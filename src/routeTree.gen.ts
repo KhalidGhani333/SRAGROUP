@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChiSiamoRouteImport } from './routes/chi-siamo'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as CostruzioniRouteImport } from './routes/costruzioni'
+import { Route as FotovoltaicoRouteImport } from './routes/fotovoltaico'
+import { Route as ProgettiRouteImport } from './routes/progetti'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChiSiamoRoute = ChiSiamoRouteImport.update({
+  id: '/chi-siamo',
+  path: '/chi-siamo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CostruzioniRoute = CostruzioniRouteImport.update({
+  id: '/costruzioni',
+  path: '/costruzioni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FotovoltaicoRoute = FotovoltaicoRouteImport.update({
+  id: '/fotovoltaico',
+  path: '/fotovoltaico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgettiRoute = ProgettiRouteImport.update({
+  id: '/progetti',
+  path: '/progetti',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/contatti': typeof ContattiRoute
+  '/costruzioni': typeof CostruzioniRoute
+  '/fotovoltaico': typeof FotovoltaicoRoute
+  '/progetti': typeof ProgettiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/contatti': typeof ContattiRoute
+  '/costruzioni': typeof CostruzioniRoute
+  '/fotovoltaico': typeof FotovoltaicoRoute
+  '/progetti': typeof ProgettiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/contatti': typeof ContattiRoute
+  '/costruzioni': typeof CostruzioniRoute
+  '/fotovoltaico': typeof FotovoltaicoRoute
+  '/progetti': typeof ProgettiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/chi-siamo'
+    | '/contatti'
+    | '/costruzioni'
+    | '/fotovoltaico'
+    | '/progetti'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/chi-siamo'
+    | '/contatti'
+    | '/costruzioni'
+    | '/fotovoltaico'
+    | '/progetti'
+  id:
+    | '__root__'
+    | '/'
+    | '/chi-siamo'
+    | '/contatti'
+    | '/costruzioni'
+    | '/fotovoltaico'
+    | '/progetti'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChiSiamoRoute: typeof ChiSiamoRoute
+  ContattiRoute: typeof ContattiRoute
+  CostruzioniRoute: typeof CostruzioniRoute
+  FotovoltaicoRoute: typeof FotovoltaicoRoute
+  ProgettiRoute: typeof ProgettiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chi-siamo': {
+      id: '/chi-siamo'
+      path: '/chi-siamo'
+      fullPath: '/chi-siamo'
+      preLoaderRoute: typeof ChiSiamoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/costruzioni': {
+      id: '/costruzioni'
+      path: '/costruzioni'
+      fullPath: '/costruzioni'
+      preLoaderRoute: typeof CostruzioniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotovoltaico': {
+      id: '/fotovoltaico'
+      path: '/fotovoltaico'
+      fullPath: '/fotovoltaico'
+      preLoaderRoute: typeof FotovoltaicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progetti': {
+      id: '/progetti'
+      path: '/progetti'
+      fullPath: '/progetti'
+      preLoaderRoute: typeof ProgettiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChiSiamoRoute: ChiSiamoRoute,
+  ContattiRoute: ContattiRoute,
+  CostruzioniRoute: CostruzioniRoute,
+  FotovoltaicoRoute: FotovoltaicoRoute,
+  ProgettiRoute: ProgettiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
