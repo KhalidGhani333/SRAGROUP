@@ -12,9 +12,21 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ChiSiamoRouteImport } from './routes/chi-siamo'
 import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as CostruzioniRouteImport } from './routes/costruzioni'
 import { Route as FotovoltaicoRouteImport } from './routes/fotovoltaico'
-import { Route as ProgettiRouteImport } from './routes/progetti'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as EnIndexRouteImport } from './routes/en/index'
+import { Route as EnAboutRouteImport } from './routes/en/about'
+import { Route as EnConstructionRouteImport } from './routes/en/construction'
+import { Route as EnContactRouteImport } from './routes/en/contact'
+import { Route as EnCookiePolicyRouteImport } from './routes/en/cookie-policy'
+import { Route as EnPrivacyPolicyRouteImport } from './routes/en/privacy-policy'
+import { Route as EnSolarRouteImport } from './routes/en/solar'
+import { Route as ProgettiIndexRouteImport } from './routes/progetti/index'
+import { Route as ProgettiSlugRouteImport } from './routes/progetti/$slug'
+import { Route as EnProjectsIndexRouteImport } from './routes/en/projects/index'
+import { Route as EnProjectsSlugRouteImport } from './routes/en/projects/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -31,6 +43,11 @@ const ContattiRoute = ContattiRouteImport.update({
   path: '/contatti',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiePolicyRoute = CookiePolicyRouteImport.update({
+  id: '/cookie-policy',
+  path: '/cookie-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CostruzioniRoute = CostruzioniRouteImport.update({
   id: '/costruzioni',
   path: '/costruzioni',
@@ -41,9 +58,64 @@ const FotovoltaicoRoute = FotovoltaicoRouteImport.update({
   path: '/fotovoltaico',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgettiRoute = ProgettiRouteImport.update({
-  id: '/progetti',
-  path: '/progetti',
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/en/',
+  path: '/en/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnAboutRoute = EnAboutRouteImport.update({
+  id: '/en/about',
+  path: '/en/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnConstructionRoute = EnConstructionRouteImport.update({
+  id: '/en/construction',
+  path: '/en/construction',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnContactRoute = EnContactRouteImport.update({
+  id: '/en/contact',
+  path: '/en/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnCookiePolicyRoute = EnCookiePolicyRouteImport.update({
+  id: '/en/cookie-policy',
+  path: '/en/cookie-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnPrivacyPolicyRoute = EnPrivacyPolicyRouteImport.update({
+  id: '/en/privacy-policy',
+  path: '/en/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnSolarRoute = EnSolarRouteImport.update({
+  id: '/en/solar',
+  path: '/en/solar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgettiIndexRoute = ProgettiIndexRouteImport.update({
+  id: '/progetti/',
+  path: '/progetti/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgettiSlugRoute = ProgettiSlugRouteImport.update({
+  id: '/progetti/$slug',
+  path: '/progetti/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnProjectsIndexRoute = EnProjectsIndexRouteImport.update({
+  id: '/en/projects/',
+  path: '/en/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnProjectsSlugRoute = EnProjectsSlugRouteImport.update({
+  id: '/en/projects/$slug',
+  path: '/en/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -51,26 +123,62 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/chi-siamo': typeof ChiSiamoRoute
   '/contatti': typeof ContattiRoute
+  '/cookie-policy': typeof CookiePolicyRoute
   '/costruzioni': typeof CostruzioniRoute
   '/fotovoltaico': typeof FotovoltaicoRoute
-  '/progetti': typeof ProgettiRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/construction': typeof EnConstructionRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/cookie-policy': typeof EnCookiePolicyRoute
+  '/en/privacy-policy': typeof EnPrivacyPolicyRoute
+  '/en/solar': typeof EnSolarRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
+  '/en/': typeof EnIndexRoute
+  '/progetti/': typeof ProgettiIndexRoute
+  '/en/projects/$slug': typeof EnProjectsSlugRoute
+  '/en/projects/': typeof EnProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/chi-siamo': typeof ChiSiamoRoute
   '/contatti': typeof ContattiRoute
+  '/cookie-policy': typeof CookiePolicyRoute
   '/costruzioni': typeof CostruzioniRoute
   '/fotovoltaico': typeof FotovoltaicoRoute
-  '/progetti': typeof ProgettiRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/construction': typeof EnConstructionRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/cookie-policy': typeof EnCookiePolicyRoute
+  '/en/privacy-policy': typeof EnPrivacyPolicyRoute
+  '/en/solar': typeof EnSolarRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
+  '/en': typeof EnIndexRoute
+  '/progetti': typeof ProgettiIndexRoute
+  '/en/projects/$slug': typeof EnProjectsSlugRoute
+  '/en/projects': typeof EnProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/chi-siamo': typeof ChiSiamoRoute
   '/contatti': typeof ContattiRoute
+  '/cookie-policy': typeof CookiePolicyRoute
   '/costruzioni': typeof CostruzioniRoute
   '/fotovoltaico': typeof FotovoltaicoRoute
-  '/progetti': typeof ProgettiRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/construction': typeof EnConstructionRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/cookie-policy': typeof EnCookiePolicyRoute
+  '/en/privacy-policy': typeof EnPrivacyPolicyRoute
+  '/en/solar': typeof EnSolarRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
+  '/en/': typeof EnIndexRoute
+  '/progetti/': typeof ProgettiIndexRoute
+  '/en/projects/$slug': typeof EnProjectsSlugRoute
+  '/en/projects/': typeof EnProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -78,34 +186,82 @@ export interface FileRouteTypes {
     | '/'
     | '/chi-siamo'
     | '/contatti'
+    | '/cookie-policy'
     | '/costruzioni'
     | '/fotovoltaico'
-    | '/progetti'
+    | '/privacy-policy'
+    | '/en/about'
+    | '/en/construction'
+    | '/en/contact'
+    | '/en/cookie-policy'
+    | '/en/privacy-policy'
+    | '/en/solar'
+    | '/progetti/$slug'
+    | '/en/'
+    | '/progetti/'
+    | '/en/projects/$slug'
+    | '/en/projects/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/chi-siamo'
     | '/contatti'
+    | '/cookie-policy'
     | '/costruzioni'
     | '/fotovoltaico'
+    | '/privacy-policy'
+    | '/en/about'
+    | '/en/construction'
+    | '/en/contact'
+    | '/en/cookie-policy'
+    | '/en/privacy-policy'
+    | '/en/solar'
+    | '/progetti/$slug'
+    | '/en'
     | '/progetti'
+    | '/en/projects/$slug'
+    | '/en/projects'
   id:
     | '__root__'
     | '/'
     | '/chi-siamo'
     | '/contatti'
+    | '/cookie-policy'
     | '/costruzioni'
     | '/fotovoltaico'
-    | '/progetti'
+    | '/privacy-policy'
+    | '/en/about'
+    | '/en/construction'
+    | '/en/contact'
+    | '/en/cookie-policy'
+    | '/en/privacy-policy'
+    | '/en/solar'
+    | '/progetti/$slug'
+    | '/en/'
+    | '/progetti/'
+    | '/en/projects/$slug'
+    | '/en/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ChiSiamoRoute: typeof ChiSiamoRoute
   ContattiRoute: typeof ContattiRoute
+  CookiePolicyRoute: typeof CookiePolicyRoute
   CostruzioniRoute: typeof CostruzioniRoute
   FotovoltaicoRoute: typeof FotovoltaicoRoute
-  ProgettiRoute: typeof ProgettiRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  EnAboutRoute: typeof EnAboutRoute
+  EnConstructionRoute: typeof EnConstructionRoute
+  EnContactRoute: typeof EnContactRoute
+  EnCookiePolicyRoute: typeof EnCookiePolicyRoute
+  EnPrivacyPolicyRoute: typeof EnPrivacyPolicyRoute
+  EnSolarRoute: typeof EnSolarRoute
+  ProgettiSlugRoute: typeof ProgettiSlugRoute
+  EnIndexRoute: typeof EnIndexRoute
+  ProgettiIndexRoute: typeof ProgettiIndexRoute
+  EnProjectsSlugRoute: typeof EnProjectsSlugRoute
+  EnProjectsIndexRoute: typeof EnProjectsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -131,6 +287,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContattiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookie-policy': {
+      id: '/cookie-policy'
+      path: '/cookie-policy'
+      fullPath: '/cookie-policy'
+      preLoaderRoute: typeof CookiePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/costruzioni': {
       id: '/costruzioni'
       path: '/costruzioni'
@@ -145,11 +308,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FotovoltaicoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/progetti': {
-      id: '/progetti'
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/en'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/about': {
+      id: '/en/about'
+      path: '/en/about'
+      fullPath: '/en/about'
+      preLoaderRoute: typeof EnAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/construction': {
+      id: '/en/construction'
+      path: '/en/construction'
+      fullPath: '/en/construction'
+      preLoaderRoute: typeof EnConstructionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/contact': {
+      id: '/en/contact'
+      path: '/en/contact'
+      fullPath: '/en/contact'
+      preLoaderRoute: typeof EnContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/cookie-policy': {
+      id: '/en/cookie-policy'
+      path: '/en/cookie-policy'
+      fullPath: '/en/cookie-policy'
+      preLoaderRoute: typeof EnCookiePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/privacy-policy': {
+      id: '/en/privacy-policy'
+      path: '/en/privacy-policy'
+      fullPath: '/en/privacy-policy'
+      preLoaderRoute: typeof EnPrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/solar': {
+      id: '/en/solar'
+      path: '/en/solar'
+      fullPath: '/en/solar'
+      preLoaderRoute: typeof EnSolarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progetti/': {
+      id: '/progetti/'
       path: '/progetti'
-      fullPath: '/progetti'
-      preLoaderRoute: typeof ProgettiRouteImport
+      fullPath: '/progetti/'
+      preLoaderRoute: typeof ProgettiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progetti/$slug': {
+      id: '/progetti/$slug'
+      path: '/progetti/$slug'
+      fullPath: '/progetti/$slug'
+      preLoaderRoute: typeof ProgettiSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/projects/': {
+      id: '/en/projects/'
+      path: '/en/projects'
+      fullPath: '/en/projects/'
+      preLoaderRoute: typeof EnProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/projects/$slug': {
+      id: '/en/projects/$slug'
+      path: '/en/projects/$slug'
+      fullPath: '/en/projects/$slug'
+      preLoaderRoute: typeof EnProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -159,9 +399,21 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ChiSiamoRoute: ChiSiamoRoute,
   ContattiRoute: ContattiRoute,
+  CookiePolicyRoute: CookiePolicyRoute,
   CostruzioniRoute: CostruzioniRoute,
   FotovoltaicoRoute: FotovoltaicoRoute,
-  ProgettiRoute: ProgettiRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  EnAboutRoute: EnAboutRoute,
+  EnConstructionRoute: EnConstructionRoute,
+  EnContactRoute: EnContactRoute,
+  EnCookiePolicyRoute: EnCookiePolicyRoute,
+  EnPrivacyPolicyRoute: EnPrivacyPolicyRoute,
+  EnSolarRoute: EnSolarRoute,
+  ProgettiSlugRoute: ProgettiSlugRoute,
+  EnIndexRoute: EnIndexRoute,
+  ProgettiIndexRoute: ProgettiIndexRoute,
+  EnProjectsSlugRoute: EnProjectsSlugRoute,
+  EnProjectsIndexRoute: EnProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,0 +1,835 @@
+{
+  "meta": {
+    "home": {
+      "title": "SRAGROUP — Costruzioni e Fotovoltaico per le imprese",
+      "description": "General contractor e EPC fotovoltaico: SRAGROUP progetta e realizza edifici industriali, commerciali e residenziali e impianti solari chiavi in mano in tutta Italia."
+    },
+    "about": {
+      "title": "Chi Siamo — SRAGROUP",
+      "description": "Storia, missione, certificazioni ISO e SOA, politica HSE e leadership di SRAGROUP, gruppo italiano attivo nelle costruzioni e nel fotovoltaico."
+    },
+    "construction": {
+      "title": "Costruzioni industriali, commerciali e residenziali — SRAGROUP",
+      "description": "Strutture in acciaio e calcestruzzo armato, ristrutturazioni, progetti chiavi in mano e design & build. Un unico interlocutore dalla progettazione alla consegna."
+    },
+    "solar": {
+      "title": "Impianti fotovoltaici e parchi solari — SRAGROUP",
+      "description": "Fotovoltaico commerciale e industriale, sviluppo di parchi solari, efficienza energetica, O&M, accumulo e ricarica EV. Ingegneria, autorizzazioni e connessione in house."
+    },
+    "projects": {
+      "title": "Progetti — SRAGROUP",
+      "description": "Una selezione di cantieri e impianti realizzati da SRAGROUP: poli logistici, uffici, residenze, coperture fotovoltaiche e parchi solari."
+    },
+    "project": {
+      "title": "{{name}} — Progetti SRAGROUP"
+    },
+    "contact": {
+      "title": "Contatti e preventivi — SRAGROUP",
+      "description": "Contatta la direzione o le divisioni Costruzioni e Fotovoltaico di SRAGROUP e richiedi un preventivo per il tuo progetto."
+    },
+    "privacy": {
+      "title": "Privacy Policy — SRAGROUP",
+      "description": "Informativa sul trattamento dei dati personali ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR)."
+    },
+    "cookies": {
+      "title": "Cookie Policy — SRAGROUP",
+      "description": "Informazioni sui cookie e sulle tecnologie di tracciamento utilizzate dal sito SRAGROUP e su come gestire le preferenze."
+    },
+    "notFound": {
+      "title": "Pagina non trovata — SRAGROUP"
+    }
+  },
+  "common": {
+    "skipToContent": "Vai al contenuto",
+    "requestQuote": "Richiedi un preventivo",
+    "discoverDivision": "Scopri la divisione",
+    "learnMore": "Approfondisci",
+    "viewProject": "Vedi il progetto",
+    "viewAllProjects": "Tutti i progetti",
+    "breadcrumb": "Percorso di navigazione",
+    "home": "Home",
+    "menuOpen": "Apri il menu",
+    "menuClose": "Chiudi il menu",
+    "mainNav": "Navigazione principale",
+    "language": "Lingua",
+    "switchTo": "Passa all'italiano",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "close": "Chiudi",
+    "divisions": {
+      "construction": "Costruzioni",
+      "solar": "Fotovoltaico",
+      "general": "Generale"
+    },
+    "scroll": "Scorri"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "construction": "Costruzioni",
+    "solar": "Fotovoltaico",
+    "projects": "Progetti",
+    "contact": "Contatti"
+  },
+  "footer": {
+    "tagline": "Costruiamo spazi e produciamo energia per imprese che guardano avanti.",
+    "navigation": "Navigazione",
+    "contacts": "Contatti diretti",
+    "legal": "Informazioni legali",
+    "departments": {
+      "general": "Direzione generale",
+      "construction": "Divisione Costruzioni",
+      "solar": "Divisione Fotovoltaico"
+    },
+    "vat": "P.IVA",
+    "rights": "Tutti i diritti riservati.",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "cookiePreferences": "Preferenze cookie",
+    "ctaEyebrow": "Nuovo progetto",
+    "ctaTitle": "Avete un progetto in mente? Costruiamolo insieme."
+  },
+  "home": {
+    "srTitle": "SRAGROUP — Costruzioni e Fotovoltaico",
+    "hero": {
+      "construction": {
+        "eyebrow": "Costruzioni",
+        "title": "Spazi solidi. Valore duraturo.",
+        "text": "General contractor per interventi industriali, commerciali e residenziali."
+      },
+      "solar": {
+        "eyebrow": "Fotovoltaico",
+        "title": "Energia che genera futuro.",
+        "text": "Impianti ad alte prestazioni per imprese e grandi superfici."
+      }
+    },
+    "statsLabel": "SRAGROUP in numeri",
+    "stats": [
+      {
+        "value": 25,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "anni di esperienza"
+      },
+      {
+        "value": 180,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "progetti completati"
+      },
+      {
+        "value": 85,
+        "decimals": 0,
+        "suffix": " MWp",
+        "label": "potenza installata"
+      },
+      {
+        "value": 98,
+        "decimals": 0,
+        "suffix": "%",
+        "label": "consegne puntuali"
+      }
+    ],
+    "intro": {
+      "eyebrow": "Un unico gruppo",
+      "title": "Dalla materia all'energia, una visione integrata.",
+      "text": "Due divisioni specialistiche, una sola cultura del progetto: competenza, responsabilità e controllo diretto di ogni fase.",
+      "cta": "Scopri chi siamo"
+    },
+    "divisions": {
+      "eyebrow": "Divisione",
+      "construction": {
+        "title": "Costruzioni",
+        "text": "Edifici industriali, direzionali e residenziali realizzati con rigore esecutivo."
+      },
+      "solar": {
+        "title": "Fotovoltaico",
+        "text": "Soluzioni energetiche complete, dalla progettazione alla gestione dell'impianto."
+      },
+      "services": "Servizi principali"
+    },
+    "why": {
+      "eyebrow": "Perché SRAGROUP",
+      "title": "Sei ragioni per affidarci il vostro prossimo progetto.",
+      "text": "Lavoriamo con un metodo industriale: processi certificati, responsabilità chiare e un unico referente dall'idea alla consegna.",
+      "items": [
+        {
+          "title": "Sicurezza prima di tutto",
+          "text": "Sistema di gestione ISO 45001, formazione continua e audit di cantiere settimanali. Obiettivo: zero infortuni."
+        },
+        {
+          "title": "Qualità certificata",
+          "text": "Processi conformi a ISO 9001 e attestazione SOA per opere pubbliche, con controlli documentati a ogni fase."
+        },
+        {
+          "title": "Chiavi in mano",
+          "text": "Progettazione, autorizzazioni, costruzione e collaudo sotto un unico contratto e un'unica responsabilità."
+        },
+        {
+          "title": "Ingegneria interna",
+          "text": "Strutturisti, impiantisti ed energy engineer in house: decisioni tecniche rapide e nessuna dispersione di responsabilità."
+        },
+        {
+          "title": "Tempi rispettati",
+          "text": "Pianificazione dettagliata e monitoraggio continuo: il 98% delle commesse è consegnato entro i termini contrattuali."
+        },
+        {
+          "title": "Sostenibilità concreta",
+          "text": "Sistema ambientale ISO 14001, materiali a basso impatto ed energia rinnovabile integrata nei nostri progetti."
+        }
+      ],
+      "badge": "Il metodo SRAGROUP"
+    },
+    "featured": {
+      "eyebrow": "Selezione lavori",
+      "title": "Progetti che misurano la nostra competenza.",
+      "cta": "Tutti i progetti"
+    },
+    "certifications": {
+      "label": "Certificazioni e attestazioni",
+      "items": [
+        {
+          "code": "ISO 9001",
+          "name": "Qualità"
+        },
+        {
+          "code": "ISO 14001",
+          "name": "Ambiente"
+        },
+        {
+          "code": "ISO 45001",
+          "name": "Salute e sicurezza"
+        },
+        {
+          "code": "SOA",
+          "name": "Opere pubbliche"
+        }
+      ]
+    },
+    "cta": "Parliamo del vostro prossimo progetto.",
+    "marquee": [
+      "Strutture in acciaio",
+      "Calcestruzzo armato",
+      "Chiavi in mano",
+      "Parchi solari",
+      "Fotovoltaico industriale",
+      "Accumulo e ricarica EV",
+      "Design & build",
+      "O&M"
+    ]
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Chi siamo",
+      "title": "Esperienza concreta. Visione industriale.",
+      "text": "Da oltre venticinque anni trasformiamo complessità tecniche in opere affidabili, efficienti e misurabili."
+    },
+    "history": {
+      "eyebrow": "La nostra storia",
+      "title": "Cresciuti sul campo, progetto dopo progetto.",
+      "items": [
+        {
+          "year": "2001",
+          "title": "Nasce SRA Costruzioni",
+          "text": "L'impresa nasce a Milano come general contractor per l'edilizia industriale."
+        },
+        {
+          "year": "2008",
+          "title": "Prime commesse nazionali",
+          "text": "Realizziamo i primi poli logistici fuori regione e otteniamo l'attestazione SOA."
+        },
+        {
+          "year": "2013",
+          "title": "Nasce la divisione Fotovoltaico",
+          "text": "Dalle coperture dei nostri edifici ai primi impianti per clienti terzi."
+        },
+        {
+          "year": "2019",
+          "title": "Sistema integrato certificato",
+          "text": "Qualità, ambiente e sicurezza certificati ISO 9001, 14001 e 45001."
+        },
+        {
+          "year": "2022",
+          "title": "Primo parco solare utility-scale",
+          "text": "Sviluppiamo e connettiamo alla rete il primo impianto a terra oltre i 10 MWp."
+        },
+        {
+          "year": "2026",
+          "title": "Oltre 180 progetti completati",
+          "text": "Due divisioni, un unico gruppo e più di 85 MWp installati in Italia."
+        }
+      ]
+    },
+    "mission": {
+      "eyebrow": "Missione e visione",
+      "title": "Infrastrutture che migliorano il modo di lavorare e produrre.",
+      "missionLabel": "Missione",
+      "mission": "Progettare e realizzare edifici e impianti energetici affidabili, mettendo al centro qualità tecnica, controllo dei tempi e una relazione trasparente con ogni committente.",
+      "visionLabel": "Visione",
+      "vision": "Essere il partner di riferimento per le imprese italiane che vogliono crescere in spazi efficienti e alimentati da energia pulita.",
+      "values": [
+        "Precisione",
+        "Sicurezza",
+        "Qualità",
+        "Responsabilità"
+      ]
+    },
+    "certifications": {
+      "eyebrow": "Certificazioni",
+      "title": "Standard verificati da enti terzi.",
+      "text": "I nostri sistemi di gestione sono certificati e sottoposti ad audit periodici da organismi accreditati.",
+      "items": [
+        {
+          "code": "ISO 9001",
+          "name": "Sistema di gestione qualità",
+          "text": "Processi documentati e misurabili, dalla gestione dell'offerta al collaudo finale."
+        },
+        {
+          "code": "ISO 14001",
+          "name": "Sistema di gestione ambientale",
+          "text": "Controllo degli impatti ambientali di cantiere: rifiuti, emissioni, rumore e consumo di risorse."
+        },
+        {
+          "code": "ISO 45001",
+          "name": "Salute e sicurezza sul lavoro",
+          "text": "Valutazione dei rischi, formazione e sorveglianza per la tutela di lavoratori e subappaltatori."
+        },
+        {
+          "code": "SOA",
+          "name": "Attestazione per opere pubbliche",
+          "text": "Qualificazione per partecipare agli appalti pubblici nelle categorie edili e impiantistiche."
+        }
+      ]
+    },
+    "standards": {
+      "eyebrow": "Sicurezza e qualità",
+      "title": "Qualità e sicurezza non sono dichiarazioni: sono processi.",
+      "hse": {
+        "title": "Politica HSE",
+        "text": "Salute, sicurezza e ambiente guidano ogni decisione, dalla progettazione alla gestione del cantiere.",
+        "points": [
+          "Piani operativi di sicurezza specifici per ogni cantiere",
+          "Formazione e addestramento periodico di tutto il personale",
+          "Qualifica e monitoraggio dei subappaltatori",
+          "Analisi dei quasi-incidenti e azioni correttive tracciate",
+          "Gestione dei rifiuti e riduzione delle emissioni di cantiere"
+        ]
+      },
+      "quality": {
+        "title": "Controllo qualità",
+        "text": "Un processo in cinque passaggi verifica ogni lavorazione prima che diventi un problema.",
+        "steps": [
+          "Riesame del progetto e dei requisiti contrattuali",
+          "Qualifica di fornitori e materiali",
+          "Piani di controllo e ispezioni per lavorazione",
+          "Prove, collaudi e documentazione as-built",
+          "Verifica della soddisfazione del cliente"
+        ]
+      }
+    },
+    "leadership": {
+      "eyebrow": "Leadership",
+      "title": "Le persone che guidano il gruppo.",
+      "text": "Un team di direzione con esperienza diretta di cantiere e di sviluppo energetico.",
+      "photoPlaceholder": "Foto in arrivo",
+      "items": [
+        {
+          "name": "Nome Cognome",
+          "role": "Amministratore Delegato"
+        },
+        {
+          "name": "Nome Cognome",
+          "role": "Direttore Divisione Costruzioni"
+        },
+        {
+          "name": "Nome Cognome",
+          "role": "Direttore Divisione Fotovoltaico"
+        },
+        {
+          "name": "Nome Cognome",
+          "role": "Responsabile HSE e Qualità"
+        }
+      ]
+    },
+    "cta": "Costruiamo insieme il prossimo capitolo."
+  },
+  "construction": {
+    "hero": {
+      "eyebrow": "Divisione Costruzioni",
+      "title": "Costruiamo certezze.",
+      "text": "Dalla progettazione alla consegna, coordiniamo persone, competenze e risorse per realizzare opere complesse senza compromessi."
+    },
+    "sectors": {
+      "eyebrow": "Ambiti",
+      "title": "Competenza trasversale, controllo verticale.",
+      "items": [
+        {
+          "title": "Industriale",
+          "text": "Stabilimenti produttivi, poli logistici, magazzini automatizzati e riqualificazioni di siti esistenti."
+        },
+        {
+          "title": "Commerciale",
+          "text": "Uffici, spazi retail e direzionali ad alta efficienza, progettati per durare e per essere vissuti."
+        },
+        {
+          "title": "Residenziale",
+          "text": "Complessi residenziali contemporanei, confortevoli e in classe energetica elevata."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Servizi specialistici",
+      "title": "Un unico interlocutore per l'intero processo.",
+      "items": [
+        {
+          "title": "Strutture in acciaio",
+          "text": "Carpenteria metallica, grandi luci e carroponti, con prefabbricazione in officina."
+        },
+        {
+          "title": "Calcestruzzo armato",
+          "text": "Fondazioni, strutture gettate in opera e prefabbricate, opere di contenimento."
+        },
+        {
+          "title": "Ristrutturazioni",
+          "text": "Riqualificazione strutturale ed energetica di edifici esistenti, anche in esercizio."
+        },
+        {
+          "title": "Progetti chiavi in mano",
+          "text": "Un contratto unico, prezzo e tempi certi, dalla progettazione al collaudo."
+        },
+        {
+          "title": "Design & build",
+          "text": "Progettazione ed esecuzione integrate per ridurre interferenze, tempi e varianti."
+        },
+        {
+          "title": "Direzione di cantiere",
+          "text": "Project management, sicurezza, contabilità lavori e coordinamento dei subappalti."
+        }
+      ]
+    },
+    "method": {
+      "eyebrow": "Metodo",
+      "title": "Sei fasi, un controllo costante.",
+      "items": [
+        {
+          "title": "Analisi",
+          "text": "Obiettivi, vincoli, fattibilità tecnica ed economica."
+        },
+        {
+          "title": "Progettazione",
+          "text": "Coordinamento BIM tra architettura, strutture e impianti."
+        },
+        {
+          "title": "Pianificazione",
+          "text": "Cronoprogramma, budget, approvvigionamenti e logistica."
+        },
+        {
+          "title": "Esecuzione",
+          "text": "Gestione diretta del cantiere e controllo qualità."
+        },
+        {
+          "title": "Consegna",
+          "text": "Collaudi, documentazione as-built e formazione."
+        },
+        {
+          "title": "Assistenza",
+          "text": "Manutenzione programmata e garanzia post-consegna."
+        }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Progetti Costruzioni",
+      "title": "Opere realizzate per i nostri clienti."
+    },
+    "cta": "Il vostro progetto merita basi solide."
+  },
+  "solar": {
+    "hero": {
+      "eyebrow": "Divisione Fotovoltaico",
+      "title": "Energia progettata per rendere.",
+      "text": "Sviluppiamo sistemi fotovoltaici affidabili e performanti, costruiti intorno ai consumi e agli obiettivi della vostra impresa."
+    },
+    "services": {
+      "eyebrow": "Servizi",
+      "title": "Dalla copertura industriale al parco solare.",
+      "items": [
+        {
+          "title": "Fotovoltaico commerciale e industriale",
+          "text": "Impianti in autoconsumo su coperture e pensiline, dimensionati sui profili di carico reali."
+        },
+        {
+          "title": "Sviluppo parchi solari",
+          "text": "Ricerca terreni, iter autorizzativo, progettazione e costruzione di impianti utility-scale e agrivoltaici."
+        },
+        {
+          "title": "Efficienza energetica",
+          "text": "Diagnosi, monitoraggio dei consumi e interventi per ridurre il fabbisogno energetico."
+        },
+        {
+          "title": "Manutenzione e O&M",
+          "text": "Manutenzione preventiva e correttiva, pulizia moduli e garanzia di performance."
+        },
+        {
+          "title": "Accumulo e ricarica EV",
+          "text": "Sistemi di storage e infrastrutture di ricarica integrate con l'impianto fotovoltaico."
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Capacità tecniche",
+      "title": "Ogni componente al servizio della resa.",
+      "text": "Gestiamo internamente tutte le fasi tecniche che determinano tempi, costi e rendimento dell'impianto.",
+      "stats": [
+        {
+          "value": "85 MWp",
+          "label": "installati"
+        },
+        {
+          "value": "99,2%",
+          "label": "disponibilità media"
+        },
+        {
+          "value": "24/7",
+          "label": "monitoraggio"
+        },
+        {
+          "value": "25 anni",
+          "label": "vita utile garantita"
+        }
+      ],
+      "items": [
+        {
+          "title": "Ingegneria",
+          "text": "Progettazione elettrica e strutturale, simulazioni di producibilità e scelta dei componenti tier 1."
+        },
+        {
+          "title": "Autorizzazioni",
+          "text": "PAS, VIA, autorizzazione unica e rapporti con enti e Soprintendenze."
+        },
+        {
+          "title": "Connessione alla rete",
+          "text": "Pratiche con il distributore, cabine di consegna e sottostazioni MT/AT."
+        },
+        {
+          "title": "Monitoraggio",
+          "text": "Piattaforma di telecontrollo, allarmi in tempo reale e report di performance mensili."
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Processo",
+      "title": "Un percorso chiaro verso l'indipendenza energetica.",
+      "items": [
+        {
+          "title": "Studio di fattibilità",
+          "text": "Analisi dei consumi, delle superfici e del ritorno economico."
+        },
+        {
+          "title": "Progettazione",
+          "text": "Dimensionamento, layout e simulazione della producibilità."
+        },
+        {
+          "title": "Autorizzazioni",
+          "text": "Pratiche edilizie, ambientali e di connessione."
+        },
+        {
+          "title": "Installazione",
+          "text": "Cantiere coordinato, sicuro e documentato."
+        },
+        {
+          "title": "Connessione",
+          "text": "Collaudo, allaccio alla rete e messa in esercizio."
+        },
+        {
+          "title": "Monitoraggio e manutenzione",
+          "text": "Controllo continuo e O&M per tutta la vita dell'impianto."
+        }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Progetti Fotovoltaico",
+      "title": "Impianti in esercizio in tutta Italia."
+    },
+    "cta": "Trasformate il sole in un vantaggio competitivo."
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Portfolio",
+      "title": "Risultati visibili. Valore misurabile.",
+      "text": "Una selezione di opere che racconta la nostra capacità di affrontare scale, contesti e obiettivi diversi."
+    },
+    "list": {
+      "eyebrow": "Progetti",
+      "title": "Costruzioni ed energia, sul territorio."
+    },
+    "filterLabel": "Filtra per divisione",
+    "filters": {
+      "all": "Tutti",
+      "construction": "Costruzioni",
+      "solar": "Fotovoltaico"
+    },
+    "count_one": "{{count}} progetto",
+    "count_other": "{{count}} progetti",
+    "carouselLabel": "Progetti correlati"
+  },
+  "project": {
+    "overview": "Panoramica",
+    "challenge": "La sfida",
+    "solution": "La soluzione",
+    "keyFigures": "Dati chiave",
+    "gallery": "Galleria",
+    "location": "Luogo",
+    "year": "Anno",
+    "division": "Divisione",
+    "metric": "Dimensione",
+    "prev": "Progetto precedente",
+    "next": "Progetto successivo",
+    "openImage": "Apri immagine {{index}} di {{total}}",
+    "imageAlt": "{{name}}, immagine {{index}}",
+    "lightboxLabel": "Galleria immagini: {{name}}",
+    "counter": "{{index}} / {{total}}",
+    "cta": "Avete un progetto simile? Parliamone."
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contatti",
+      "title": "Iniziamo da una conversazione concreta.",
+      "text": "Scrivete al reparto più adatto o compilate il modulo: un referente tecnico vi risponderà entro due giorni lavorativi."
+    },
+    "departments": {
+      "eyebrow": "Reparti",
+      "title": "Il referente giusto, subito.",
+      "general": "Generale",
+      "construction": "Costruzioni",
+      "solar": "Fotovoltaico",
+      "generalText": "Informazioni sul gruppo, fornitori e candidature.",
+      "constructionText": "Nuove costruzioni, ristrutturazioni e progetti chiavi in mano.",
+      "solarText": "Impianti fotovoltaici, parchi solari, accumulo e O&M.",
+      "email": "Email",
+      "phone": "Telefono"
+    },
+    "form": {
+      "eyebrow": "Preventivo",
+      "title": "Raccontateci il progetto.",
+      "requiredNote": "I campi contrassegnati con * sono obbligatori.",
+      "step1": "Divisione",
+      "step1Question": "Di cosa avete bisogno?",
+      "step2": "Dettagli del progetto",
+      "step3": "I vostri dati",
+      "divisionCards": {
+        "construction": "Nuove costruzioni, ampliamenti e ristrutturazioni.",
+        "solar": "Impianti fotovoltaici, parchi solari, accumulo.",
+        "general": "Informazioni, partnership e altre richieste."
+      },
+      "projectType": "Tipologia di progetto",
+      "projectTypes": {
+        "industrial": "Industriale",
+        "commercial": "Commerciale",
+        "residential": "Residenziale"
+      },
+      "area": "Superficie (m²)",
+      "location": "Località dell'intervento",
+      "locationPlaceholder": "Comune e provincia",
+      "timeline": "Tempistiche",
+      "timelines": {
+        "asap": "Il prima possibile",
+        "3to6": "Entro 3-6 mesi",
+        "6to12": "Entro 6-12 mesi",
+        "over12": "Oltre 12 mesi",
+        "unknown": "Da definire"
+      },
+      "selectPlaceholder": "Selezionate un'opzione",
+      "installationType": "Tipologia di impianto",
+      "installationTypes": {
+        "roof": "Tetto",
+        "ground": "A terra",
+        "park": "Parco solare"
+      },
+      "sizing": "Dimensionamento",
+      "sizingModes": {
+        "power": "Potenza (kWp)",
+        "bill": "Bolletta annua (€)"
+      },
+      "power": "Potenza indicativa (kWp)",
+      "bill": "Spesa energetica annua (€)",
+      "subject": "Oggetto",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "company": "Azienda",
+      "role": "Ruolo",
+      "email": "Email",
+      "phone": "Telefono",
+      "message": "Messaggio",
+      "messagePlaceholder": "Descriveteci obiettivi, vincoli e qualsiasi informazione utile.",
+      "file": "Allegato (facoltativo)",
+      "fileHint": "Planimetrie, bollette o capitolati. PDF, DWG, JPG o PNG, max 10 MB.",
+      "fileButton": "Scegli file",
+      "fileRemove": "Rimuovi allegato",
+      "fileNone": "Nessun file selezionato",
+      "gdpr": "Ho letto l'<0>informativa privacy</0> e acconsento al trattamento dei miei dati per rispondere alla richiesta. *",
+      "marketing": "Acconsento a ricevere comunicazioni commerciali e aggiornamenti da SRAGROUP (facoltativo).",
+      "submit": "Invia richiesta",
+      "submitting": "Invio in corso…",
+      "successTitle": "Richiesta ricevuta",
+      "successText": "Grazie. Il team SRAGROUP vi contatterà entro due giorni lavorativi.",
+      "newRequest": "Invia un'altra richiesta",
+      "errorSubmit": "Non è stato possibile inviare la richiesta. Riprovate o scriveteci via email.",
+      "errorSummary": "Controllate i campi evidenziati.",
+      "errors": {
+        "required": "Campo obbligatorio",
+        "email": "Inserite un indirizzo email valido",
+        "phone": "Inserite un numero di telefono valido",
+        "number": "Inserite un valore numerico maggiore di zero",
+        "gdpr": "Il consenso è necessario per inviare la richiesta",
+        "fileSize": "Il file supera i 10 MB"
+      }
+    },
+    "map": {
+      "title": "Mappa della sede SRAGROUP",
+      "eyebrow": "Sede",
+      "consentText": "La mappa è fornita da Google e può impostare cookie di terze parti.",
+      "load": "Mostra la mappa"
+    }
+  },
+  "legal": {
+    "updated": "Ultimo aggiornamento: {{date}}",
+    "placeholderNote": "Testo segnaposto: da completare e validare con il consulente legale e il DPO prima della pubblicazione.",
+    "toc": "In questa pagina",
+    "privacy": {
+      "eyebrow": "Informazioni legali",
+      "title": "Privacy Policy",
+      "sections": [
+        {
+          "title": "Titolare del trattamento",
+          "body": [
+            "SRAGROUP S.r.l., con sede legale in [indirizzo], P.IVA [numero], è titolare del trattamento dei dati personali raccolti tramite questo sito.",
+            "Per qualsiasi richiesta potete scrivere a privacy@sragroup.it."
+          ]
+        },
+        {
+          "title": "Dati trattati",
+          "body": [
+            "Dati di navigazione raccolti automaticamente dai sistemi informatici del sito.",
+            "Dati forniti volontariamente tramite il modulo di contatto: nome, cognome, azienda, ruolo, email, telefono, contenuto del messaggio ed eventuali allegati."
+          ]
+        },
+        {
+          "title": "Finalità e base giuridica",
+          "body": [
+            "Rispondere alle richieste di informazioni e preventivo (esecuzione di misure precontrattuali, art. 6.1.b GDPR).",
+            "Invio di comunicazioni commerciali, solo previo consenso espresso (art. 6.1.a GDPR).",
+            "Adempimento di obblighi di legge (art. 6.1.c GDPR)."
+          ]
+        },
+        {
+          "title": "Modalità e durata della conservazione",
+          "body": [
+            "I dati sono trattati con strumenti elettronici e misure di sicurezza adeguate.",
+            "I dati delle richieste sono conservati per [periodo] dalla chiusura del contatto; i dati per finalità di marketing fino alla revoca del consenso."
+          ]
+        },
+        {
+          "title": "Destinatari",
+          "body": [
+            "I dati possono essere comunicati a fornitori che agiscono come responsabili del trattamento (hosting, CRM, assistenza IT) e non sono diffusi.",
+            "Eventuali trasferimenti extra UE avvengono nel rispetto degli artt. 44 e seguenti del GDPR."
+          ]
+        },
+        {
+          "title": "Diritti dell'interessato",
+          "body": [
+            "Potete esercitare in qualsiasi momento i diritti di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15-22 GDPR), e revocare il consenso.",
+            "Avete inoltre diritto di proporre reclamo al Garante per la protezione dei dati personali."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "eyebrow": "Informazioni legali",
+      "title": "Cookie Policy",
+      "sections": [
+        {
+          "title": "Cosa sono i cookie",
+          "body": [
+            "I cookie sono piccoli file di testo che i siti salvano sul dispositivo dell'utente per memorizzare informazioni sulla navigazione."
+          ]
+        },
+        {
+          "title": "Cookie tecnici necessari",
+          "body": [
+            "Indispensabili al funzionamento del sito e alla memorizzazione delle preferenze sui cookie. Non richiedono consenso."
+          ]
+        },
+        {
+          "title": "Cookie analitici",
+          "body": [
+            "Utilizzati, solo previo consenso, per raccogliere statistiche aggregate sull'uso del sito. Fornitore: [da definire, es. Google Analytics 4]."
+          ]
+        },
+        {
+          "title": "Cookie di marketing e di terze parti",
+          "body": [
+            "Utilizzati, solo previo consenso, per misurare le campagne e mostrare contenuti di terze parti come Google Maps. Fornitori: [da definire]."
+          ]
+        },
+        {
+          "title": "Gestione delle preferenze",
+          "body": [
+            "Potete modificare o revocare il consenso in qualsiasi momento tramite il link \"Preferenze cookie\" nel footer del sito, oppure dalle impostazioni del browser."
+          ]
+        },
+        {
+          "title": "Contatti",
+          "body": [
+            "Per informazioni sull'uso dei cookie scrivete a privacy@sragroup.it."
+          ]
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "eyebrow": "Errore 404",
+    "title": "Questa pagina non esiste.",
+    "text": "Il link potrebbe essere errato o la pagina potrebbe essere stata spostata. Ripartite dalla home o esplorate i nostri progetti.",
+    "home": "Torna alla home",
+    "projects": "Vedi i progetti"
+  },
+  "error": {
+    "title": "La pagina non è stata caricata",
+    "text": "Si è verificato un problema. Provate a ricaricare la pagina o tornate alla home.",
+    "retry": "Riprova",
+    "home": "Torna alla home"
+  },
+  "consent": {
+    "bannerLabel": "Consenso ai cookie",
+    "title": "Rispettiamo la vostra privacy",
+    "text": "Utilizziamo cookie tecnici necessari e, solo con il vostro consenso, cookie analitici e di marketing. Potete modificare la scelta in qualsiasi momento.",
+    "policy": "Cookie Policy",
+    "accept": "Accetta tutti",
+    "reject": "Rifiuta",
+    "customize": "Personalizza",
+    "save": "Salva preferenze",
+    "modalTitle": "Preferenze cookie",
+    "modalText": "Scegliete quali categorie di cookie autorizzare. I cookie necessari sono sempre attivi.",
+    "alwaysOn": "Sempre attivi",
+    "categories": {
+      "necessary": {
+        "title": "Necessari",
+        "text": "Garantiscono il funzionamento del sito e memorizzano le vostre preferenze."
+      },
+      "analytics": {
+        "title": "Analitici",
+        "text": "Ci aiutano a capire come viene usato il sito, con dati aggregati."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "text": "Misurano le campagne e abilitano contenuti di terze parti come le mappe."
+      }
+    }
+  },
+  "cta": {
+    "eyebrow": "Iniziamo",
+    "text": "Raccontateci obiettivi e vincoli: un referente tecnico vi risponde entro due giorni lavorativi con una prima proposta.",
+    "call": "Chiamateci"
+  }
+}

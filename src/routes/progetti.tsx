@@ -1,5 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, SectionIntro, images } from "@/components/site/Site";
-import { ProjectGrid } from "@/components/site/ProjectGrid";
-export const Route=createFileRoute("/progetti")({head:()=>({meta:[{title:"Progetti — SRAGROUP"},{name:"description",content:"Una selezione di progetti SRAGROUP nelle costruzioni e nel fotovoltaico."},{property:"og:title",content:"Progetti — SRAGROUP"},{property:"og:description",content:"Opere e impianti realizzati in tutta Italia."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:Page});
-function Page(){return <><PageHero eyebrow="Portfolio" title="Risultati visibili. Valore misurabile." text="Una selezione di opere che racconta la nostra capacità di affrontare scale, contesti e obiettivi diversi." image={images.solarHero}/><section className="site-container py-24"><SectionIntro eyebrow="Progetti" title="Costruzioni ed energia, sul territorio."/><div className="mt-12"><ProjectGrid/></div></section></>}

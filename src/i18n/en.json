@@ -1,0 +1,835 @@
+{
+  "meta": {
+    "home": {
+      "title": "SRAGROUP — Construction and Solar Energy for Business",
+      "description": "General contractor and solar EPC: SRAGROUP designs and builds industrial, commercial and residential buildings and turnkey solar plants across Italy."
+    },
+    "about": {
+      "title": "About Us — SRAGROUP",
+      "description": "History, mission, ISO and SOA certifications, HSE policy and leadership of SRAGROUP, an Italian group working in construction and solar energy."
+    },
+    "construction": {
+      "title": "Industrial, Commercial and Residential Construction — SRAGROUP",
+      "description": "Steel and reinforced concrete structures, renovation, turnkey projects and design & build. One point of contact from design to handover."
+    },
+    "solar": {
+      "title": "Solar PV Systems and Solar Parks — SRAGROUP",
+      "description": "Commercial and industrial PV, solar park development, energy efficiency, O&M, storage and EV charging. In-house engineering, permitting and grid connection."
+    },
+    "projects": {
+      "title": "Projects — SRAGROUP",
+      "description": "A selection of sites and plants delivered by SRAGROUP: logistics hubs, offices, homes, rooftop solar and solar parks."
+    },
+    "project": {
+      "title": "{{name}} — SRAGROUP Projects"
+    },
+    "contact": {
+      "title": "Contact and Quotes — SRAGROUP",
+      "description": "Get in touch with SRAGROUP's head office or its Construction and Solar divisions and request a quote for your project."
+    },
+    "privacy": {
+      "title": "Privacy Policy — SRAGROUP",
+      "description": "Information on the processing of personal data under Articles 13 and 14 of Regulation (EU) 2016/679 (GDPR)."
+    },
+    "cookies": {
+      "title": "Cookie Policy — SRAGROUP",
+      "description": "Information about the cookies and tracking technologies used on the SRAGROUP website and how to manage your preferences."
+    },
+    "notFound": {
+      "title": "Page not found — SRAGROUP"
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "requestQuote": "Request a quote",
+    "discoverDivision": "Explore the division",
+    "learnMore": "Learn more",
+    "viewProject": "View project",
+    "viewAllProjects": "All projects",
+    "breadcrumb": "Breadcrumb",
+    "home": "Home",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "mainNav": "Main navigation",
+    "language": "Language",
+    "switchTo": "Switch to English",
+    "previous": "Previous",
+    "next": "Next",
+    "close": "Close",
+    "divisions": {
+      "construction": "Construction",
+      "solar": "Solar",
+      "general": "General"
+    },
+    "scroll": "Scroll"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "construction": "Construction",
+    "solar": "Solar",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "We build spaces and generate energy for forward-looking businesses.",
+    "navigation": "Navigation",
+    "contacts": "Direct contacts",
+    "legal": "Legal",
+    "departments": {
+      "general": "Head office",
+      "construction": "Construction Division",
+      "solar": "Solar Division"
+    },
+    "vat": "VAT No.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "cookiePreferences": "Cookie preferences",
+    "ctaEyebrow": "New project",
+    "ctaTitle": "Have a project in mind? Let's build it together."
+  },
+  "home": {
+    "srTitle": "SRAGROUP — Construction and Solar Energy",
+    "hero": {
+      "construction": {
+        "eyebrow": "Construction",
+        "title": "Solid spaces. Lasting value.",
+        "text": "General contractor for industrial, commercial and residential projects."
+      },
+      "solar": {
+        "eyebrow": "Solar",
+        "title": "Energy that powers the future.",
+        "text": "High-performance systems for businesses and large surfaces."
+      }
+    },
+    "statsLabel": "SRAGROUP in numbers",
+    "stats": [
+      {
+        "value": 25,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "years of experience"
+      },
+      {
+        "value": 180,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "projects completed"
+      },
+      {
+        "value": 85,
+        "decimals": 0,
+        "suffix": " MWp",
+        "label": "capacity installed"
+      },
+      {
+        "value": 98,
+        "decimals": 0,
+        "suffix": "%",
+        "label": "on-time delivery"
+      }
+    ],
+    "intro": {
+      "eyebrow": "One group",
+      "title": "From materials to energy, one integrated vision.",
+      "text": "Two specialist divisions, one project culture: expertise, accountability and direct control of every phase.",
+      "cta": "About us"
+    },
+    "divisions": {
+      "eyebrow": "Division",
+      "construction": {
+        "title": "Construction",
+        "text": "Industrial, office and residential buildings delivered with rigorous execution."
+      },
+      "solar": {
+        "title": "Solar",
+        "text": "Complete energy solutions, from design to plant operation."
+      },
+      "services": "Core services"
+    },
+    "why": {
+      "eyebrow": "Why SRAGROUP",
+      "title": "Six reasons to trust us with your next project.",
+      "text": "We work with an industrial method: certified processes, clear accountability and a single point of contact from concept to handover.",
+      "items": [
+        {
+          "title": "Safety first",
+          "text": "ISO 45001 management system, ongoing training and weekly site audits. Our target: zero injuries."
+        },
+        {
+          "title": "Certified quality",
+          "text": "ISO 9001 processes and SOA qualification for public works, with documented checks at every stage."
+        },
+        {
+          "title": "Turnkey delivery",
+          "text": "Design, permitting, construction and commissioning under one contract and one responsibility."
+        },
+        {
+          "title": "In-house engineering",
+          "text": "Structural, MEP and energy engineers on staff: fast technical decisions and no diluted accountability."
+        },
+        {
+          "title": "On-time delivery",
+          "text": "Detailed planning and continuous monitoring: 98% of projects are handed over within contract dates."
+        },
+        {
+          "title": "Real sustainability",
+          "text": "ISO 14001 environmental system, low-impact materials and renewable energy built into our projects."
+        }
+      ],
+      "badge": "The SRAGROUP method"
+    },
+    "featured": {
+      "eyebrow": "Selected work",
+      "title": "Projects that measure our expertise.",
+      "cta": "All projects"
+    },
+    "certifications": {
+      "label": "Certifications and qualifications",
+      "items": [
+        {
+          "code": "ISO 9001",
+          "name": "Quality"
+        },
+        {
+          "code": "ISO 14001",
+          "name": "Environment"
+        },
+        {
+          "code": "ISO 45001",
+          "name": "Health and safety"
+        },
+        {
+          "code": "SOA",
+          "name": "Public works"
+        }
+      ]
+    },
+    "cta": "Let's talk about your next project.",
+    "marquee": [
+      "Steel structures",
+      "Reinforced concrete",
+      "Turnkey delivery",
+      "Solar parks",
+      "Industrial PV",
+      "Storage and EV charging",
+      "Design and build",
+      "O&M"
+    ]
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About us",
+      "title": "Hands-on experience. Industrial vision.",
+      "text": "For more than twenty-five years we have turned technical complexity into reliable, efficient and measurable results."
+    },
+    "history": {
+      "eyebrow": "Our history",
+      "title": "Grown on site, one project at a time.",
+      "items": [
+        {
+          "year": "2001",
+          "title": "SRA Costruzioni is founded",
+          "text": "The company starts in Milan as a general contractor for industrial buildings."
+        },
+        {
+          "year": "2008",
+          "title": "First national contracts",
+          "text": "We deliver our first logistics hubs outside Lombardy and obtain SOA qualification."
+        },
+        {
+          "year": "2013",
+          "title": "The Solar division is born",
+          "text": "From the roofs of our own buildings to the first plants for third-party clients."
+        },
+        {
+          "year": "2019",
+          "title": "Integrated certified system",
+          "text": "Quality, environment and safety certified to ISO 9001, 14001 and 45001."
+        },
+        {
+          "year": "2022",
+          "title": "First utility-scale solar park",
+          "text": "We develop and connect our first ground-mounted plant above 10 MWp."
+        },
+        {
+          "year": "2026",
+          "title": "More than 180 projects completed",
+          "text": "Two divisions, one group and over 85 MWp installed across Italy."
+        }
+      ]
+    },
+    "mission": {
+      "eyebrow": "Mission and vision",
+      "title": "Infrastructure that improves the way businesses work and produce.",
+      "missionLabel": "Mission",
+      "mission": "To design and build reliable buildings and energy systems, focusing on technical quality, schedule control and a transparent relationship with every client.",
+      "visionLabel": "Vision",
+      "vision": "To be the partner of choice for Italian businesses that want to grow in efficient spaces powered by clean energy.",
+      "values": [
+        "Precision",
+        "Safety",
+        "Quality",
+        "Accountability"
+      ]
+    },
+    "certifications": {
+      "eyebrow": "Certifications",
+      "title": "Standards verified by third parties.",
+      "text": "Our management systems are certified and regularly audited by accredited bodies.",
+      "items": [
+        {
+          "code": "ISO 9001",
+          "name": "Quality management system",
+          "text": "Documented, measurable processes from tendering to final acceptance testing."
+        },
+        {
+          "code": "ISO 14001",
+          "name": "Environmental management system",
+          "text": "Control of on-site environmental impacts: waste, emissions, noise and resource use."
+        },
+        {
+          "code": "ISO 45001",
+          "name": "Occupational health and safety",
+          "text": "Risk assessment, training and supervision to protect workers and subcontractors."
+        },
+        {
+          "code": "SOA",
+          "name": "Public works qualification",
+          "text": "Italian qualification to bid for public contracts in building and plant categories."
+        }
+      ]
+    },
+    "standards": {
+      "eyebrow": "Safety and quality",
+      "title": "Quality and safety are not statements: they are processes.",
+      "hse": {
+        "title": "HSE policy",
+        "text": "Health, safety and the environment guide every decision, from design to site management.",
+        "points": [
+          "Site-specific safety plans for every project",
+          "Regular training for all staff",
+          "Subcontractor pre-qualification and monitoring",
+          "Near-miss analysis with tracked corrective actions",
+          "Waste management and reduced site emissions"
+        ]
+      },
+      "quality": {
+        "title": "Quality control",
+        "text": "A five-step process checks every work package before it can become a problem.",
+        "steps": [
+          "Review of design and contract requirements",
+          "Supplier and material qualification",
+          "Inspection and test plans for each work package",
+          "Testing, commissioning and as-built documentation",
+          "Client satisfaction review"
+        ]
+      }
+    },
+    "leadership": {
+      "eyebrow": "Leadership",
+      "title": "The people who lead the group.",
+      "text": "A management team with direct experience on construction sites and in energy development.",
+      "photoPlaceholder": "Photo coming soon",
+      "items": [
+        {
+          "name": "First Last",
+          "role": "Chief Executive Officer"
+        },
+        {
+          "name": "First Last",
+          "role": "Head of Construction"
+        },
+        {
+          "name": "First Last",
+          "role": "Head of Solar"
+        },
+        {
+          "name": "First Last",
+          "role": "HSE and Quality Manager"
+        }
+      ]
+    },
+    "cta": "Let's build the next chapter together."
+  },
+  "construction": {
+    "hero": {
+      "eyebrow": "Construction Division",
+      "title": "We build certainty.",
+      "text": "From design to handover, we coordinate people, skills and resources to deliver complex projects without compromise."
+    },
+    "sectors": {
+      "eyebrow": "Sectors",
+      "title": "Broad expertise, end-to-end control.",
+      "items": [
+        {
+          "title": "Industrial",
+          "text": "Manufacturing plants, logistics hubs, automated warehouses and redevelopment of existing sites."
+        },
+        {
+          "title": "Commercial",
+          "text": "High-efficiency offices and retail spaces, designed to last and to be used."
+        },
+        {
+          "title": "Residential",
+          "text": "Contemporary, comfortable residential developments with high energy ratings."
+        }
+      ]
+    },
+    "services": {
+      "eyebrow": "Specialist services",
+      "title": "One partner for the whole process.",
+      "items": [
+        {
+          "title": "Steel structures",
+          "text": "Structural steelwork, long spans and overhead cranes, with shop prefabrication."
+        },
+        {
+          "title": "Reinforced concrete",
+          "text": "Foundations, cast-in-place and precast structures, retaining works."
+        },
+        {
+          "title": "Renovation",
+          "text": "Structural and energy upgrades of existing buildings, including while in use."
+        },
+        {
+          "title": "Turnkey projects",
+          "text": "One contract with fixed price and schedule, from design to commissioning."
+        },
+        {
+          "title": "Design and build",
+          "text": "Integrated design and construction to reduce clashes, time and variations."
+        },
+        {
+          "title": "Site management",
+          "text": "Project management, safety, cost control and subcontractor coordination."
+        }
+      ]
+    },
+    "method": {
+      "eyebrow": "Method",
+      "title": "Six phases, constant control.",
+      "items": [
+        {
+          "title": "Analysis",
+          "text": "Goals, constraints, technical and financial feasibility."
+        },
+        {
+          "title": "Design",
+          "text": "BIM coordination across architecture, structure and MEP."
+        },
+        {
+          "title": "Planning",
+          "text": "Schedule, budget, procurement and logistics."
+        },
+        {
+          "title": "Execution",
+          "text": "Direct site management and quality control."
+        },
+        {
+          "title": "Delivery",
+          "text": "Testing, as-built documentation and training."
+        },
+        {
+          "title": "Aftercare",
+          "text": "Planned maintenance and post-handover warranty."
+        }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Construction projects",
+      "title": "Work delivered for our clients."
+    },
+    "cta": "Your project deserves solid foundations."
+  },
+  "solar": {
+    "hero": {
+      "eyebrow": "Solar Division",
+      "title": "Energy engineered to perform.",
+      "text": "We develop reliable, high-performing solar systems built around your company's consumption and goals."
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "From industrial rooftops to solar parks.",
+      "items": [
+        {
+          "title": "Commercial and industrial PV",
+          "text": "Self-consumption systems on roofs and carports, sized on real load profiles."
+        },
+        {
+          "title": "Solar park development",
+          "text": "Land sourcing, permitting, design and construction of utility-scale and agrivoltaic plants."
+        },
+        {
+          "title": "Energy efficiency",
+          "text": "Energy audits, consumption monitoring and measures to reduce demand."
+        },
+        {
+          "title": "Maintenance and O&M",
+          "text": "Preventive and corrective maintenance, module cleaning and performance guarantees."
+        },
+        {
+          "title": "Storage and EV charging",
+          "text": "Battery storage and charging infrastructure integrated with the solar plant."
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Technical capabilities",
+      "title": "Every component working for yield.",
+      "text": "We handle in-house every technical phase that determines a plant's schedule, cost and output.",
+      "stats": [
+        {
+          "value": "85 MWp",
+          "label": "installed"
+        },
+        {
+          "value": "99.2%",
+          "label": "average availability"
+        },
+        {
+          "value": "24/7",
+          "label": "monitoring"
+        },
+        {
+          "value": "25 years",
+          "label": "guaranteed service life"
+        }
+      ],
+      "items": [
+        {
+          "title": "Engineering",
+          "text": "Electrical and structural design, yield simulations and tier-1 component selection."
+        },
+        {
+          "title": "Permitting",
+          "text": "Simplified permits, environmental assessments, single authorisations and heritage bodies."
+        },
+        {
+          "title": "Grid connection",
+          "text": "Applications to the grid operator, delivery cabins and MV/HV substations."
+        },
+        {
+          "title": "Monitoring",
+          "text": "Remote monitoring platform, real-time alarms and monthly performance reports."
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "A clear path to energy independence.",
+      "items": [
+        {
+          "title": "Feasibility study",
+          "text": "Analysis of consumption, available surfaces and financial return."
+        },
+        {
+          "title": "Design",
+          "text": "Sizing, layout and yield simulation."
+        },
+        {
+          "title": "Permits",
+          "text": "Building, environmental and grid applications."
+        },
+        {
+          "title": "Installation",
+          "text": "A coordinated, safe and documented site."
+        },
+        {
+          "title": "Grid connection",
+          "text": "Testing, connection and commissioning."
+        },
+        {
+          "title": "Monitoring and maintenance",
+          "text": "Continuous monitoring and O&M for the life of the plant."
+        }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Solar projects",
+      "title": "Plants in operation across Italy."
+    },
+    "cta": "Turn sunlight into a competitive advantage."
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Portfolio",
+      "title": "Visible results. Measurable value.",
+      "text": "A selection of projects that shows our ability to work across different scales, settings and goals."
+    },
+    "list": {
+      "eyebrow": "Projects",
+      "title": "Construction and energy across Italy."
+    },
+    "filterLabel": "Filter by division",
+    "filters": {
+      "all": "All",
+      "construction": "Construction",
+      "solar": "Solar"
+    },
+    "count_one": "{{count}} project",
+    "count_other": "{{count}} projects",
+    "carouselLabel": "Related projects"
+  },
+  "project": {
+    "overview": "Overview",
+    "challenge": "The challenge",
+    "solution": "The solution",
+    "keyFigures": "Key figures",
+    "gallery": "Gallery",
+    "location": "Location",
+    "year": "Year",
+    "division": "Division",
+    "metric": "Scale",
+    "prev": "Previous project",
+    "next": "Next project",
+    "openImage": "Open image {{index}} of {{total}}",
+    "imageAlt": "{{name}}, image {{index}}",
+    "lightboxLabel": "Image gallery: {{name}}",
+    "counter": "{{index}} / {{total}}",
+    "cta": "Have a similar project? Let's talk."
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Let's start with a practical conversation.",
+      "text": "Write to the right department or fill in the form: a technical lead will reply within two working days."
+    },
+    "departments": {
+      "eyebrow": "Departments",
+      "title": "The right contact, straight away.",
+      "general": "General",
+      "construction": "Construction",
+      "solar": "Solar",
+      "generalText": "Company information, suppliers and careers.",
+      "constructionText": "New builds, renovation and turnkey projects.",
+      "solarText": "Solar PV, solar parks, storage and O&M.",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "form": {
+      "eyebrow": "Quote",
+      "title": "Tell us about your project.",
+      "requiredNote": "Fields marked with * are required.",
+      "step1": "Division",
+      "step1Question": "What do you need?",
+      "step2": "Project details",
+      "step3": "Your details",
+      "divisionCards": {
+        "construction": "New builds, extensions and renovation.",
+        "solar": "Solar PV systems, solar parks, storage.",
+        "general": "Information, partnerships and other enquiries."
+      },
+      "projectType": "Project type",
+      "projectTypes": {
+        "industrial": "Industrial",
+        "commercial": "Commercial",
+        "residential": "Residential"
+      },
+      "area": "Area (m²)",
+      "location": "Project location",
+      "locationPlaceholder": "Town and province",
+      "timeline": "Timeline",
+      "timelines": {
+        "asap": "As soon as possible",
+        "3to6": "Within 3–6 months",
+        "6to12": "Within 6–12 months",
+        "over12": "More than 12 months",
+        "unknown": "To be defined"
+      },
+      "selectPlaceholder": "Select an option",
+      "installationType": "Installation type",
+      "installationTypes": {
+        "roof": "Rooftop",
+        "ground": "Ground-mounted",
+        "park": "Solar park"
+      },
+      "sizing": "Sizing",
+      "sizingModes": {
+        "power": "Capacity (kWp)",
+        "bill": "Annual energy bill (€)"
+      },
+      "power": "Approximate capacity (kWp)",
+      "bill": "Annual energy spend (€)",
+      "subject": "Subject",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "company": "Company",
+      "role": "Job title",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your goals, constraints and anything else that may help.",
+      "file": "Attachment (optional)",
+      "fileHint": "Floor plans, energy bills or specifications. PDF, DWG, JPG or PNG, max 10 MB.",
+      "fileButton": "Choose file",
+      "fileRemove": "Remove attachment",
+      "fileNone": "No file selected",
+      "gdpr": "I have read the <0>privacy notice</0> and consent to the processing of my data to handle this request. *",
+      "marketing": "I agree to receive marketing communications and updates from SRAGROUP (optional).",
+      "submit": "Send request",
+      "submitting": "Sending…",
+      "successTitle": "Request received",
+      "successText": "Thank you. The SRAGROUP team will contact you within two working days.",
+      "newRequest": "Send another request",
+      "errorSubmit": "We couldn't send your request. Please try again or email us.",
+      "errorSummary": "Please check the highlighted fields.",
+      "errors": {
+        "required": "This field is required",
+        "email": "Enter a valid email address",
+        "phone": "Enter a valid phone number",
+        "number": "Enter a number greater than zero",
+        "gdpr": "Consent is required to send the request",
+        "fileSize": "The file is larger than 10 MB"
+      }
+    },
+    "map": {
+      "title": "Map of SRAGROUP's office",
+      "eyebrow": "Office",
+      "consentText": "The map is provided by Google and may set third-party cookies.",
+      "load": "Show map"
+    }
+  },
+  "legal": {
+    "updated": "Last updated: {{date}}",
+    "placeholderNote": "Placeholder text: to be completed and approved by legal counsel and the DPO before publication.",
+    "toc": "On this page",
+    "privacy": {
+      "eyebrow": "Legal",
+      "title": "Privacy Policy",
+      "sections": [
+        {
+          "title": "Data controller",
+          "body": [
+            "SRAGROUP S.r.l., registered office at [address], VAT No. [number], is the controller of personal data collected through this website.",
+            "For any request you can write to privacy@sragroup.it."
+          ]
+        },
+        {
+          "title": "Data we process",
+          "body": [
+            "Browsing data collected automatically by the website's IT systems.",
+            "Data you provide through the contact form: first and last name, company, job title, email, phone, message content and any attachments."
+          ]
+        },
+        {
+          "title": "Purposes and legal basis",
+          "body": [
+            "Answering requests for information and quotes (pre-contractual measures, Art. 6(1)(b) GDPR).",
+            "Sending marketing communications, only with your explicit consent (Art. 6(1)(a) GDPR).",
+            "Complying with legal obligations (Art. 6(1)(c) GDPR)."
+          ]
+        },
+        {
+          "title": "How and how long we keep data",
+          "body": [
+            "Data is processed electronically with appropriate security measures.",
+            "Request data is kept for [period] after the enquiry is closed; marketing data until consent is withdrawn."
+          ]
+        },
+        {
+          "title": "Recipients",
+          "body": [
+            "Data may be shared with providers acting as processors (hosting, CRM, IT support) and is never made public.",
+            "Any transfer outside the EU complies with Articles 44 et seq. GDPR."
+          ]
+        },
+        {
+          "title": "Your rights",
+          "body": [
+            "You may at any time exercise your rights of access, rectification, erasure, restriction, portability and objection (Articles 15–22 GDPR), and withdraw consent.",
+            "You also have the right to lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali)."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "eyebrow": "Legal",
+      "title": "Cookie Policy",
+      "sections": [
+        {
+          "title": "What cookies are",
+          "body": [
+            "Cookies are small text files that websites store on your device to remember information about your visit."
+          ]
+        },
+        {
+          "title": "Strictly necessary cookies",
+          "body": [
+            "Required for the website to work and to remember your cookie preferences. They do not require consent."
+          ]
+        },
+        {
+          "title": "Analytics cookies",
+          "body": [
+            "Used only with your consent to collect aggregated statistics on how the site is used. Provider: [to be confirmed, e.g. Google Analytics 4]."
+          ]
+        },
+        {
+          "title": "Marketing and third-party cookies",
+          "body": [
+            "Used only with your consent to measure campaigns and display third-party content such as Google Maps. Providers: [to be confirmed]."
+          ]
+        },
+        {
+          "title": "Managing your preferences",
+          "body": [
+            "You can change or withdraw consent at any time using the \"Cookie preferences\" link in the site footer, or through your browser settings."
+          ]
+        },
+        {
+          "title": "Contact",
+          "body": [
+            "For information about our use of cookies, write to privacy@sragroup.it."
+          ]
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "This page doesn't exist.",
+    "text": "The link may be wrong or the page may have moved. Start again from the home page or browse our projects.",
+    "home": "Back to home",
+    "projects": "View projects"
+  },
+  "error": {
+    "title": "This page didn't load",
+    "text": "Something went wrong. Try reloading the page or go back to the home page.",
+    "retry": "Try again",
+    "home": "Back to home"
+  },
+  "consent": {
+    "bannerLabel": "Cookie consent",
+    "title": "We respect your privacy",
+    "text": "We use strictly necessary cookies and, only with your consent, analytics and marketing cookies. You can change your choice at any time.",
+    "policy": "Cookie Policy",
+    "accept": "Accept all",
+    "reject": "Reject",
+    "customize": "Customize",
+    "save": "Save preferences",
+    "modalTitle": "Cookie preferences",
+    "modalText": "Choose which categories of cookies to allow. Strictly necessary cookies are always on.",
+    "alwaysOn": "Always on",
+    "categories": {
+      "necessary": {
+        "title": "Strictly necessary",
+        "text": "Keep the site working and remember your preferences."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "text": "Help us understand how the site is used, with aggregated data."
+      },
+      "marketing": {
+        "title": "Marketing",
+        "text": "Measure campaigns and enable third-party content such as maps."
+      }
+    }
+  },
+  "cta": {
+    "eyebrow": "Let's begin",
+    "text": "Tell us your goals and constraints: a technical lead will reply within two working days with an initial proposal.",
+    "call": "Call us"
+  }
+}

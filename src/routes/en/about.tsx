@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AboutPage } from "@/components/pages/AboutPage";
 import { pageHead } from "@/i18n/seo";
 
-export const Route = createFileRoute("/chi-siamo")({
-  head: () => pageHead("about", "it"),
+export const Route = createFileRoute("/en/about")({
+  head: () => pageHead("about", "en"),
   component: AboutPage,
 });
