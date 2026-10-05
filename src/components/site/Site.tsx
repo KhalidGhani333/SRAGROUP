@@ -1,6 +1,7 @@
 import { Link, useRouterState, type LinkProps } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, ChevronRight, Mail, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
+import logoSrc from "@/assets/sra-logo.png";
 import { Button } from "@/components/ui/button";
 import { company, departments, telHref } from "@/data/company";
 import { useConsent } from "@/lib/consent";
@@ -24,41 +25,73 @@ export { images } from "./images";
 
 const navPages = ["home", "about", "construction", "solar", "projects", "contact"] as const;
 
-/** The SRA GROUP diamond-and-check mark, redrawn as SVG so it stays sharp on any background. */
-export function LogoMark({ light = false, className = "size-9" }: { light?: boolean; className?: string }) {
+/*
+ * The official logo (src/assets/sra-logo.png, 882×708, transparent) is a stacked lockup:
+ * mark, "SRA GROUP SRL" wordmark and tagline. Regions are cropped with CSS so they can be
+ * arranged horizontally in the header. Boxes are in source pixels.
+ */
+const LOGO_W = 882;
+const LOGO_H = 708;
+const logoBoxes = {
+  mark: { x: 270, y: 0, w: 342, h: 341 },
+  wordmark: { x: 22, y: 389, w: 840, h: 207 },
+  tagline: { x: 15, y: 653, w: 858, h: 50 },
+};
+
+function LogoCrop({
+  box,
+  className,
+  imgClassName = "",
+}: {
+  box: keyof typeof logoBoxes;
+  className: string;
+  imgClassName?: string;
+}) {
+  const { x, y, w, h } = logoBoxes[box];
   return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden>
-      <rect
-        x="8.5"
-        y="8.5"
-        width="23"
-        height="23"
-        rx="2.5"
-        transform="rotate(45 20 20)"
-        className={light ? "fill-offwhite" : "fill-brand"}
+    <span
+      className={`block shrink-0 overflow-hidden ${className}`}
+      style={{ aspectRatio: `${w} / ${h}` }}
+      aria-hidden
+    >
+      <img
+        src={logoSrc}
+        alt=""
+        width={LOGO_W}
+        height={LOGO_H}
+        className={`block max-w-none ${imgClassName}`}
+        style={{
+          width: `${(LOGO_W / w) * 100}%`,
+          marginLeft: `${(-x / w) * 100}%`,
+          // Percentage margins resolve against the container width, so y scales with w too.
+          marginTop: `${(-y / w) * 100}%`,
+        }}
       />
-      <path
-        d="M13.6 20.4l4.6 4.6 8.4-8.6"
-        fill="none"
-        strokeWidth="3.4"
-        strokeLinecap="square"
-        className={light ? "stroke-charcoal" : "stroke-offwhite"}
-      />
-    </svg>
+    </span>
   );
 }
 
-export function Logo({ light = false }: { light?: boolean }) {
+/** The SRA GROUP diamond-and-check mark on its own (keeps its brand blue on any background). */
+export function LogoMark({ className = "h-9" }: { light?: boolean; className?: string }) {
+  return <LogoCrop box="mark" className={className} />;
+}
+
+/** Horizontal lockup. On dark surfaces the navy wordmark is rendered white. */
+export function Logo({ light = false, tagline = false }: { light?: boolean; tagline?: boolean }) {
+  const onDark = light ? "brightness-0 invert" : "";
   return (
-    <LocalizedLink
-      page="home"
-      className={`flex items-center gap-2.5 transition-colors ${light ? "text-offwhite" : "text-foreground"}`}
-      aria-label="SRA GROUP — Home"
-    >
-      <LogoMark light={light} />
-      <span className="font-display text-xl leading-none font-bold tracking-tight">
-        SRA <span className="font-medium opacity-60">GROUP</span>
+    <LocalizedLink page="home" className="inline-flex flex-col gap-3" aria-label="SRA GROUP SRL — Home">
+      <span className="flex items-center gap-3">
+        <LogoMark className="h-10 md:h-11" />
+        <LogoCrop box="wordmark" className="h-9 md:h-10" imgClassName={onDark} />
       </span>
+      {tagline && (
+        <LogoCrop
+          box="tagline"
+          className="h-3.5 opacity-60"
+          imgClassName={light ? "brightness-0 invert" : ""}
+        />
+      )}
     </LocalizedLink>
   );
 }
@@ -223,7 +256,7 @@ export function SiteFooter() {
       <div className="site-container relative">
         <div className="grid gap-12 pt-20 pb-16 md:grid-cols-2 lg:grid-cols-[1.1fr_.8fr_1.6fr]">
           <div>
-            <Logo light />
+            <Logo light tagline />
             <p className="mt-6 max-w-xs text-sm leading-6 text-offwhite/60">{t("footer.tagline")}</p>
             <p className="mt-6 text-sm leading-6 text-offwhite/50">
               {company.legalName}

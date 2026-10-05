@@ -48,7 +48,7 @@ export function HomePage() {
           aria-hidden
         >
           <div className="grid size-20 place-items-center rounded-full border border-offwhite/25 bg-charcoal/60 backdrop-blur-md">
-            <LogoMark light className="size-10" />
+            <LogoMark light className="h-10" />
           </div>
         </div>
         <div className="pointer-events-none absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 md:block">
