@@ -1,10 +1,7 @@
 <!-- LOVABLE:BEGIN -->
 > [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
+> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting published git history.
 <!-- LOVABLE:END -->
+
+- Keep shared corporate chrome and reusable marketing patterns in `src/components/site` so all public routes remain visually consistent.
+- Keep portfolio content in `src/data/projects.ts` so filtering and featured selections share one source of truth.
