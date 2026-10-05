@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChiSiamoRouteImport } from './routes/chi-siamo'
+import { Route as CostruzioniRouteImport } from './routes/costruzioni'
+import { Route as FotovoltaicoRouteImport } from './routes/fotovoltaico'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChiSiamoRoute = ChiSiamoRouteImport.update({
+  id: '/chi-siamo',
+  path: '/chi-siamo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CostruzioniRoute = CostruzioniRouteImport.update({
+  id: '/costruzioni',
+  path: '/costruzioni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FotovoltaicoRoute = FotovoltaicoRouteImport.update({
+  id: '/fotovoltaico',
+  path: '/fotovoltaico',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/costruzioni': typeof CostruzioniRoute
+  '/fotovoltaico': typeof FotovoltaicoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/costruzioni': typeof CostruzioniRoute
+  '/fotovoltaico': typeof FotovoltaicoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chi-siamo': typeof ChiSiamoRoute
+  '/costruzioni': typeof CostruzioniRoute
+  '/fotovoltaico': typeof FotovoltaicoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/chi-siamo' | '/costruzioni' | '/fotovoltaico'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/chi-siamo' | '/costruzioni' | '/fotovoltaico'
+  id: '__root__' | '/' | '/chi-siamo' | '/costruzioni' | '/fotovoltaico'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChiSiamoRoute: typeof ChiSiamoRoute
+  CostruzioniRoute: typeof CostruzioniRoute
+  FotovoltaicoRoute: typeof FotovoltaicoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chi-siamo': {
+      id: '/chi-siamo'
+      path: '/chi-siamo'
+      fullPath: '/chi-siamo'
+      preLoaderRoute: typeof ChiSiamoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/costruzioni': {
+      id: '/costruzioni'
+      path: '/costruzioni'
+      fullPath: '/costruzioni'
+      preLoaderRoute: typeof CostruzioniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fotovoltaico': {
+      id: '/fotovoltaico'
+      path: '/fotovoltaico'
+      fullPath: '/fotovoltaico'
+      preLoaderRoute: typeof FotovoltaicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChiSiamoRoute: ChiSiamoRoute,
+  CostruzioniRoute: CostruzioniRoute,
+  FotovoltaicoRoute: FotovoltaicoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
