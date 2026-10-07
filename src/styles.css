@@ -166,25 +166,66 @@
     margin: 0;
     text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
-  ::selection { background: var(--color-construction); color: var(--color-charcoal); }
-  html { scroll-behavior: smooth; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: var(--color-construction);
+    color: var(--color-charcoal);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 3px;
   }
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
   }
 }
 
-@utility site-container { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: 1.25rem; @media (min-width: 768px) { padding-inline: 3rem; } }
-@utility eyebrow { font-size: .7rem; line-height: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
-@utility grid-lines { background-image: linear-gradient(to right, color-mix(in oklab, currentColor 8%, transparent) 1px, transparent 1px); background-size: calc(100% / 6) 100%; }
+@utility site-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) {
+    padding-inline: 3rem;
+  }
+}
+@utility eyebrow {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+@utility grid-lines {
+  background-image: linear-gradient(
+    to right,
+    color-mix(in oklab, currentColor 8%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: calc(100% / 6) 100%;
+}
 
 /* Brand blue from the SRA GROUP logo mark, used only for the logo. */
-@theme inline { --color-brand: oklch(0.45 0.13 255); }
+@theme inline {
+  --color-brand: oklch(0.45 0.13 255);
+}
 
 /* Fine film grain for dark surfaces: adds depth without an image request. */
 @utility noise {
@@ -194,7 +235,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: .07;
+    opacity: 0.07;
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -203,8 +244,16 @@
 /* Blueprint-style square grid for dark sections. */
 @utility grid-blueprint {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, currentColor 6%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, currentColor 6%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      color-mix(in oklab, currentColor 6%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, currentColor 6%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 80px 80px;
 }
 
@@ -214,11 +263,38 @@
   -webkit-text-stroke: 1px color-mix(in oklab, currentColor 35%, transparent);
 }
 
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@utility animate-marquee { animation: marquee 40s linear infinite; }
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
 
-@keyframes ken-burns { from { transform: scale(1.12); } to { transform: scale(1); } }
-@utility animate-ken-burns { animation: ken-burns 2.4s cubic-bezier(.22,1,.36,1) both; }
+@keyframes ken-burns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@utility animate-ken-burns {
+  animation: ken-burns 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
-@keyframes scroll-cue { 0% { transform: translateY(-100%); } 100% { transform: translateY(200%); } }
-@utility animate-scroll-cue { animation: scroll-cue 1.8s cubic-bezier(.65,0,.35,1) infinite; }
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+@utility animate-scroll-cue {
+  animation: scroll-cue 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}

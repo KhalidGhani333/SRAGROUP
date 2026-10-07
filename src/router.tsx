@@ -10,6 +10,8 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // "/" normally; "/sra-group" when built for a sub-folder (vite `base`, see vite.config.ts).
+    basepath: import.meta.env.BASE_URL.replace(/\/$/, "") || "/",
   });
 
   return router;

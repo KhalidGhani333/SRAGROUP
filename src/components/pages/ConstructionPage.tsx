@@ -10,9 +10,9 @@ import {
   Warehouse,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import cOffice from "@/assets/c-office.jpg";
-import cResidential from "@/assets/c-residential.jpg";
-import cWarehouse from "@/assets/c-warehouse.jpg";
+import cOffice from "@/assets/c-office.webp";
+import cResidential from "@/assets/c-residential.webp";
+import cWarehouse from "@/assets/c-warehouse.webp";
 import { Reveal } from "@/components/site/Motion";
 import { ProjectCarousel } from "@/components/site/ProjectCarousel";
 import { CTA, NumberedSteps, PageHero, SectionIntro, images } from "@/components/site/Site";
@@ -50,13 +50,13 @@ export function ConstructionPage() {
           title={t("construction.sectors.title")}
           division="construction"
         />
-        <ul className="mt-14 grid gap-4 md:grid-cols-3">
+        <ul className="mt-14 grid gap-4 lg:grid-cols-3">
           {list<Card>("construction.sectors.items").map((item, i) => {
             const Icon = sectorIcons[i] ?? Factory;
             return (
               <li key={item.title}>
                 <Reveal delay={i * 0.08} className="h-full">
-                  <article className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden bg-charcoal p-7 text-offwhite md:p-8">
+                  <article className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden bg-charcoal p-7 text-offwhite sm:aspect-[16/9] md:p-8 lg:aspect-[4/5]">
                     <img
                       src={sectorImages[i]}
                       alt=""
@@ -101,8 +101,14 @@ export function ConstructionPage() {
             {list<Card>("construction.services.items").map((item, i) => {
               const Icon = serviceIcons[i] ?? Hammer;
               return (
-                <li key={item.title} className="group relative bg-charcoal transition-colors duration-500 hover:bg-slate">
-                  <span className="absolute top-0 left-0 h-0.5 w-0 bg-construction transition-all duration-500 group-hover:w-full" aria-hidden />
+                <li
+                  key={item.title}
+                  className="group relative bg-charcoal transition-colors duration-500 hover:bg-slate"
+                >
+                  <span
+                    className="absolute top-0 left-0 h-0.5 w-0 bg-construction transition-all duration-500 group-hover:w-full"
+                    aria-hidden
+                  />
                   <Reveal delay={(i % 3) * 0.06} className="h-full p-8 md:p-10">
                     <span className="grid size-14 place-items-center border border-offwhite/15 text-construction transition-colors duration-500 group-hover:border-construction group-hover:bg-construction group-hover:text-charcoal">
                       <Icon className="size-6" strokeWidth={1.5} aria-hidden />

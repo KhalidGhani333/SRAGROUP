@@ -1,42 +1,42 @@
 {
   "meta": {
     "home": {
-      "title": "SRAGROUP — Construction and Solar Energy for Business",
+      "title": "SRAGROUP - Construction and Solar Energy for Business",
       "description": "General contractor and solar EPC: SRAGROUP designs and builds industrial, commercial and residential buildings and turnkey solar plants across Italy."
     },
     "about": {
-      "title": "About Us — SRAGROUP",
+      "title": "About Us - SRAGROUP",
       "description": "History, mission, ISO and SOA certifications, HSE policy and leadership of SRAGROUP, an Italian group working in construction and solar energy."
     },
     "construction": {
-      "title": "Industrial, Commercial and Residential Construction — SRAGROUP",
+      "title": "Industrial, Commercial and Residential Construction - SRAGROUP",
       "description": "Steel and reinforced concrete structures, renovation, turnkey projects and design & build. One point of contact from design to handover."
     },
     "solar": {
-      "title": "Solar PV Systems and Solar Parks — SRAGROUP",
+      "title": "Solar PV Systems and Solar Parks - SRAGROUP",
       "description": "Commercial and industrial PV, solar park development, energy efficiency, O&M, storage and EV charging. In-house engineering, permitting and grid connection."
     },
     "projects": {
-      "title": "Projects — SRAGROUP",
+      "title": "Projects - SRAGROUP",
       "description": "A selection of sites and plants delivered by SRAGROUP: logistics hubs, offices, homes, rooftop solar and solar parks."
     },
     "project": {
-      "title": "{{name}} — SRAGROUP Projects"
+      "title": "{{name}} - SRAGROUP Projects"
     },
     "contact": {
-      "title": "Contact and Quotes — SRAGROUP",
+      "title": "Contact and Quotes - SRAGROUP",
       "description": "Get in touch with SRAGROUP's head office or its Construction and Solar divisions and request a quote for your project."
     },
     "privacy": {
-      "title": "Privacy Policy — SRAGROUP",
+      "title": "Privacy Policy - SRAGROUP",
       "description": "Information on the processing of personal data under Articles 13 and 14 of Regulation (EU) 2016/679 (GDPR)."
     },
     "cookies": {
-      "title": "Cookie Policy — SRAGROUP",
+      "title": "Cookie Policy - SRAGROUP",
       "description": "Information about the cookies and tracking technologies used on the SRAGROUP website and how to manage your preferences."
     },
     "notFound": {
-      "title": "Page not found — SRAGROUP"
+      "title": "Page not found - SRAGROUP"
     }
   },
   "common": {
@@ -87,10 +87,12 @@
     "cookies": "Cookie Policy",
     "cookiePreferences": "Cookie preferences",
     "ctaEyebrow": "New project",
-    "ctaTitle": "Have a project in mind? Let's build it together."
+    "ctaTitle": "Have a project in mind? Let's build it together.",
+    "follow": "Follow us",
+    "shareCapital": "Share capital {{amount}} fully paid"
   },
   "home": {
-    "srTitle": "SRAGROUP — Construction and Solar Energy",
+    "srTitle": "SRAGROUP - Construction and Solar Energy",
     "hero": {
       "construction": {
         "eyebrow": "Construction",
@@ -267,12 +269,7 @@
       "mission": "To design and build reliable buildings and energy systems, focusing on technical quality, schedule control and a transparent relationship with every client.",
       "visionLabel": "Vision",
       "vision": "To be the partner of choice for Italian businesses that want to grow in efficient spaces powered by clean energy.",
-      "values": [
-        "Precision",
-        "Safety",
-        "Quality",
-        "Accountability"
-      ]
+      "values": ["Precision", "Safety", "Quality", "Accountability"]
     },
     "certifications": {
       "eyebrow": "Certifications",
@@ -331,22 +328,21 @@
       "eyebrow": "Leadership",
       "title": "The people who lead the group.",
       "text": "A management team with direct experience on construction sites and in energy development.",
-      "photoPlaceholder": "Photo coming soon",
       "items": [
         {
-          "name": "First Last",
+          "name": "Roberto Sala",
           "role": "Chief Executive Officer"
         },
         {
-          "name": "First Last",
+          "name": "Elena Marchetti",
           "role": "Head of Construction"
         },
         {
-          "name": "First Last",
+          "name": "Davide Colombo",
           "role": "Head of Solar"
         },
         {
-          "name": "First Last",
+          "name": "Chiara Bellini",
           "role": "HSE and Quality Manager"
         }
       ]
@@ -693,7 +689,6 @@
   },
   "legal": {
     "updated": "Last updated: {{date}}",
-    "placeholderNote": "Placeholder text: to be completed and approved by legal counsel and the DPO before publication.",
     "toc": "On this page",
     "privacy": {
       "eyebrow": "Legal",
@@ -702,44 +697,75 @@
         {
           "title": "Data controller",
           "body": [
-            "SRAGROUP S.r.l., registered office at [address], VAT No. [number], is the controller of personal data collected through this website.",
-            "For any request you can write to privacy@sragroup.it."
+            "The data controller is {{legalName}}, registered office at {{address}}, VAT No. {{vatNumber}}.",
+            "For any request about personal data you can write to {{privacyEmail}}."
           ]
         },
         {
           "title": "Data we process",
           "body": [
-            "Browsing data collected automatically by the website's IT systems.",
-            "Data you provide through the contact form: first and last name, company, job title, email, phone, message content and any attachments."
+            "Browsing data: the servers hosting the website automatically log IP address, date and time, requested page and browser type to keep the service running and secure.",
+            "Data provided through the request form: chosen division, project details (type, area or power, location, timeline), first name, last name, company, role, email, phone, message and any attachment.",
+            "Proof of consent: together with the request we record date and time, page and language of submission, IP address and the choices made on privacy and marketing communications."
           ]
         },
         {
           "title": "Purposes and legal basis",
           "body": [
-            "Answering requests for information and quotes (pre-contractual measures, Art. 6(1)(b) GDPR).",
-            "Sending marketing communications, only with your explicit consent (Art. 6(1)(a) GDPR).",
-            "Complying with legal obligations (Art. 6(1)(c) GDPR)."
+            "Answering information and quote requests and managing the resulting business contacts: pre-contractual measures (Art. 6(1)(b) GDPR).",
+            "Protecting the form from abuse and automated submissions, using technical checks that rely on no cookies or external services: the controller's legitimate interest (Art. 6(1)(f) GDPR).",
+            "Sending marketing communications and updates, only if you gave the optional consent in the form: consent (Art. 6(1)(a) GDPR), which you can withdraw at any time.",
+            "Complying with legal, tax and accounting obligations: legal obligation (Art. 6(1)(c) GDPR)."
           ]
         },
         {
-          "title": "How and how long we keep data",
+          "title": "Whether providing data is required",
           "body": [
-            "Data is processed electronically with appropriate security measures.",
-            "Request data is kept for [period] after the enquiry is closed; marketing data until consent is withdrawn."
+            "Fields marked as required are needed to answer your request: without them we cannot follow up.",
+            "Consent to marketing communications is optional, and refusing it has no effect on how your request is handled."
+          ]
+        },
+        {
+          "title": "How data is processed",
+          "body": [
+            "Requests are stored in SRAGROUP's internal management system, hosted on our hosting provider's servers, and only authorised staff of the relevant division can access them with personal credentials.",
+            "We apply appropriate technical and organisational measures: encrypted connection (HTTPS), protected passwords, logged access and attachments that are not publicly accessible."
+          ]
+        },
+        {
+          "title": "Retention period",
+          "body": [
+            "Requests and their attachments: 24 months from the last contact; if the request leads to a contract, 10 years as required by civil and tax law.",
+            "Data for marketing purposes: until consent is withdrawn.",
+            "Browsing data: as long as needed for the security of the service and no longer than 12 months, unless required to investigate offences.",
+            "You can ask for earlier deletion of your data at any time."
           ]
         },
         {
           "title": "Recipients",
           "body": [
-            "Data may be shared with providers acting as processors (hosting, CRM, IT support) and is never made public.",
-            "Any transfer outside the EU complies with Articles 44 et seq. GDPR."
+            "Data is processed by authorised SRAGROUP staff and may be shared with the providers that support us as processors (Art. 28 GDPR): hosting of the website and management system, email service and IT support.",
+            "To display its typefaces the website uses Google Fonts, which receives the visitor's IP address. The Google Maps map on the Contact page loads only after your consent or your click.",
+            "Data is not disclosed to the public or sold to third parties."
+          ]
+        },
+        {
+          "title": "Transfers outside the European Union",
+          "body": [
+            "Using Google services may involve transferring data to the United States. Google LLC participates in the EU-U.S. Data Privacy Framework, recognised as adequate by the European Commission (Art. 45 GDPR)."
           ]
         },
         {
           "title": "Your rights",
           "body": [
-            "You may at any time exercise your rights of access, rectification, erasure, restriction, portability and objection (Articles 15–22 GDPR), and withdraw consent.",
-            "You also have the right to lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali)."
+            "You can exercise at any time your rights of access, rectification, erasure, restriction, portability and objection (Arts. 15-22 GDPR) and withdraw consent, without affecting the lawfulness of earlier processing, by writing to {{privacyEmail}}.",
+            "You also have the right to lodge a complaint with the Italian Data Protection Authority (www.garanteprivacy.it)."
+          ]
+        },
+        {
+          "title": "Changes",
+          "body": [
+            "This notice may be updated; the date of the last update is shown at the top of the page."
           ]
         }
       ]
@@ -751,38 +777,40 @@
         {
           "title": "What cookies are",
           "body": [
-            "Cookies are small text files that websites store on your device to remember information about your visit."
+            "Cookies and similar technologies (such as the browser's localStorage) are small pieces of information a website saves on the user's device to remember browsing data or preferences."
           ]
         },
         {
-          "title": "Strictly necessary cookies",
+          "title": "Strictly necessary tools",
           "body": [
-            "Required for the website to work and to remember your cookie preferences. They do not require consent."
+            "sragroup-consent (localStorage, first party): stores your cookie choices so the banner does not appear on every visit. It stays until you clear it in your browser or we update the categories. No consent required.",
+            "The staff-only area (/backend) uses two first-party technical cookies: sra_crm (sign-in session, deleted when the browser closes) and crm_lang (panel language, 12 months). They do not concern website visitors."
           ]
         },
         {
           "title": "Analytics cookies",
           "body": [
-            "Used only with your consent to collect aggregated statistics on how the site is used. Provider: [to be confirmed, e.g. Google Analytics 4]."
+            "The website currently uses no analytics cookies.",
+            "If statistics tools (for example Google Analytics 4) are enabled in the future, they will load only after consent to the \"Analytics\" category and this page will be updated with the list of cookies."
           ]
         },
         {
-          "title": "Marketing and third-party cookies",
+          "title": "Third-party content",
           "body": [
-            "Used only with your consent to measure campaigns and display third-party content such as Google Maps. Providers: [to be confirmed]."
+            "Google Maps (Google Ireland Ltd.): the map on the Contact page loads only if you accepted the \"Marketing\" category or click \"Show map\". Once loaded, Google may set its own cookies (for example NID). Privacy notice: policies.google.com/privacy.",
+            "Google Fonts: the website's typefaces are downloaded from Google's servers, which receive the IP address but set no cookies.",
+            "The request form uses internal anti-spam checks that set no cookies."
           ]
         },
         {
           "title": "Managing your preferences",
           "body": [
-            "You can change or withdraw consent at any time using the \"Cookie preferences\" link in the site footer, or through your browser settings."
+            "You can change or withdraw consent at any time through the \"Cookie preferences\" link in the website footer. You can also delete cookies and site data from your browser settings."
           ]
         },
         {
           "title": "Contact",
-          "body": [
-            "For information about our use of cookies, write to privacy@sragroup.it."
-          ]
+          "body": ["For information about the use of cookies write to {{privacyEmail}}."]
         }
       ]
     }

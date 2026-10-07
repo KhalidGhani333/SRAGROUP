@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
+import { gtag, track } from "@/lib/analytics";
 
 export type ConsentCategories = { analytics: boolean; marketing: boolean };
 export type ConsentRecord = ConsentCategories & {
@@ -27,12 +28,6 @@ type ConsentContextValue = {
 
 const ConsentContext = createContext<ConsentContextValue | null>(null);
 
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-  }
-}
-
 function read(): ConsentRecord | null {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -45,17 +40,17 @@ function read(): ConsentRecord | null {
 }
 
 /**
- * Integration point for Google Tag Manager Consent Mode v2. When GTM is added, it reads this
- * event from the dataLayer; nothing is sent anywhere until then.
+ * Google Consent Mode v2: updates the defaults set in the head (all denied, see analytics.ts),
+ * then a `consent_update` event lets GTM fire tags that were waiting for consent.
  */
 function publish(record: ConsentRecord) {
-  window.dataLayer?.push({
-    event: "consent_update",
+  gtag("consent", "update", {
     analytics_storage: record.analytics ? "granted" : "denied",
     ad_storage: record.marketing ? "granted" : "denied",
     ad_user_data: record.marketing ? "granted" : "denied",
     ad_personalization: record.marketing ? "granted" : "denied",
   });
+  track("consent_update", { analytics: record.analytics, marketing: record.marketing });
   window.dispatchEvent(new CustomEvent("sragroup:consent", { detail: record }));
 }
 

@@ -1,12 +1,12 @@
-import constructionHero from "@/assets/construction-hero.jpg";
-import solarHero from "@/assets/solar-hero.jpg";
-import cBlueprint from "@/assets/c-blueprint.jpg";
-import cEngineering from "@/assets/c-engineering.jpg";
-import cSiteAerial from "@/assets/c-site-aerial.jpg";
-import cSteel from "@/assets/c-steel.jpg";
-import cWorkers from "@/assets/c-workers.jpg";
-import sField from "@/assets/s-field.jpg";
-import sRoofIndustrial from "@/assets/s-roof-industrial.jpg";
+import constructionHero from "@/assets/construction-hero.webp";
+import solarHero from "@/assets/solar-hero.webp";
+import cBlueprint from "@/assets/c-blueprint.webp";
+import cEngineering from "@/assets/c-engineering.webp";
+import cSiteAerial from "@/assets/c-site-aerial.webp";
+import cSteel from "@/assets/c-steel.webp";
+import cWorkers from "@/assets/c-workers.webp";
+import sField from "@/assets/s-field.webp";
+import sRoofIndustrial from "@/assets/s-roof-industrial.webp";
 
 /** Placeholder photography (Unsplash licence). Replace with the client's own project photos. */
 export const images = {

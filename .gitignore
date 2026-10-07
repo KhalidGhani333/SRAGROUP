@@ -36,3 +36,11 @@ dist-ssr
 
 # Client documents (kept local)
 *.docx
+
+# CRM backend: local secrets and uploaded files
+backend/config.php
+backend/storage/uploads/*
+!backend/storage/uploads/.gitkeep
+deploy
+deploy.zip
+deploy-staging.zip

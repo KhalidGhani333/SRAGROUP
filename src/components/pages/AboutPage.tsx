@@ -1,6 +1,6 @@
-import { Award, CheckCircle2, HardHat, ShieldCheck, Target, UserRound } from "lucide-react";
+import { Award, CheckCircle2, HardHat, ShieldCheck, Target } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import cCranes from "@/assets/c-cranes.jpg";
+import cCranes from "@/assets/c-cranes.webp";
 import { Reveal } from "@/components/site/Motion";
 import { CTA, Eyebrow, PageHero, SectionIntro, images } from "@/components/site/Site";
 import { useT } from "@/i18n/useT";
@@ -83,7 +83,11 @@ export function AboutPage() {
           aria-hidden
         />
         <div className="site-container relative">
-          <SectionIntro eyebrow={t("about.mission.eyebrow")} title={t("about.mission.title")} onDark />
+          <SectionIntro
+            eyebrow={t("about.mission.eyebrow")}
+            title={t("about.mission.title")}
+            onDark
+          />
           <div className="mt-16 grid gap-4 md:grid-cols-2">
             {(["mission", "vision"] as const).map((k, i) => (
               <Reveal
@@ -102,7 +106,7 @@ export function AboutPage() {
               </Reveal>
             ))}
           </div>
-          <ul className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <ul className="mt-4 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 lg:grid-cols-4">
             {list<string>("about.mission.values").map((label, i) => {
               const Icon = valueIcons[i] ?? Target;
               return (
@@ -136,7 +140,7 @@ export function AboutPage() {
                     <span className="grid size-14 place-items-center rounded-full border border-border transition-colors duration-500 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background">
                       <Award className="size-6" strokeWidth={1.5} aria-hidden />
                     </span>
-                    <span className="text-[.6rem] font-bold tracking-[.18em] text-muted-foreground uppercase">
+                    <span className="text-[.68rem] font-bold tracking-[.18em] text-muted-foreground uppercase">
                       {t("about.certifications.eyebrow")}
                     </span>
                   </div>
@@ -161,10 +165,15 @@ export function AboutPage() {
               <h3 className="mt-8 text-3xl font-semibold tracking-tight">
                 {t("about.standards.hse.title")}
               </h3>
-              <p className="mt-3 leading-7 text-muted-foreground">{t("about.standards.hse.text")}</p>
+              <p className="mt-3 leading-7 text-muted-foreground">
+                {t("about.standards.hse.text")}
+              </p>
               <ul className="mt-8 border-t border-border">
                 {list<string>("about.standards.hse.points").map((p) => (
-                  <li key={p} className="flex gap-3 border-b border-border py-4 text-sm last:border-b-0">
+                  <li
+                    key={p}
+                    className="flex gap-3 border-b border-border py-4 text-sm last:border-b-0"
+                  >
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-solar-ink" aria-hidden />
                     {p}
                   </li>
@@ -183,7 +192,10 @@ export function AboutPage() {
               </p>
               <ol className="mt-8 border-t border-border">
                 {list<string>("about.standards.quality.steps").map((s, i) => (
-                  <li key={s} className="flex gap-4 border-b border-border py-4 text-sm last:border-b-0">
+                  <li
+                    key={s}
+                    className="flex gap-4 border-b border-border py-4 text-sm last:border-b-0"
+                  >
                     <span className="font-display font-semibold text-construction-ink">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -209,14 +221,16 @@ export function AboutPage() {
                 <article className="group">
                   <div className="noise relative grid aspect-[4/5] place-items-center overflow-hidden bg-gradient-to-br from-slate to-charcoal text-offwhite">
                     <div className="grid-lines absolute inset-0 text-offwhite" aria-hidden />
-                    <UserRound
-                      className="size-24 text-offwhite/25 transition-transform duration-700 group-hover:scale-110"
-                      strokeWidth={0.75}
+                    {/* Monogram until portrait photos are provided. */}
+                    <span
+                      className="relative font-display text-7xl font-semibold tracking-tight text-offwhite/80 transition-transform duration-700 group-hover:scale-110"
                       aria-hidden
-                    />
-                    <p className="absolute bottom-5 left-5 text-[.6rem] font-semibold tracking-[.18em] text-offwhite/45 uppercase">
-                      {t("about.leadership.photoPlaceholder")}
-                    </p>
+                    >
+                      {p.name
+                        .split(" ")
+                        .map((part) => part[0])
+                        .join("")}
+                    </span>
                     <span
                       className={`absolute bottom-0 left-0 h-1 w-0 transition-all duration-700 group-hover:w-full ${i % 2 === 0 ? "bg-construction" : "bg-solar"}`}
                       aria-hidden

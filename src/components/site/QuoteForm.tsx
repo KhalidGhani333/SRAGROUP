@@ -9,6 +9,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { track } from "@/lib/analytics";
 import { submitLead } from "@/lib/submitLead";
 import { parseDivisionParam, type LeadDivision } from "@/i18n/routes";
 import { useT } from "@/i18n/useT";
@@ -117,6 +118,9 @@ export function QuoteForm() {
   const [fileError, setFileError] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
+  // Spam checks for the CRM: bots fill the hidden field or submit within seconds of loading.
+  const honeypot = useRef<HTMLInputElement>(null);
+  const startedAt = useRef(Date.now());
 
   const {
     register,
@@ -163,22 +167,35 @@ export function QuoteForm() {
               timeline: data.timeline,
             }
           : { subject: data.subject };
-    const result = await submitLead({
-      division: d,
-      details,
-      contact: {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        company: data.company,
-        role: data.role,
-        email: data.email,
-        phone: data.phone,
+    const result = await submitLead(
+      {
+        division: d,
+        details,
+        contact: {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          company: data.company,
+          role: data.role,
+          email: data.email,
+          phone: data.phone,
+        },
+        message: data.message,
+        ...(file ? { attachmentName: file.name } : {}),
+        consent: { privacy: true, marketing: data.marketing },
+        meta: {
+          lang,
+          page: location.href,
+          submittedAt: new Date().toISOString(),
+          elapsedMs: Date.now() - startedAt.current,
+        },
+        website: honeypot.current?.value ?? "",
       },
-      message: data.message,
-      ...(file ? { attachmentName: file.name } : {}),
-      consent: { privacy: true, marketing: data.marketing },
-      meta: { lang, page: location.href, submittedAt: new Date().toISOString() },
-    });
+      file,
+    );
+    if (result.ok) {
+      // GA4 conversion via GTM; no personal data is sent.
+      track("generate_lead", { division: d, form_language: lang, has_attachment: !!file });
+    }
     setStatus(result.ok ? "success" : "error");
   };
 
@@ -198,6 +215,7 @@ export function QuoteForm() {
           className="mt-6 rounded-none"
           onClick={() => {
             reset({ ...emptyForm, division: preselected ?? "" });
+            startedAt.current = Date.now();
             setFile(null);
             setStatus("idle");
           }}
@@ -213,6 +231,15 @@ export function QuoteForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-10">
       <p className="text-xs text-muted-foreground">{t("contact.form.requiredNote")}</p>
+      <input
+        ref={honeypot}
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-px w-px opacity-0"
+      />
 
       <Step number={1} title={t("contact.form.step1")}>
         <fieldset aria-describedby={errors.division ? "division-error" : undefined}>

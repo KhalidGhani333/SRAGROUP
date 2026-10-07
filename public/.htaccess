@@ -1,0 +1,54 @@
+# SRAGROUP static site on cPanel / Apache (built with `npm run build:cpanel`).
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+
+# Force HTTPS and the canonical www host once the SSL certificate is active.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^sragroup\.it$ [NC]
+  RewriteRule ^ https://www.sragroup.it%{REQUEST_URI} [L,R=301]
+
+  # The site's own folder (root or sub-folder) -> its index.html.
+  RewriteRule ^$ index.html [L]
+
+  # /chi-siamo/ -> /chi-siamo (pages are folders with index.html; keep one canonical URL).
+  RewriteCond %{REQUEST_URI} !/backend/
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteCond %{REQUEST_URI} ^(.+)/$
+  RewriteRule ^ %1 [L,R=301]
+
+  # /chi-siamo -> serve /chi-siamo/index.html without a redirect.
+  RewriteCond %{REQUEST_URI} !/backend/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+</IfModule>
+DirectorySlash Off
+
+ErrorDocument 404 /404/index.html
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+  # Allows the site's own files, Google Fonts, the consent-gated Google Map and future GTM/GA4.
+  # Inline scripts are TanStack's hydration data. The CRM sets its own stricter policy.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-src https://www.google.com https://maps.google.com https://www.googletagmanager.com; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'" "expr=%{REQUEST_URI} !~ m#/backend/#"
+  # Hashed build assets never change; HTML must always be fresh.
+  <FilesMatch "\.(js|css|woff2?|png|jpe?g|webp|avif|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

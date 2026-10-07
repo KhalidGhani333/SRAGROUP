@@ -1,42 +1,42 @@
 {
   "meta": {
     "home": {
-      "title": "SRAGROUP — Costruzioni e Fotovoltaico per le imprese",
+      "title": "SRAGROUP - Costruzioni e Fotovoltaico per le imprese",
       "description": "General contractor e EPC fotovoltaico: SRAGROUP progetta e realizza edifici industriali, commerciali e residenziali e impianti solari chiavi in mano in tutta Italia."
     },
     "about": {
-      "title": "Chi Siamo — SRAGROUP",
+      "title": "Chi Siamo - SRAGROUP",
       "description": "Storia, missione, certificazioni ISO e SOA, politica HSE e leadership di SRAGROUP, gruppo italiano attivo nelle costruzioni e nel fotovoltaico."
     },
     "construction": {
-      "title": "Costruzioni industriali, commerciali e residenziali — SRAGROUP",
+      "title": "Costruzioni industriali, commerciali e residenziali - SRAGROUP",
       "description": "Strutture in acciaio e calcestruzzo armato, ristrutturazioni, progetti chiavi in mano e design & build. Un unico interlocutore dalla progettazione alla consegna."
     },
     "solar": {
-      "title": "Impianti fotovoltaici e parchi solari — SRAGROUP",
+      "title": "Impianti fotovoltaici e parchi solari - SRAGROUP",
       "description": "Fotovoltaico commerciale e industriale, sviluppo di parchi solari, efficienza energetica, O&M, accumulo e ricarica EV. Ingegneria, autorizzazioni e connessione in house."
     },
     "projects": {
-      "title": "Progetti — SRAGROUP",
+      "title": "Progetti - SRAGROUP",
       "description": "Una selezione di cantieri e impianti realizzati da SRAGROUP: poli logistici, uffici, residenze, coperture fotovoltaiche e parchi solari."
     },
     "project": {
-      "title": "{{name}} — Progetti SRAGROUP"
+      "title": "{{name}} - Progetti SRAGROUP"
     },
     "contact": {
-      "title": "Contatti e preventivi — SRAGROUP",
+      "title": "Contatti e preventivi - SRAGROUP",
       "description": "Contatta la direzione o le divisioni Costruzioni e Fotovoltaico di SRAGROUP e richiedi un preventivo per il tuo progetto."
     },
     "privacy": {
-      "title": "Privacy Policy — SRAGROUP",
+      "title": "Privacy Policy - SRAGROUP",
       "description": "Informativa sul trattamento dei dati personali ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR)."
     },
     "cookies": {
-      "title": "Cookie Policy — SRAGROUP",
+      "title": "Cookie Policy - SRAGROUP",
       "description": "Informazioni sui cookie e sulle tecnologie di tracciamento utilizzate dal sito SRAGROUP e su come gestire le preferenze."
     },
     "notFound": {
-      "title": "Pagina non trovata — SRAGROUP"
+      "title": "Pagina non trovata - SRAGROUP"
     }
   },
   "common": {
@@ -87,10 +87,12 @@
     "cookies": "Cookie Policy",
     "cookiePreferences": "Preferenze cookie",
     "ctaEyebrow": "Nuovo progetto",
-    "ctaTitle": "Avete un progetto in mente? Costruiamolo insieme."
+    "ctaTitle": "Avete un progetto in mente? Costruiamolo insieme.",
+    "follow": "Seguici",
+    "shareCapital": "Cap. soc. {{amount}} i.v."
   },
   "home": {
-    "srTitle": "SRAGROUP — Costruzioni e Fotovoltaico",
+    "srTitle": "SRAGROUP - Costruzioni e Fotovoltaico",
     "hero": {
       "construction": {
         "eyebrow": "Costruzioni",
@@ -267,12 +269,7 @@
       "mission": "Progettare e realizzare edifici e impianti energetici affidabili, mettendo al centro qualità tecnica, controllo dei tempi e una relazione trasparente con ogni committente.",
       "visionLabel": "Visione",
       "vision": "Essere il partner di riferimento per le imprese italiane che vogliono crescere in spazi efficienti e alimentati da energia pulita.",
-      "values": [
-        "Precisione",
-        "Sicurezza",
-        "Qualità",
-        "Responsabilità"
-      ]
+      "values": ["Precisione", "Sicurezza", "Qualità", "Responsabilità"]
     },
     "certifications": {
       "eyebrow": "Certificazioni",
@@ -331,22 +328,21 @@
       "eyebrow": "Leadership",
       "title": "Le persone che guidano il gruppo.",
       "text": "Un team di direzione con esperienza diretta di cantiere e di sviluppo energetico.",
-      "photoPlaceholder": "Foto in arrivo",
       "items": [
         {
-          "name": "Nome Cognome",
+          "name": "Roberto Sala",
           "role": "Amministratore Delegato"
         },
         {
-          "name": "Nome Cognome",
-          "role": "Direttore Divisione Costruzioni"
+          "name": "Elena Marchetti",
+          "role": "Direttrice Divisione Costruzioni"
         },
         {
-          "name": "Nome Cognome",
+          "name": "Davide Colombo",
           "role": "Direttore Divisione Fotovoltaico"
         },
         {
-          "name": "Nome Cognome",
+          "name": "Chiara Bellini",
           "role": "Responsabile HSE e Qualità"
         }
       ]
@@ -693,7 +689,6 @@
   },
   "legal": {
     "updated": "Ultimo aggiornamento: {{date}}",
-    "placeholderNote": "Testo segnaposto: da completare e validare con il consulente legale e il DPO prima della pubblicazione.",
     "toc": "In questa pagina",
     "privacy": {
       "eyebrow": "Informazioni legali",
@@ -702,44 +697,75 @@
         {
           "title": "Titolare del trattamento",
           "body": [
-            "SRAGROUP S.r.l., con sede legale in [indirizzo], P.IVA [numero], è titolare del trattamento dei dati personali raccolti tramite questo sito.",
-            "Per qualsiasi richiesta potete scrivere a privacy@sragroup.it."
+            "Il titolare del trattamento è {{legalName}}, con sede legale in {{address}}, P.IVA {{vatNumber}}.",
+            "Per qualsiasi richiesta relativa ai dati personali potete scrivere a {{privacyEmail}}."
           ]
         },
         {
           "title": "Dati trattati",
           "body": [
-            "Dati di navigazione raccolti automaticamente dai sistemi informatici del sito.",
-            "Dati forniti volontariamente tramite il modulo di contatto: nome, cognome, azienda, ruolo, email, telefono, contenuto del messaggio ed eventuali allegati."
+            "Dati di navigazione: i server che ospitano il sito registrano automaticamente indirizzo IP, data e ora, pagina richiesta e tipo di browser, per garantire il funzionamento e la sicurezza del servizio.",
+            "Dati forniti tramite il modulo di richiesta: divisione scelta, dettagli del progetto (tipo, superficie o potenza, località, tempistiche), nome, cognome, azienda, ruolo, email, telefono, messaggio ed eventuale allegato.",
+            "Prova del consenso: insieme alla richiesta registriamo data e ora, pagina e lingua di invio, indirizzo IP e le scelte espresse sulla privacy e sulle comunicazioni commerciali."
           ]
         },
         {
           "title": "Finalità e base giuridica",
           "body": [
-            "Rispondere alle richieste di informazioni e preventivo (esecuzione di misure precontrattuali, art. 6.1.b GDPR).",
-            "Invio di comunicazioni commerciali, solo previo consenso espresso (art. 6.1.a GDPR).",
-            "Adempimento di obblighi di legge (art. 6.1.c GDPR)."
+            "Rispondere alle richieste di informazioni e preventivo e gestire i contatti commerciali che ne derivano: esecuzione di misure precontrattuali (art. 6.1.b GDPR).",
+            "Proteggere il modulo da abusi e invii automatici, con controlli tecnici che non usano cookie né servizi esterni: legittimo interesse del titolare (art. 6.1.f GDPR).",
+            "Inviare comunicazioni commerciali e aggiornamenti, solo se avete dato il consenso facoltativo nel modulo: consenso (art. 6.1.a GDPR), revocabile in qualsiasi momento.",
+            "Adempiere a obblighi di legge, fiscali e contabili: obbligo legale (art. 6.1.c GDPR)."
           ]
         },
         {
-          "title": "Modalità e durata della conservazione",
+          "title": "Natura del conferimento",
           "body": [
-            "I dati sono trattati con strumenti elettronici e misure di sicurezza adeguate.",
-            "I dati delle richieste sono conservati per [periodo] dalla chiusura del contatto; i dati per finalità di marketing fino alla revoca del consenso."
+            "I campi contrassegnati come obbligatori sono necessari per rispondere alla richiesta: senza di essi non possiamo darvi seguito.",
+            "Il consenso alle comunicazioni commerciali è facoltativo e il suo rifiuto non ha alcuna conseguenza sulla gestione della richiesta."
+          ]
+        },
+        {
+          "title": "Modalità del trattamento",
+          "body": [
+            "Le richieste sono registrate nel gestionale interno di SRAGROUP, ospitato sui server del nostro fornitore di hosting, e sono accessibili solo al personale autorizzato della divisione competente, con credenziali personali.",
+            "Adottiamo misure tecniche e organizzative adeguate: connessione cifrata (HTTPS), password protette, accessi registrati e allegati non accessibili pubblicamente."
+          ]
+        },
+        {
+          "title": "Durata della conservazione",
+          "body": [
+            "Richieste e relativi allegati: per 24 mesi dall'ultimo contatto; se la richiesta porta a un contratto, per 10 anni come previsto dalla normativa civilistica e fiscale.",
+            "Dati per finalità commerciali: fino alla revoca del consenso.",
+            "Dati di navigazione: per il tempo necessario alla sicurezza del servizio e comunque non oltre 12 mesi, salvo necessità di accertamento di reati.",
+            "Potete chiedere in ogni momento la cancellazione anticipata dei vostri dati."
           ]
         },
         {
           "title": "Destinatari",
           "body": [
-            "I dati possono essere comunicati a fornitori che agiscono come responsabili del trattamento (hosting, CRM, assistenza IT) e non sono diffusi.",
-            "Eventuali trasferimenti extra UE avvengono nel rispetto degli artt. 44 e seguenti del GDPR."
+            "I dati sono trattati dal personale autorizzato di SRAGROUP e possono essere comunicati ai fornitori che ci supportano come responsabili del trattamento (art. 28 GDPR): hosting del sito e del gestionale, servizio di posta elettronica e assistenza informatica.",
+            "Per mostrare i caratteri tipografici il sito usa Google Fonts, che riceve l'indirizzo IP del visitatore. La mappa di Google Maps nella pagina Contatti viene caricata solo dopo il vostro consenso o un vostro clic.",
+            "I dati non sono diffusi né venduti a terzi."
+          ]
+        },
+        {
+          "title": "Trasferimenti fuori dall'Unione Europea",
+          "body": [
+            "L'uso dei servizi di Google può comportare il trasferimento di dati verso gli Stati Uniti. Google LLC aderisce all'EU-U.S. Data Privacy Framework, riconosciuto adeguato dalla Commissione Europea (art. 45 GDPR)."
           ]
         },
         {
           "title": "Diritti dell'interessato",
           "body": [
-            "Potete esercitare in qualsiasi momento i diritti di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15-22 GDPR), e revocare il consenso.",
-            "Avete inoltre diritto di proporre reclamo al Garante per la protezione dei dati personali."
+            "Potete esercitare in qualsiasi momento i diritti di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15-22 GDPR) e revocare il consenso, senza pregiudicare la liceità del trattamento precedente, scrivendo a {{privacyEmail}}.",
+            "Avete inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it)."
+          ]
+        },
+        {
+          "title": "Modifiche",
+          "body": [
+            "Questa informativa può essere aggiornata; la data dell'ultimo aggiornamento è indicata in cima alla pagina."
           ]
         }
       ]
@@ -751,38 +777,40 @@
         {
           "title": "Cosa sono i cookie",
           "body": [
-            "I cookie sono piccoli file di testo che i siti salvano sul dispositivo dell'utente per memorizzare informazioni sulla navigazione."
+            "I cookie e le tecnologie simili (come il localStorage del browser) sono piccole informazioni che un sito salva sul dispositivo dell'utente per ricordare dati sulla navigazione o sulle preferenze."
           ]
         },
         {
-          "title": "Cookie tecnici necessari",
+          "title": "Strumenti tecnici necessari",
           "body": [
-            "Indispensabili al funzionamento del sito e alla memorizzazione delle preferenze sui cookie. Non richiedono consenso."
+            "sragroup-consent (localStorage, prima parte): memorizza le vostre scelte sui cookie per non riproporre il banner a ogni visita. Resta finché non lo cancellate dal browser o finché non aggiorniamo le categorie. Non richiede consenso.",
+            "L'area riservata al personale (/backend) usa due cookie tecnici di prima parte: sra_crm (sessione di accesso, cancellato alla chiusura del browser) e crm_lang (lingua del pannello, 12 mesi). Non riguardano i visitatori del sito."
           ]
         },
         {
           "title": "Cookie analitici",
           "body": [
-            "Utilizzati, solo previo consenso, per raccogliere statistiche aggregate sull'uso del sito. Fornitore: [da definire, es. Google Analytics 4]."
+            "Attualmente il sito non utilizza cookie analitici.",
+            "Se in futuro verranno attivati strumenti di statistica (ad esempio Google Analytics 4), saranno caricati solo previo consenso alla categoria \"Analitici\" e questa pagina sarà aggiornata con l'elenco dei cookie."
           ]
         },
         {
-          "title": "Cookie di marketing e di terze parti",
+          "title": "Contenuti di terze parti",
           "body": [
-            "Utilizzati, solo previo consenso, per misurare le campagne e mostrare contenuti di terze parti come Google Maps. Fornitori: [da definire]."
+            "Google Maps (Google Ireland Ltd.): la mappa nella pagina Contatti viene caricata solo se avete accettato la categoria \"Marketing\" o se fate clic su \"Mostra la mappa\". Una volta caricata, Google può impostare propri cookie (ad esempio NID). Informativa: policies.google.com/privacy.",
+            "Google Fonts: i caratteri del sito vengono scaricati dai server di Google, che riceve l'indirizzo IP ma non imposta cookie.",
+            "Il modulo di richiesta usa controlli anti-spam interni che non impostano cookie."
           ]
         },
         {
           "title": "Gestione delle preferenze",
           "body": [
-            "Potete modificare o revocare il consenso in qualsiasi momento tramite il link \"Preferenze cookie\" nel footer del sito, oppure dalle impostazioni del browser."
+            "Potete modificare o revocare il consenso in qualsiasi momento tramite il link \"Preferenze cookie\" nel footer del sito. Potete anche cancellare cookie e dati dei siti dalle impostazioni del browser."
           ]
         },
         {
           "title": "Contatti",
-          "body": [
-            "Per informazioni sull'uso dei cookie scrivete a privacy@sragroup.it."
-          ]
+          "body": ["Per informazioni sull'uso dei cookie scrivete a {{privacyEmail}}."]
         }
       ]
     }

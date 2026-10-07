@@ -1,0 +1,16 @@
+Options -Indexes
+DirectoryIndex index.php
+
+# Never serve configuration, SQL, internal PHP or docs directly.
+<FilesMatch "^(config(\.sample)?\.php|README\.md|.*\.sql)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "same-origin"
+  Header always set X-Frame-Options "DENY"
+</IfModule>
+
+# Root .htaccess turns DirectorySlash off for clean page URLs; the CRM needs it on.
+DirectorySlash On

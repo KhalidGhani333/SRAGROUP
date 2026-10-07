@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, ChevronRight, Mail, Menu, Phone, X } from "lu
 import { useEffect, useState, type ReactNode } from "react";
 import logoSrc from "@/assets/sra-logo.png";
 import { Button } from "@/components/ui/button";
-import { company, departments, telHref } from "@/data/company";
+import { company, departments, telHref, socialLinks } from "@/data/company";
 import { useConsent } from "@/lib/consent";
 import { useT } from "@/i18n/useT";
 import {
@@ -27,8 +27,8 @@ const navPages = ["home", "about", "construction", "solar", "projects", "contact
 
 /*
  * The official logo (src/assets/sra-logo.png, 882×708, transparent) is a stacked lockup:
- * mark, "SRA GROUP SRL" wordmark and tagline. Regions are cropped with CSS so they can be
- * arranged horizontally in the header. Boxes are in source pixels.
+ * mark, "SRA GROUP SRL" wordmark and tagline. It is shown as designed; the header only leaves
+ * out the tagline, which is unreadable at header size. Boxes are in source pixels.
  */
 const LOGO_W = 882;
 const LOGO_H = 708;
@@ -36,6 +36,11 @@ const logoBoxes = {
   mark: { x: 270, y: 0, w: 342, h: 341 },
   wordmark: { x: 22, y: 389, w: 840, h: 207 },
   tagline: { x: 15, y: 653, w: 858, h: 50 },
+  lockup: { x: 0, y: 0, w: 882, h: 612 },
+  full: { x: 0, y: 0, w: 882, h: 708 },
+  // Everything below the mark, for the white version on dark surfaces.
+  lockupText: { x: 0, y: 352, w: 882, h: 260 },
+  fullText: { x: 0, y: 352, w: 882, h: 356 },
 };
 
 function LogoCrop({
@@ -76,21 +81,41 @@ export function LogoMark({ className = "h-9" }: { light?: boolean; className?: s
   return <LogoCrop box="mark" className={className} />;
 }
 
-/** Horizontal lockup. On dark surfaces the navy wordmark is rendered white. */
+/**
+ * The original stacked logo (transparent PNG). On dark surfaces the mark keeps its brand blue and
+ * the navy lettering is rendered white; `tagline` shows the complete artwork (footer).
+ */
 export function Logo({ light = false, tagline = false }: { light?: boolean; tagline?: boolean }) {
-  const onDark = light ? "brightness-0 invert" : "";
+  const box = tagline ? "full" : "lockup";
+  const size = tagline ? "h-32 sm:h-36" : "h-14 sm:h-16";
+  const { w, h } = logoBoxes[box];
+  const mark = logoBoxes.mark;
+  const text = logoBoxes[tagline ? "fullText" : "lockupText"];
   return (
-    <LocalizedLink page="home" className="inline-flex flex-col gap-3" aria-label="SRA GROUP SRL — Home">
-      <span className="flex items-center gap-3">
-        <LogoMark className="h-10 md:h-11" />
-        <LogoCrop box="wordmark" className="h-9 md:h-10" imgClassName={onDark} />
-      </span>
-      {tagline && (
-        <LogoCrop
-          box="tagline"
-          className="h-3.5 opacity-60"
-          imgClassName={light ? "brightness-0 invert" : ""}
-        />
+    <LocalizedLink
+      page="home"
+      className="inline-flex w-fit shrink-0 justify-self-start"
+      aria-label="SRA GROUP SRL - Home"
+    >
+      {light ? (
+        // Same artwork split in two non-overlapping parts: blue mark + white lettering.
+        <span className={`relative block ${size}`} style={{ aspectRatio: `${w} / ${h}` }}>
+          <span
+            className="absolute top-0"
+            style={{ left: `${(mark.x / w) * 100}%`, width: `${(mark.w / w) * 100}%` }}
+          >
+            <LogoCrop box="mark" className="w-full" />
+          </span>
+          <span className="absolute inset-x-0" style={{ top: `${(text.y / h) * 100}%` }}>
+            <LogoCrop
+              box={tagline ? "fullText" : "lockupText"}
+              className="w-full"
+              imgClassName="brightness-0 invert"
+            />
+          </span>
+        </span>
+      ) : (
+        <LogoCrop box={box} className={size} />
       )}
     </LocalizedLink>
   );
@@ -124,7 +149,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
               lang={target}
               aria-current={active ? "true" : undefined}
               aria-label={active ? undefined : t("common.switchTo", { lng: target })}
-              className={`px-1 py-2 tracking-[.14em] uppercase transition-opacity ${active ? "opacity-100" : "opacity-50 hover:opacity-100"}`}
+              className={`inline-flex min-h-8 min-w-8 items-center justify-center px-1.5 tracking-[.14em] uppercase transition-opacity ${active ? "opacity-100" : "opacity-50 hover:opacity-100"}`}
             >
               {target}
             </Link>
@@ -172,19 +197,19 @@ export function SiteHeader() {
       }`}
     >
       <div
-        className={`site-container grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 transition-[height] duration-500 lg:grid-cols-[auto_1fr_auto] ${solid ? "h-[4.5rem]" : "h-24"}`}
+        className={`site-container grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 transition-[height] duration-500 lg:grid-cols-[auto_1fr_auto] ${solid ? "h-20" : "h-24"}`}
       >
         <Logo light={!solid} />
         <nav
           aria-label={t("common.mainNav")}
-          className="hidden items-center justify-center gap-8 lg:flex"
+          className="hidden items-center justify-center gap-5 lg:flex xl:gap-8"
         >
           {navPages.map((page) => (
             <LocalizedLink
               key={page}
               page={page}
               aria-current={isActive(page) ? "page" : undefined}
-              className={`group relative py-2 text-[.7rem] font-semibold tracking-[.16em] uppercase transition-opacity ${isActive(page) ? "opacity-100" : "opacity-65 hover:opacity-100"}`}
+              className={`group relative py-2 text-[.7rem] font-semibold tracking-[.16em] whitespace-nowrap uppercase transition-opacity ${isActive(page) ? "opacity-100" : "opacity-65 hover:opacity-100"}`}
             >
               {t(`nav.${page}`)}
               <span
@@ -198,7 +223,7 @@ export function SiteHeader() {
           <LanguageSwitcher />
           <Button
             asChild
-            className={`group hidden h-11 rounded-none px-5 lg:inline-flex ${solid ? "" : "bg-offwhite text-charcoal hover:bg-offwhite/90"}`}
+            className={`group hidden h-11 rounded-none px-5 xl:inline-flex ${solid ? "" : "bg-offwhite text-charcoal hover:bg-offwhite/90"}`}
           >
             <LocalizedLink page="contact">
               {t("common.requestQuote")}
@@ -248,32 +273,42 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
-  const { t } = useT();
+  const { t, lang } = useT();
   const { openPreferences } = useConsent();
   const year = 2026;
   return (
     <footer className="noise relative overflow-hidden bg-charcoal text-offwhite">
       <div className="site-container relative">
-        <div className="grid gap-12 pt-20 pb-16 md:grid-cols-2 lg:grid-cols-[1.1fr_.8fr_1.6fr]">
+        <div className="grid gap-12 pt-20 pb-16 md:grid-cols-2 xl:grid-cols-[1fr_.6fr_2fr]">
           <div>
             <Logo light tagline />
-            <p className="mt-6 max-w-xs text-sm leading-6 text-offwhite/60">{t("footer.tagline")}</p>
+            <p className="mt-6 max-w-xs text-sm leading-6 text-offwhite/60">
+              {t("footer.tagline")}
+            </p>
+            <SocialLinks />
             <p className="mt-6 text-sm leading-6 text-offwhite/50">
               {company.legalName}
               <br />
               {company.address}
               <br />
-              {t("footer.vat")} {company.vatNumber}
+              {t("footer.vat")} {company.vatNumber} · REA {company.rea}
+              <br />
+              {t("footer.shareCapital", {
+                amount: new Intl.NumberFormat(lang === "it" ? "it-IT" : "en-GB", {
+                  style: "currency",
+                  currency: "EUR",
+                }).format(company.shareCapitalEur),
+              })}
             </p>
           </div>
           <div>
             <p className="eyebrow text-offwhite/40">{t("footer.navigation")}</p>
-            <ul className="mt-6 grid gap-3 text-sm">
+            <ul className="mt-5 grid gap-1 text-sm">
               {navPages.slice(1).map((page) => (
                 <li key={page}>
                   <LocalizedLink
                     page={page}
-                    className="group inline-flex items-center gap-1.5 text-offwhite/70 transition-colors hover:text-offwhite"
+                    className="group inline-flex items-center gap-1.5 py-1 text-offwhite/70 transition-colors hover:text-offwhite"
                   >
                     {t(`nav.${page}`)}
                     <ArrowUpRight
@@ -285,9 +320,9 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="md:col-span-2 xl:col-span-1">
             <p className="eyebrow text-offwhite/40">{t("footer.contacts")}</p>
-            <ul className="mt-6 grid gap-6 text-sm sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <ul className="mt-6 grid gap-6 text-sm sm:grid-cols-3">
               {(["general", "construction", "solar"] as const).map((d) => (
                 <li key={d} className="border-l border-offwhite/10 pl-4">
                   <p
@@ -297,13 +332,13 @@ export function SiteFooter() {
                   </p>
                   <a
                     href={`mailto:${departments[d].email}`}
-                    className="mt-3 flex items-center gap-2 text-offwhite/65 transition-colors hover:text-offwhite"
+                    className="mt-2 flex items-center gap-2 py-1 break-all text-offwhite/65 transition-colors hover:text-offwhite"
                   >
                     <Mail className="size-3.5 shrink-0" aria-hidden /> {departments[d].email}
                   </a>
                   <a
                     href={telHref(departments[d].phone)}
-                    className="mt-1.5 flex items-center gap-2 text-offwhite/65 transition-colors hover:text-offwhite"
+                    className="flex items-center gap-2 py-1 text-offwhite/65 transition-colors hover:text-offwhite"
                   >
                     <Phone className="size-3.5 shrink-0" aria-hidden /> {departments[d].phone}
                   </a>
@@ -312,13 +347,6 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
-
-        <p
-          className="text-outline pointer-events-none -mb-[0.18em] font-display text-[19vw] leading-none font-bold tracking-tighter text-offwhite select-none 2xl:text-[17rem]"
-          aria-hidden
-        >
-          SRAGROUP
-        </p>
       </div>
       <div className="relative border-t border-offwhite/10 bg-charcoal">
         <div className="site-container flex flex-col gap-3 py-6 text-xs text-offwhite/50 md:flex-row md:items-center md:justify-between">
@@ -327,19 +355,59 @@ export function SiteFooter() {
             {t("footer.rights")}
           </p>
           <nav aria-label={t("footer.legal")} className="flex flex-wrap gap-x-6 gap-y-2">
-            <LocalizedLink page="privacy" className="hover:text-offwhite">
+            <LocalizedLink page="privacy" className="inline-block py-1 hover:text-offwhite">
               {t("footer.privacy")}
             </LocalizedLink>
-            <LocalizedLink page="cookies" className="hover:text-offwhite">
+            <LocalizedLink page="cookies" className="inline-block py-1 hover:text-offwhite">
               {t("footer.cookies")}
             </LocalizedLink>
-            <button type="button" onClick={openPreferences} className="text-left hover:text-offwhite">
+            <button
+              type="button"
+              onClick={openPreferences}
+              className="py-1 text-left hover:text-offwhite"
+            >
               {t("footer.cookiePreferences")}
             </button>
           </nav>
         </div>
       </div>
     </footer>
+  );
+}
+
+const socialLabels: Record<keyof typeof socialLinks, string> = {
+  linkedin: "LinkedIn",
+  googleBusiness: "Google",
+  instagram: "Instagram",
+  facebook: "Facebook",
+  youtube: "YouTube",
+};
+
+/** Footer links to the company's public profiles; hidden until at least one URL is set. */
+function SocialLinks() {
+  const { t } = useT();
+  const links = (Object.keys(socialLinks) as (keyof typeof socialLinks)[]).filter(
+    (k) => socialLinks[k],
+  );
+  if (!links.length) return null;
+  return (
+    <nav aria-label={t("footer.follow")} className="mt-6">
+      <ul className="flex flex-wrap gap-2">
+        {links.map((k) => (
+          <li key={k}>
+            <a
+              href={socialLinks[k]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 border border-offwhite/15 px-3 py-1.5 text-xs font-semibold text-offwhite/70 transition-colors hover:border-offwhite/40 hover:text-offwhite"
+            >
+              {socialLabels[k]}
+              <ArrowUpRight className="size-3" aria-hidden />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 
@@ -359,7 +427,7 @@ export function Breadcrumb({ items, onDark = true }: { items: Crumb[]; onDark?: 
             {c.page && i < all.length - 1 ? (
               <LocalizedLink
                 page={c.page}
-                className={onDark ? "hover:text-offwhite" : "hover:text-foreground"}
+                className={`inline-block py-1 ${onDark ? "hover:text-offwhite" : "hover:text-foreground"}`}
               >
                 {c.label}
               </LocalizedLink>
@@ -379,13 +447,7 @@ export function Breadcrumb({ items, onDark = true }: { items: Crumb[]; onDark?: 
 }
 
 /** Eyebrow label with a leading rule, used across sections. */
-export function Eyebrow({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <p className={`eyebrow flex items-center gap-3 ${className}`}>
       <span className="h-px w-8 bg-current" aria-hidden />
@@ -396,7 +458,7 @@ export function Eyebrow({
 
 export function ScrollCue({ label }: { label: string }) {
   return (
-    <span className="flex items-center gap-3 text-[.65rem] font-semibold tracking-[.2em] uppercase text-offwhite/60">
+    <span className="flex items-center gap-3 text-[.7rem] font-semibold tracking-[.2em] uppercase text-offwhite/60">
       <span className="relative h-10 w-px overflow-hidden bg-offwhite/20" aria-hidden>
         <span className="animate-scroll-cue absolute inset-x-0 top-0 h-1/2 bg-offwhite" />
       </span>
@@ -412,7 +474,6 @@ export function PageHero({
   image,
   division = "neutral",
   breadcrumb,
-  compact = false,
 }: {
   eyebrow?: string;
   title: string;
@@ -420,6 +481,7 @@ export function PageHero({
   image: string;
   division?: Tone;
   breadcrumb: Crumb[];
+  /** Kept for existing callers; every hero is now one full screen tall. */
   compact?: boolean;
 }) {
   const { t } = useT();
@@ -430,9 +492,7 @@ export function PageHero({
         ? "bg-solar/25"
         : "bg-offwhite/10";
   return (
-    <section
-      className={`noise relative isolate overflow-hidden bg-charcoal text-offwhite ${compact ? "min-h-[68vh]" : "min-h-[88vh]"}`}
-    >
+    <section className="noise relative isolate overflow-hidden bg-charcoal text-offwhite">
       <div className="absolute inset-0 -z-20 overflow-hidden">
         <img
           src={image}
@@ -452,7 +512,8 @@ export function PageHero({
       />
 
       <div
-        className={`site-container relative flex flex-col justify-between gap-14 pt-32 pb-10 md:pt-36 ${compact ? "min-h-[68vh]" : "min-h-[88vh]"}`}
+        // Every page hero fills exactly one screen (svh = visible height, also on mobile).
+        className="site-container relative flex min-h-svh flex-col justify-between gap-10 pt-28 pb-8 md:pt-32"
       >
         <Reveal immediate>
           <Breadcrumb items={breadcrumb} />
@@ -466,7 +527,7 @@ export function PageHero({
           <RevealText
             text={title}
             delay={0.15}
-            className="mt-6 text-[clamp(2.75rem,7.5vw,7.5rem)] leading-[.95] font-semibold tracking-[-0.035em]"
+            className="mt-6 text-[clamp(2.125rem,5vw,4.5rem)] leading-[1.02] font-semibold tracking-[-0.035em]"
           />
           {text && (
             <Reveal immediate delay={0.45}>
@@ -478,7 +539,7 @@ export function PageHero({
         </div>
         <div className="flex items-end justify-between border-t border-offwhite/10 pt-6">
           <ScrollCue label={t("common.scroll")} />
-          <p className="hidden text-[.65rem] font-semibold tracking-[.2em] uppercase text-offwhite/45 sm:block">
+          <p className="hidden text-[.7rem] font-semibold tracking-[.2em] uppercase text-offwhite/45 sm:block">
             SRA GROUP · {company.city}
           </p>
         </div>
@@ -517,7 +578,7 @@ export function SectionIntro({
           as={as}
           text={title}
           immediate={false}
-          className="text-[clamp(2rem,4.6vw,4rem)] leading-[1.02] font-semibold tracking-[-0.03em]"
+          className="text-[clamp(1.75rem,3.2vw,2.875rem)] leading-[1.08] font-semibold tracking-[-0.03em]"
         />
         {text && (
           <Reveal delay={0.15}>
@@ -575,7 +636,7 @@ export function CTA({ title, division = "neutral" }: { title: string; division?:
             as="h2"
             text={title}
             immediate={false}
-            className="mt-6 text-[clamp(2.5rem,6vw,5.5rem)] leading-[.98] font-semibold tracking-[-0.035em]"
+            className="mt-6 text-[clamp(2rem,4.2vw,3.75rem)] leading-[1.02] font-semibold tracking-[-0.035em]"
           />
         </div>
         <Reveal delay={0.2} className="lg:pb-3">
@@ -590,7 +651,10 @@ export function CTA({ title, division = "neutral" }: { title: string; division?:
                 {...(lead ? { search: { division: divisionParam(lead, lang) } } : {})}
               >
                 {t("common.requestQuote")}
-                <ArrowRight className="transition-transform group-hover:translate-x-1" aria-hidden />
+                <ArrowRight
+                  className="transition-transform group-hover:translate-x-1"
+                  aria-hidden
+                />
               </LocalizedLink>
             </Button>
             <a
@@ -614,7 +678,11 @@ export function NumberedSteps({
   division?: Tone;
 }) {
   const dot =
-    division === "construction" ? "bg-construction" : division === "solar" ? "bg-solar" : "bg-foreground";
+    division === "construction"
+      ? "bg-construction"
+      : division === "solar"
+        ? "bg-solar"
+        : "bg-foreground";
   return (
     <ol className="relative grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       <span className="absolute top-3 right-0 left-0 hidden h-px bg-border xl:block" aria-hidden />
@@ -622,7 +690,9 @@ export function NumberedSteps({
         <li key={item.title} className="group relative">
           <Reveal delay={i * 0.08}>
             <span className="relative z-10 grid size-6 place-items-center rounded-full border border-border bg-background transition-colors group-hover:border-foreground">
-              <span className={`size-2 rounded-full ${dot} transition-transform group-hover:scale-150`} />
+              <span
+                className={`size-2 rounded-full ${dot} transition-transform group-hover:scale-150`}
+              />
             </span>
             <p className="text-outline mt-6 font-display text-6xl leading-none font-bold text-foreground transition-colors">
               {String(i + 1).padStart(2, "0")}

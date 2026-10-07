@@ -56,29 +56,31 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
             </p>
           </Reveal>
           <Reveal delay={0.05}>
-            <p className="font-display text-[clamp(1.75rem,3.2vw,2.75rem)] leading-[1.15] font-medium tracking-tight">
+            <p className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] leading-[1.2] font-medium tracking-tight">
               {localize(project.summary, lang)}
             </p>
           </Reveal>
         </div>
         <div className="mt-16 grid gap-8 lg:grid-cols-[.55fr_1.45fr]">
-        <div aria-hidden className="hidden lg:block" />
-        <div className="grid gap-4 md:grid-cols-2">
-          {(["challenge", "solution"] as const).map((k, i) => (
-            <Reveal key={k} delay={i * 0.08} className="h-full">
-              <article className="relative h-full border border-border bg-card p-8 md:p-10">
-                <span className={`absolute top-0 left-0 h-1 w-20 ${tone.bg}`} aria-hidden />
-                <p className="font-display text-sm font-semibold text-muted-foreground">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h2 className="mt-6 text-3xl font-semibold tracking-tight">{t(`project.${k}`)}</h2>
-                <p className="mt-4 leading-7 text-muted-foreground">
-                  {localize(project[k], lang)}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+          <div aria-hidden className="hidden lg:block" />
+          <div className="grid gap-4 md:grid-cols-2">
+            {(["challenge", "solution"] as const).map((k, i) => (
+              <Reveal key={k} delay={i * 0.08} className="h-full">
+                <article className="relative h-full border border-border bg-card p-8 md:p-10">
+                  <span className={`absolute top-0 left-0 h-1 w-20 ${tone.bg}`} aria-hidden />
+                  <p className="font-display text-sm font-semibold text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h2 className="mt-6 text-3xl font-semibold tracking-tight">
+                    {t(`project.${k}`)}
+                  </h2>
+                  <p className="mt-4 leading-7 text-muted-foreground">
+                    {localize(project[k], lang)}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -93,10 +95,10 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
             {project.keyFigures.map((k) => (
               <div
                 key={localize(k.label, lang)}
-                className="flex flex-col-reverse bg-charcoal p-6 md:p-10"
+                className="flex flex-col-reverse bg-charcoal p-5 sm:p-6 xl:p-10"
               >
                 <dt className="mt-2 text-xs text-offwhite/60">{localize(k.label, lang)}</dt>
-                <dd className="font-display text-3xl font-semibold tracking-tight md:text-5xl">
+                <dd className="font-display text-[clamp(1.375rem,6.5vw,1.875rem)] font-semibold tracking-tight sm:text-3xl sm:whitespace-nowrap md:text-4xl 2xl:text-5xl">
                   {localize(k.value, lang)}
                 </dd>
               </div>

@@ -14,6 +14,7 @@ import { LocalizedLink } from "@/components/site/LocalizedLink";
 import { NotFoundPage } from "@/components/pages/NotFoundPage";
 import { Button } from "@/components/ui/button";
 import { ConsentProvider } from "@/lib/consent";
+import { GSC_VERIFICATION, gtmHeadScripts, useClickTracking } from "@/lib/analytics";
 import { langFromPath } from "@/i18n/routes";
 import { useT } from "@/i18n/useT";
 import i18n from "@/i18n";
@@ -61,7 +62,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "SRAGROUP" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...(GSC_VERIFICATION
+        ? [{ name: "google-site-verification", content: GSC_VERIFICATION }]
+        : []),
     ],
+    scripts: gtmHeadScripts(),
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -70,8 +75,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap",
       },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "icon", href: `${import.meta.env.BASE_URL}favicon.png`, type: "image/png" },
+      { rel: "apple-touch-icon", href: `${import.meta.env.BASE_URL}apple-touch-icon.png` },
+      { rel: "manifest", href: `${import.meta.env.BASE_URL}site.webmanifest` },
     ],
   }),
   shellComponent: RootShell,
@@ -107,6 +113,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useClickTracking();
 
   return (
     <QueryClientProvider client={queryClient}>

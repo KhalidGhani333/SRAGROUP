@@ -40,7 +40,7 @@ export function HomePage() {
       <h1 className="sr-only">{t("home.srTitle")}</h1>
 
       {/* Split hero: each half grows on hover (desktop), stacked 70vh halves on mobile. */}
-      <section className="relative flex flex-col bg-charcoal md:h-[100svh] md:min-h-[640px] md:flex-row">
+      <section className="relative flex min-h-svh flex-col bg-charcoal md:h-svh md:min-h-[640px] md:flex-row">
         <HeroHalf division="construction" image={images.constructionHero} index="01" />
         <HeroHalf division="solar" image={images.solarHero} index="02" />
         <div
@@ -56,16 +56,16 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-offwhite/10 bg-charcoal py-6 text-offwhite">
+      <section className="border-y border-offwhite/10 bg-charcoal py-4 text-offwhite">
         <Marquee>
           {list<string>("home.marquee").map((item, i) => (
             <span
               key={item}
-              className="flex items-center gap-8 pr-8 font-display text-2xl font-semibold tracking-tight whitespace-nowrap md:text-4xl"
+              className="flex items-center gap-6 pr-6 font-display text-lg font-semibold tracking-tight whitespace-nowrap md:text-2xl"
             >
               {item}
               <span
-                className={`size-2.5 rotate-45 ${i % 2 === 0 ? "bg-construction" : "bg-solar"}`}
+                className={`size-2 rotate-45 ${i % 2 === 0 ? "bg-construction" : "bg-solar"}`}
                 aria-hidden
               />
             </span>
@@ -83,7 +83,7 @@ export function HomePage() {
               as="h2"
               immediate={false}
               text={t("home.intro.title")}
-              className="mt-6 text-[clamp(2.25rem,5vw,4.5rem)] leading-[1] font-semibold tracking-[-0.035em]"
+              className="mt-6 text-[clamp(1.875rem,3.4vw,3rem)] leading-[1.05] font-semibold tracking-[-0.035em]"
             />
             <Reveal delay={0.15}>
               <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">
@@ -106,9 +106,9 @@ export function HomePage() {
           >
             {list<Stat>("home.stats").map((s, i) => (
               <Reveal key={s.label} delay={i * 0.08} className="bg-background">
-                <div className="flex h-full flex-col-reverse justify-end p-6 sm:p-8 md:p-10">
+                <div className="flex h-full flex-col-reverse justify-end p-5 sm:p-8 xl:p-10">
                   <dt className="mt-3 text-sm text-muted-foreground">{s.label}</dt>
-                  <dd className="font-display text-4xl leading-none font-semibold tracking-tight whitespace-nowrap sm:text-5xl xl:text-6xl">
+                  <dd className="font-display text-[clamp(1.75rem,8.5vw,2.25rem)] leading-none font-semibold tracking-tight whitespace-nowrap sm:text-5xl lg:text-[clamp(2.5rem,3.4vw,3.75rem)]">
                     <CountUp value={s.value} decimals={s.decimals} suffix={s.suffix} lang={lang} />
                   </dd>
                 </div>
@@ -141,7 +141,10 @@ export function HomePage() {
               const Icon = whyIcons[i] ?? ShieldCheck;
               const line = i % 2 === 0 ? "bg-construction" : "bg-solar";
               return (
-                <li key={item.title} className="group relative bg-charcoal transition-colors duration-500 hover:bg-slate">
+                <li
+                  key={item.title}
+                  className="group relative bg-charcoal transition-colors duration-500 hover:bg-slate"
+                >
                   <span
                     className={`absolute top-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full ${line}`}
                     aria-hidden
@@ -174,7 +177,10 @@ export function HomePage() {
             <Button asChild variant="outline" className="group h-12 rounded-none px-6">
               <LocalizedLink page="projects">
                 {t("home.featured.cta")}
-                <ArrowRight className="transition-transform group-hover:translate-x-1" aria-hidden />
+                <ArrowRight
+                  className="transition-transform group-hover:translate-x-1"
+                  aria-hidden
+                />
               </LocalizedLink>
             </Button>
           </Reveal>
@@ -184,7 +190,10 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-card" aria-label={t("home.certifications.label")}>
+      <section
+        className="border-y border-border bg-card"
+        aria-label={t("home.certifications.label")}
+      >
         <div className="site-container grid lg:grid-cols-[.8fr_2fr]">
           <div className="flex items-center border-b border-border py-8 lg:border-r lg:border-b-0 lg:pr-10">
             <Eyebrow className="text-muted-foreground">{t("home.certifications.label")}</Eyebrow>
@@ -226,7 +235,7 @@ function HeroHalf({
 }) {
   const { t } = useT();
   return (
-    <div className="group relative isolate flex min-h-[70vh] flex-1 overflow-hidden transition-[flex-grow] duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:min-h-0 md:hover:flex-[1.35]">
+    <div className="group relative isolate flex min-h-[50svh] flex-1 overflow-hidden transition-[flex-grow] duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:min-h-0 md:hover:flex-[1.35]">
       <img
         src={image}
         alt=""
@@ -237,9 +246,11 @@ function HeroHalf({
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-charcoal via-charcoal/45 to-charcoal/30 transition-opacity duration-700 group-hover:opacity-80" />
       <div className="grid-lines absolute inset-0 -z-10 text-offwhite opacity-50" aria-hidden />
-      <div className="flex w-full flex-col justify-between p-6 pt-28 text-offwhite sm:p-10 sm:pt-32 md:p-14 md:pt-36">
+      <div
+        className={`flex w-full flex-col justify-between gap-4 p-6 text-offwhite sm:p-10 md:p-14 md:pt-36 ${division === "construction" ? "pt-24 sm:pt-28" : "pt-6 sm:pt-10"}`}
+      >
         <Reveal immediate delay={division === "construction" ? 0.1 : 0.25}>
-          <p className="text-outline font-display text-7xl leading-none font-bold text-offwhite md:text-8xl">
+          <p className="text-outline font-display text-5xl leading-none font-bold text-offwhite sm:text-7xl md:text-8xl">
             {index}
           </p>
         </Reveal>
@@ -253,13 +264,16 @@ function HeroHalf({
             as="h2"
             text={t(`home.hero.${division}.title`)}
             delay={division === "construction" ? 0.3 : 0.45}
-            className="mt-5 text-[clamp(2.5rem,4.8vw,4.75rem)] leading-[.98] font-semibold tracking-[-0.035em]"
+            className="mt-4 text-[clamp(1.75rem,7vw,2.25rem)] leading-[1.05] font-semibold tracking-[-0.035em] md:mt-5 md:text-[clamp(2.125rem,3.6vw,3.5rem)]"
           />
           <Reveal immediate delay={division === "construction" ? 0.6 : 0.75}>
-            <p className="mt-5 max-w-md text-base leading-7 text-offwhite/75">
+            <p className="mt-3 hidden max-w-md text-sm leading-6 text-offwhite/75 min-[380px]:block sm:text-base sm:leading-7 md:mt-5">
               {t(`home.hero.${division}.text`)}
             </p>
-            <Button asChild className={`group/btn mt-8 h-12 rounded-none px-6 ${accent[division].button}`}>
+            <Button
+              asChild
+              className={`group/btn mt-5 h-11 rounded-none px-5 md:mt-8 md:h-12 md:px-6 ${accent[division].button}`}
+            >
               <LocalizedLink page={division}>
                 {t("common.discoverDivision")}
                 <ArrowRight
@@ -291,7 +305,7 @@ function DivisionPanel({
   const { t, list } = useT();
   const services = list<Card>(`${division}.services.items`).slice(0, 4);
   return (
-    <article className="group relative isolate flex min-h-[680px] overflow-hidden p-8 text-offwhite md:p-14">
+    <article className="group relative isolate flex min-h-[680px] overflow-hidden p-6 text-offwhite sm:p-8 lg:p-10 xl:p-14">
       <img
         src={image}
         alt=""
@@ -313,13 +327,13 @@ function DivisionPanel({
           </span>
         </div>
         <Reveal>
-          <h2 className="text-5xl font-semibold tracking-[-0.035em] md:text-7xl">
+          <h2 className="text-[clamp(1.875rem,8vw,2.5rem)] font-semibold tracking-[-0.035em] [overflow-wrap:anywhere] md:text-[clamp(1.875rem,3.4vw,3.25rem)]">
             {t(`home.divisions.${division}.title`)}
           </h2>
           <p className="mt-5 max-w-md text-lg leading-8 text-offwhite/75">
             {t(`home.divisions.${division}.text`)}
           </p>
-          <p className="mt-10 text-[.65rem] font-semibold tracking-[.2em] text-offwhite/50 uppercase">
+          <p className="mt-10 text-[.7rem] font-semibold tracking-[.2em] text-offwhite/50 uppercase">
             {t("home.divisions.services")}
           </p>
           <ul className="mt-4 grid gap-x-6 sm:grid-cols-2">

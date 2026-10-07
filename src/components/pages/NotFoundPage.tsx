@@ -16,7 +16,7 @@ export function NotFoundPage() {
         >
           404
         </p>
-        <h1 className="-mt-4 max-w-3xl text-4xl font-semibold leading-tight sm:text-6xl">
+        <h1 className="-mt-4 max-w-3xl text-3xl font-semibold leading-tight sm:text-5xl">
           {t("notFound.title")}
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-8 text-offwhite/70">{t("notFound.text")}</p>

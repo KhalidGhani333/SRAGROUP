@@ -61,7 +61,7 @@ export function SolarPage() {
                       <span className="absolute top-8 left-8 grid size-14 place-items-center bg-solar text-charcoal md:top-10 md:left-10">
                         <Icon className="size-6" strokeWidth={1.5} aria-hidden />
                       </span>
-                      <h3 className="max-w-md text-3xl font-semibold tracking-tight md:text-4xl">
+                      <h3 className="max-w-md text-2xl font-semibold tracking-tight md:text-3xl">
                         {item.title}
                       </h3>
                       <p className="mt-4 max-w-md leading-7 text-offwhite/75">{item.text}</p>
@@ -103,9 +103,9 @@ export function SolarPage() {
           />
           <dl className="mt-14 grid grid-cols-2 gap-px bg-offwhite/10 lg:grid-cols-4">
             {list<Stat>("solar.capabilities.stats").map((s) => (
-              <div key={s.label} className="flex flex-col-reverse bg-charcoal p-7 md:p-10">
+              <div key={s.label} className="flex flex-col-reverse bg-charcoal p-5 sm:p-7 xl:p-10">
                 <dt className="mt-2 text-xs text-offwhite/60">{s.label}</dt>
-                <dd className="font-display text-4xl font-semibold tracking-tight text-solar md:text-6xl">
+                <dd className="font-display text-[clamp(1.75rem,8.5vw,2.25rem)] font-semibold tracking-tight whitespace-nowrap text-solar sm:text-5xl lg:text-[clamp(2.5rem,4vw,3.75rem)]">
                   {s.value}
                 </dd>
               </div>

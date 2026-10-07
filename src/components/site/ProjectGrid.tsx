@@ -37,7 +37,7 @@ export function ProjectCard({
       <div className="flex h-full flex-col justify-between p-6 md:p-8">
         <div className="flex items-start justify-between gap-4">
           <span
-            className={`px-3 py-1.5 text-[.62rem] font-bold tracking-[.16em] text-charcoal uppercase ${chip}`}
+            className={`px-3 py-1.5 text-[.68rem] font-bold tracking-[.16em] text-charcoal uppercase ${chip}`}
           >
             {t(`common.divisions.${project.division}`)}
           </span>
@@ -50,7 +50,7 @@ export function ProjectCard({
             {project.location} · {project.year}
           </p>
           <h3
-            className={`mt-3 font-semibold tracking-tight ${size === "large" ? "text-3xl md:text-5xl" : "text-2xl"}`}
+            className={`mt-3 font-semibold tracking-tight ${size === "large" ? "text-2xl md:text-4xl" : "text-2xl"}`}
           >
             {title}
           </h3>
@@ -134,7 +134,7 @@ export function FilterableProjectGrid() {
               >
                 {t(`projects.filters.${f}`)}
                 <span
-                  className={`grid min-w-6 place-items-center px-1.5 py-0.5 text-[.65rem] tabular-nums ${pressed ? "bg-black/15" : "bg-muted"}`}
+                  className={`grid min-w-6 place-items-center px-1.5 py-0.5 text-[.7rem] tabular-nums ${pressed ? "bg-black/15" : "bg-muted"}`}
                 >
                   {getProjects(f === "all" ? undefined : f).length}
                 </span>

@@ -7,7 +7,8 @@ import { useT } from "@/i18n/useT";
 function tileClass(i: number, total: number) {
   if (i === 0) return "sm:col-span-2 lg:row-span-2";
   const rest = total - 3;
-  if (i === total - 1 && i >= 3 && rest % 3 === 1) return "sm:col-span-2 lg:col-span-3 [&_img]:lg:aspect-[3/1]";
+  if (i === total - 1 && i >= 3 && rest % 3 === 1)
+    return "sm:col-span-2 lg:col-span-3 [&_img]:lg:aspect-[3/1]";
   if (i >= total - 2 && i >= 3 && rest % 3 === 2) return "lg:[&:last-child]:col-span-2";
   return "";
 }
