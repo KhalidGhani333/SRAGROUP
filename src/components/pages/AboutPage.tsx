@@ -6,7 +6,6 @@ import { CTA, Eyebrow, PageHero, SectionIntro, images } from "@/components/site/
 import { useT } from "@/i18n/useT";
 
 type Milestone = { year: string; title: string; text: string };
-type Cert = { code: string; name: string; text: string };
 type Leader = { name: string; role: string };
 
 const valueIcons: LucideIcon[] = [Target, ShieldCheck, Award, HardHat];
@@ -125,35 +124,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="site-container py-28 md:py-36">
-        <SectionIntro
-          eyebrow={t("about.certifications.eyebrow")}
-          title={t("about.certifications.title")}
-          text={t("about.certifications.text")}
-        />
-        <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {list<Cert>("about.certifications.items").map((c, i) => (
-            <li key={c.code}>
-              <Reveal delay={i * 0.08} className="h-full">
-                <article className="group relative flex h-full flex-col overflow-hidden border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1 hover:border-foreground hover:shadow-[0_24px_60px_-30px_rgba(15,17,21,.35)] md:p-8">
-                  <div className="flex items-center justify-between">
-                    <span className="grid size-14 place-items-center rounded-full border border-border transition-colors duration-500 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background">
-                      <Award className="size-6" strokeWidth={1.5} aria-hidden />
-                    </span>
-                    <span className="text-[.68rem] font-bold tracking-[.18em] text-muted-foreground uppercase">
-                      {t("about.certifications.eyebrow")}
-                    </span>
-                  </div>
-                  <p className="mt-12 font-display text-4xl font-bold tracking-tight">{c.code}</p>
-                  <h3 className="mt-3 font-semibold">{c.name}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{c.text}</p>
-                </article>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <section className="border-y border-border bg-card py-28 md:py-36">
         <div className="site-container">
           <SectionIntro eyebrow={t("about.standards.eyebrow")} title={t("about.standards.title")} />
@@ -216,7 +186,7 @@ export function AboutPage() {
         />
         <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {list<Leader>("about.leadership.items").map((p, i) => (
-            <li key={p.role}>
+            <li key={p.name}>
               <Reveal delay={i * 0.08}>
                 <article className="group">
                   <div className="noise relative grid aspect-[4/5] place-items-center overflow-hidden bg-gradient-to-br from-slate to-charcoal text-offwhite">

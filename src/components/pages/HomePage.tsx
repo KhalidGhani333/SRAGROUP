@@ -1,7 +1,6 @@
 import {
   ArrowRight,
   ArrowUpRight,
-  Award,
   BadgeCheck,
   CalendarCheck,
   Check,
@@ -22,7 +21,6 @@ import { useT } from "@/i18n/useT";
 
 type Stat = { value: number; decimals: number; suffix: string; label: string };
 type Card = { title: string; text: string };
-type Cert = { code: string; name: string };
 
 const whyIcons: LucideIcon[] = [
   ShieldCheck,
@@ -187,35 +185,6 @@ export function HomePage() {
         </div>
         <div className="mt-14">
           <ProjectList projects={getFeaturedProjects(3)} />
-        </div>
-      </section>
-
-      <section
-        className="border-y border-border bg-card"
-        aria-label={t("home.certifications.label")}
-      >
-        <div className="site-container grid lg:grid-cols-[.8fr_2fr]">
-          <div className="flex items-center border-b border-border py-8 lg:border-r lg:border-b-0 lg:pr-10">
-            <Eyebrow className="text-muted-foreground">{t("home.certifications.label")}</Eyebrow>
-          </div>
-          <ul className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
-            {list<Cert>("home.certifications.items").map((c) => (
-              <li
-                key={c.code}
-                className="group flex items-center gap-4 bg-card px-5 py-8 transition-colors hover:bg-background md:px-8"
-              >
-                <span className="grid size-11 shrink-0 place-items-center rounded-full border border-border transition-colors group-hover:border-foreground">
-                  <Award className="size-5" strokeWidth={1.5} aria-hidden />
-                </span>
-                <span>
-                  <span className="block font-display text-lg leading-tight font-semibold">
-                    {c.code}
-                  </span>
-                  <span className="mt-0.5 block text-xs text-muted-foreground">{c.name}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

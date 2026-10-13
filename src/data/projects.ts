@@ -1,7 +1,5 @@
 import constructionHero from "@/assets/construction-hero.webp";
 import projectConstruction from "@/assets/project-construction.webp";
-import projectSolar from "@/assets/project-solar.webp";
-import solarHero from "@/assets/solar-hero.webp";
 import cBlueprint from "@/assets/c-blueprint.webp";
 import cCranes from "@/assets/c-cranes.webp";
 import cEngineering from "@/assets/c-engineering.webp";
@@ -14,14 +12,17 @@ import cWarehouse from "@/assets/c-warehouse.webp";
 import cWarehouseInterior from "@/assets/c-warehouse-interior.webp";
 import cWorkers from "@/assets/c-workers.webp";
 import sEv from "@/assets/s-ev.webp";
-import sField from "@/assets/s-field.webp";
 import sHardhat from "@/assets/s-hardhat.webp";
 import sInstall from "@/assets/s-install.webp";
-import sPark from "@/assets/s-park.webp";
 import sRoofIndustrial from "@/assets/s-roof-industrial.webp";
 import sRoofRows from "@/assets/s-roof-rows.webp";
-import sRows from "@/assets/s-rows.webp";
 import sStorage from "@/assets/s-storage.webp";
+import agrivoltaicLift from "@/assets/project images/agrivoltaic-installation-scissor-lift.jpeg";
+import agrivoltaicUnderside from "@/assets/project images/agrivoltaic-structure-underside.jpeg";
+import pileDriverSky from "@/assets/project images/pile-driver-blue-sky.jpeg";
+import rooftopCabling from "@/assets/project images/rooftop-pv-cable-trays.jpeg";
+import mountingStructures from "@/assets/project images/solar-mounting-structures-installation.jpeg";
+import parkHills from "@/assets/project images/solar-park-aerial-hills.jpeg";
 import type { Division, Lang } from "@/i18n/routes";
 
 export type { Division };
@@ -126,8 +127,8 @@ const projects: Project[] = [
       },
       { label: { it: "Moduli", en: "Modules" }, value: { it: "32.300", en: "32,300" } },
     ],
-    coverImage: sField,
-    gallery: [sRows, sPark, sInstall],
+    coverImage: parkHills,
+    gallery: [mountingStructures, pileDriverSky],
   },
   {
     id: "c-002",
@@ -197,8 +198,8 @@ const projects: Project[] = [
         value: { it: "21.000 m²", en: "21,000 m²" },
       },
     ],
-    coverImage: sRoofIndustrial,
-    gallery: [sRoofRows, sHardhat, projectSolar],
+    coverImage: rooftopCabling,
+    gallery: [sRoofIndustrial, sRoofRows, sHardhat],
   },
   {
     id: "c-003",
@@ -261,8 +262,8 @@ const projects: Project[] = [
         value: { it: "2,6 m", en: "2.6 m" },
       },
     ],
-    coverImage: solarHero,
-    gallery: [sPark, sRows, sField],
+    coverImage: agrivoltaicLift,
+    gallery: [agrivoltaicUnderside],
   },
   {
     id: "c-004",
@@ -337,16 +338,4 @@ export function getProjects(division?: Division): Project[] {
 
 export function getFeaturedProjects(limit = 3): Project[] {
   return projects.filter((p) => p.featured).slice(0, limit);
-}
-
-export function getProjectBySlug(slug: string): Project | undefined {
-  return projects.find((p) => p.slug === slug);
-}
-
-/** Previous and next project in list order, wrapping around. */
-export function getAdjacentProjects(slug: string): { prev: Project; next: Project } | undefined {
-  const index = projects.findIndex((p) => p.slug === slug);
-  if (index === -1) return undefined;
-  const at = (i: number) => projects[(i + projects.length) % projects.length] as Project;
-  return { prev: at(index - 1), next: at(index + 1) };
 }

@@ -1,11 +1,9 @@
 import { useNavigate, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import { getProjects, localize, type Division, type Project } from "@/data/projects";
 import { divisionParam, parseDivisionParam } from "@/i18n/routes";
 import { useT } from "@/i18n/useT";
 import { accent } from "./accent";
-import { LocalizedLink } from "./LocalizedLink";
 
 export function ProjectCard({
   project,
@@ -20,9 +18,8 @@ export function ProjectCard({
   const title = localize(project.title, lang);
   const chip = project.division === "construction" ? "bg-construction" : "bg-solar";
   return (
-    <LocalizedLink
-      slug={project.slug}
-      className={`group relative isolate block h-full overflow-hidden bg-charcoal text-offwhite focus-visible:outline-offset-4 ${size === "large" ? "min-h-[28rem] lg:min-h-full" : "aspect-[4/5] sm:aspect-[4/4.6]"}`}
+    <article
+      className={`group relative isolate block h-full overflow-hidden bg-charcoal text-offwhite ${size === "large" ? "min-h-[28rem] lg:min-h-full" : "aspect-[4/5] sm:aspect-[4/4.6]"}`}
     >
       <img
         src={project.coverImage}
@@ -41,9 +38,6 @@ export function ProjectCard({
           >
             {t(`common.divisions.${project.division}`)}
           </span>
-          <span className="grid size-12 place-items-center rounded-full border border-offwhite/30 backdrop-blur-sm transition-all duration-500 group-hover:rotate-45 group-hover:border-transparent group-hover:bg-offwhite group-hover:text-charcoal">
-            <ArrowUpRight className="size-5" aria-hidden />
-          </span>
         </div>
         <div>
           <p className="text-[.68rem] font-semibold tracking-[.18em] text-offwhite/65 uppercase">
@@ -54,11 +48,8 @@ export function ProjectCard({
           >
             {title}
           </h3>
-          <div className="mt-5 flex items-center justify-between gap-4 border-t border-offwhite/15 pt-4">
+          <div className="mt-5 border-t border-offwhite/15 pt-4">
             <p className="font-display text-lg font-semibold">{localize(project.metric, lang)}</p>
-            <p className="translate-y-2 text-xs font-semibold tracking-[.14em] uppercase opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              {t("common.viewProject")}
-            </p>
           </div>
         </div>
       </div>
@@ -66,7 +57,7 @@ export function ProjectCard({
         className={`absolute bottom-0 left-0 h-1 w-0 transition-all duration-700 group-hover:w-full ${chip}`}
         aria-hidden
       />
-    </LocalizedLink>
+    </article>
   );
 }
 

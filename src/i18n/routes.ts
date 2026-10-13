@@ -27,10 +27,6 @@ export function localizedPath(page: PageKey, lang: Lang): string {
   return routeMap[page][lang];
 }
 
-export function projectPath(slug: string, lang: Lang): string {
-  return `${routeMap.projects[lang]}/${slug}`;
-}
-
 /** Division values as they appear in ?division= query strings, per language. */
 export type Division = "construction" | "solar";
 export type LeadDivision = Division | "general";
@@ -64,10 +60,6 @@ export function alternatePath(pathname: string, target: Lang): string {
   const current = langFromPath(path);
   for (const page of Object.keys(routeMap) as PageKey[]) {
     if (routeMap[page][current] === path) return routeMap[page][target];
-  }
-  const projectsBase = `${routeMap.projects[current]}/`;
-  if (path.startsWith(projectsBase)) {
-    return projectPath(path.slice(projectsBase.length), target);
   }
   return routeMap.home[target];
 }

@@ -7,26 +7,13 @@ const address = "Via Fabio Filzi 27, 20124 Milano (MI)";
 export const company = {
   legalName: "SRAGROUP S.r.l.",
   vatNumber: "12345678903",
-  /** Registro Imprese / REA number and share capital: mandatory on Italian company websites. */
+  /** Registro Imprese / REA number. */
   rea: "MI-2045871",
-  shareCapitalEur: 100000,
   address,
   city: "Milano",
   /** What the Contact page map searches for: the registered address unless set otherwise. */
   mapQuery: address,
   privacyEmail: "info@sragroup.it",
-};
-
-/**
- * Public profiles shown in the footer and given to search engines (JSON-LD sameAs).
- * Leave a value empty to hide it.
- */
-export const socialLinks = {
-  linkedin: "",
-  googleBusiness: "",
-  instagram: "",
-  facebook: "",
-  youtube: "",
 };
 
 export const departments: Record<LeadDivision, { email: string; phone: string }> = {
@@ -36,3 +23,17 @@ export const departments: Record<LeadDivision, { email: string; phone: string }>
 };
 
 export const telHref = (phone: string) => `tel:${phone.replace(/\s+/g, "")}`;
+
+/**
+ * Public profiles shown as icons in the footer and given to search engines (JSON-LD sameAs).
+ * Fill in the client's profile URLs; an empty value still shows the icon, without a link.
+ */
+export const socialLinks = {
+  whatsapp: `https://wa.me/${departments.general.phone.replace(/\D/g, "")}`,
+  facebook: "",
+  instagram: "",
+  tiktok: "",
+};
+
+/** Credit shown in the footer bottom bar. */
+export const siteCredit = "Abbad Ahmed Khan";

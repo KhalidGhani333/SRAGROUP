@@ -6,7 +6,7 @@
     },
     "about": {
       "title": "Chi Siamo - SRAGROUP",
-      "description": "Storia, missione, certificazioni ISO e SOA, politica HSE e leadership di SRAGROUP, gruppo italiano attivo nelle costruzioni e nel fotovoltaico."
+      "description": "Storia, missione, politica HSE e leadership di SRAGROUP, gruppo italiano attivo nelle costruzioni e nel fotovoltaico."
     },
     "construction": {
       "title": "Costruzioni industriali, commerciali e residenziali - SRAGROUP",
@@ -19,9 +19,6 @@
     "projects": {
       "title": "Progetti - SRAGROUP",
       "description": "Una selezione di cantieri e impianti realizzati da SRAGROUP: poli logistici, uffici, residenze, coperture fotovoltaiche e parchi solari."
-    },
-    "project": {
-      "title": "{{name}} - Progetti SRAGROUP"
     },
     "contact": {
       "title": "Contatti e preventivi - SRAGROUP",
@@ -44,7 +41,6 @@
     "requestQuote": "Richiedi un preventivo",
     "discoverDivision": "Scopri la divisione",
     "learnMore": "Approfondisci",
-    "viewProject": "Vedi il progetto",
     "viewAllProjects": "Tutti i progetti",
     "breadcrumb": "Percorso di navigazione",
     "home": "Home",
@@ -81,7 +77,6 @@
       "construction": "Divisione Costruzioni",
       "solar": "Divisione Fotovoltaico"
     },
-    "vat": "P.IVA",
     "rights": "Tutti i diritti riservati.",
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy",
@@ -89,7 +84,7 @@
     "ctaEyebrow": "Nuovo progetto",
     "ctaTitle": "Avete un progetto in mente? Costruiamolo insieme.",
     "follow": "Seguici",
-    "shareCapital": "Cap. soc. {{amount}} i.v."
+    "createdBy": "Sito creato da:"
   },
   "home": {
     "srTitle": "SRAGROUP - Costruzioni e Fotovoltaico",
@@ -153,15 +148,15 @@
     "why": {
       "eyebrow": "Perché SRAGROUP",
       "title": "Sei ragioni per affidarci il vostro prossimo progetto.",
-      "text": "Lavoriamo con un metodo industriale: processi certificati, responsabilità chiare e un unico referente dall'idea alla consegna.",
+      "text": "Lavoriamo con un metodo industriale: processi strutturati, responsabilità chiare e un unico referente dall'idea alla consegna.",
       "items": [
         {
           "title": "Sicurezza prima di tutto",
-          "text": "Sistema di gestione ISO 45001, formazione continua e audit di cantiere settimanali. Obiettivo: zero infortuni."
+          "text": "Sistema di gestione della sicurezza strutturato, formazione continua e audit di cantiere settimanali. Obiettivo: zero infortuni."
         },
         {
-          "title": "Qualità certificata",
-          "text": "Processi conformi a ISO 9001 e attestazione SOA per opere pubbliche, con controlli documentati a ogni fase."
+          "title": "Qualità garantita",
+          "text": "Processi di qualità rigorosi, con controlli documentati a ogni fase, dall'offerta alla consegna finale."
         },
         {
           "title": "Chiavi in mano",
@@ -177,7 +172,7 @@
         },
         {
           "title": "Sostenibilità concreta",
-          "text": "Sistema ambientale ISO 14001, materiali a basso impatto ed energia rinnovabile integrata nei nostri progetti."
+          "text": "Attenzione all'ambiente in ogni cantiere, materiali a basso impatto ed energia rinnovabile integrata nei nostri progetti."
         }
       ],
       "badge": "Il metodo SRAGROUP"
@@ -186,27 +181,6 @@
       "eyebrow": "Selezione lavori",
       "title": "Progetti che misurano la nostra competenza.",
       "cta": "Tutti i progetti"
-    },
-    "certifications": {
-      "label": "Certificazioni e attestazioni",
-      "items": [
-        {
-          "code": "ISO 9001",
-          "name": "Qualità"
-        },
-        {
-          "code": "ISO 14001",
-          "name": "Ambiente"
-        },
-        {
-          "code": "ISO 45001",
-          "name": "Salute e sicurezza"
-        },
-        {
-          "code": "SOA",
-          "name": "Opere pubbliche"
-        }
-      ]
     },
     "cta": "Parliamo del vostro prossimo progetto.",
     "marquee": [
@@ -271,33 +245,6 @@
       "vision": "Essere il partner di riferimento per le imprese italiane che vogliono crescere in spazi efficienti e alimentati da energia pulita.",
       "values": ["Precisione", "Sicurezza", "Qualità", "Responsabilità"]
     },
-    "certifications": {
-      "eyebrow": "Certificazioni",
-      "title": "Standard verificati da enti terzi.",
-      "text": "I nostri sistemi di gestione sono certificati e sottoposti ad audit periodici da organismi accreditati.",
-      "items": [
-        {
-          "code": "ISO 9001",
-          "name": "Sistema di gestione qualità",
-          "text": "Processi documentati e misurabili, dalla gestione dell'offerta al collaudo finale."
-        },
-        {
-          "code": "ISO 14001",
-          "name": "Sistema di gestione ambientale",
-          "text": "Controllo degli impatti ambientali di cantiere: rifiuti, emissioni, rumore e consumo di risorse."
-        },
-        {
-          "code": "ISO 45001",
-          "name": "Salute e sicurezza sul lavoro",
-          "text": "Valutazione dei rischi, formazione e sorveglianza per la tutela di lavoratori e subappaltatori."
-        },
-        {
-          "code": "SOA",
-          "name": "Attestazione per opere pubbliche",
-          "text": "Qualificazione per partecipare agli appalti pubblici nelle categorie edili e impiantistiche."
-        }
-      ]
-    },
     "standards": {
       "eyebrow": "Sicurezza e qualità",
       "title": "Qualità e sicurezza non sono dichiarazioni: sono processi.",
@@ -330,20 +277,20 @@
       "text": "Un team di direzione con esperienza diretta di cantiere e di sviluppo energetico.",
       "items": [
         {
-          "name": "Roberto Sala",
-          "role": "Amministratore Delegato"
+          "name": "Abbas Aryan",
+          "role": "Responsabile Operativo"
         },
         {
-          "name": "Elena Marchetti",
-          "role": "Direttrice Divisione Costruzioni"
+          "name": "Khan Rafaqat",
+          "role": "Socio"
         },
         {
-          "name": "Davide Colombo",
-          "role": "Direttore Divisione Fotovoltaico"
+          "name": "Khan Sadaqat",
+          "role": "Socio"
         },
         {
-          "name": "Chiara Bellini",
-          "role": "Responsabile HSE e Qualità"
+          "name": "Khalid Mohsin",
+          "role": "Project Manager"
         }
       ]
     },
@@ -446,6 +393,7 @@
       "text": "Sviluppiamo sistemi fotovoltaici affidabili e performanti, costruiti intorno ai consumi e agli obiettivi della vostra impresa."
     },
     "services": {
+      "collageLabel": "SRA GROUP al lavoro sui cantieri fotovoltaici",
       "eyebrow": "Servizi",
       "title": "Dalla copertura industriale al parco solare.",
       "items": [
@@ -481,34 +429,16 @@
           "label": "installati"
         },
         {
-          "value": "99,2%",
-          "label": "disponibilità media"
+          "value": "100+",
+          "label": "dipendenti"
         },
         {
           "value": "24/7",
           "label": "monitoraggio"
         },
         {
-          "value": "25 anni",
-          "label": "vita utile garantita"
-        }
-      ],
-      "items": [
-        {
-          "title": "Ingegneria",
-          "text": "Progettazione elettrica e strutturale, simulazioni di producibilità e scelta dei componenti tier 1."
-        },
-        {
-          "title": "Autorizzazioni",
-          "text": "PAS, VIA, autorizzazione unica e rapporti con enti e Soprintendenze."
-        },
-        {
-          "title": "Connessione alla rete",
-          "text": "Pratiche con il distributore, cabine di consegna e sottostazioni MT/AT."
-        },
-        {
-          "title": "Monitoraggio",
-          "text": "Piattaforma di telecontrollo, allarmi in tempo reale e report di performance mensili."
+          "value": "2",
+          "label": "battipalo di proprietà"
         }
       ]
     },
@@ -542,6 +472,20 @@
         }
       ]
     },
+    "team": {
+      "eyebrow": "Il nostro team",
+      "title": "Il team Fotovoltaico.",
+      "members": [
+        {
+          "name": "Khalid Mohsin",
+          "role": "Project Manager"
+        },
+        {
+          "name": "Abbas Aryan",
+          "role": "Responsabile Operativo"
+        }
+      ]
+    },
     "projects": {
       "eyebrow": "Progetti Fotovoltaico",
       "title": "Impianti in esercizio in tutta Italia."
@@ -567,24 +511,6 @@
     "count_one": "{{count}} progetto",
     "count_other": "{{count}} progetti",
     "carouselLabel": "Progetti correlati"
-  },
-  "project": {
-    "overview": "Panoramica",
-    "challenge": "La sfida",
-    "solution": "La soluzione",
-    "keyFigures": "Dati chiave",
-    "gallery": "Galleria",
-    "location": "Luogo",
-    "year": "Anno",
-    "division": "Divisione",
-    "metric": "Dimensione",
-    "prev": "Progetto precedente",
-    "next": "Progetto successivo",
-    "openImage": "Apri immagine {{index}} di {{total}}",
-    "imageAlt": "{{name}}, immagine {{index}}",
-    "lightboxLabel": "Galleria immagini: {{name}}",
-    "counter": "{{index}} / {{total}}",
-    "cta": "Avete un progetto simile? Parliamone."
   },
   "contact": {
     "hero": {

@@ -1,7 +1,6 @@
 import i18n from "./index";
-import { projectPath, routeMap, type Lang, type PageKey } from "./routes";
+import { routeMap, type Lang, type PageKey } from "./routes";
 import { company, departments, socialLinks } from "@/data/company";
-import { getProjectBySlug, localize } from "@/data/projects";
 
 /** Production origin used for canonical and hreflang URLs. Update when the domain is final. */
 export const SITE_URL = "https://www.sragroup.it";
@@ -105,7 +104,7 @@ function organizationData(lang: Lang) {
       addressCountry: "IT",
     },
     areaServed: { "@type": "Country", name: "Italia" },
-    sameAs: Object.values(socialLinks).filter(Boolean),
+    sameAs: [socialLinks.facebook, socialLinks.instagram, socialLinks.tiktok].filter(Boolean),
     knowsAbout: [t("nav.construction"), t("nav.solar")],
     contactPoint: (Object.keys(departments) as (keyof typeof departments)[]).map((d) => ({
       "@type": "ContactPoint",
@@ -136,26 +135,5 @@ export function pageHead(page: PageKey, lang: Lang) {
     crumbs:
       page === "home" ? [home] : [home, { name: pageName(page, lang), path: routeMap[page][lang] }],
     structuredData: page === "home" ? [organizationData(lang)] : [],
-  });
-}
-
-export function projectHead(slug: string, lang: Lang) {
-  const t = i18n.getFixedT(lang);
-  const project = getProjectBySlug(slug);
-  if (!project) {
-    return { meta: [{ title: t("meta.notFound.title") }, { name: "robots", content: "noindex" }] };
-  }
-  const name = localize(project.title, lang);
-  return buildHead({
-    title: t("meta.project.title", { name }),
-    description: localize(project.summary, lang),
-    lang,
-    paths: { it: projectPath(slug, "it"), en: projectPath(slug, "en") },
-    image: project.coverImage,
-    crumbs: [
-      { name: pageName("home", lang), path: routeMap.home[lang] },
-      { name: pageName("projects", lang), path: routeMap.projects[lang] },
-      { name, path: projectPath(slug, lang) },
-    ],
   });
 }
