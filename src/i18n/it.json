@@ -115,7 +115,7 @@
         "label": "progetti completati"
       },
       {
-        "value": 85,
+        "value": 135,
         "decimals": 0,
         "suffix": " MWp",
         "label": "potenza installata"
@@ -232,7 +232,7 @@
         {
           "year": "2026",
           "title": "Oltre 180 progetti completati",
-          "text": "Due divisioni, un unico gruppo e più di 85 MWp installati in Italia."
+          "text": "Due divisioni, un unico gruppo e più di 135 MWp installati in Italia."
         }
       ]
     },
@@ -384,6 +384,12 @@
       "eyebrow": "Progetti Costruzioni",
       "title": "Opere realizzate per i nostri clienti."
     },
+    "team": {
+      "eyebrow": "Il nostro team",
+      "title": "Il team Costruzioni.",
+      "empty": "Il nostro team sarà presentato a breve.",
+      "members": []
+    },
     "cta": "Il vostro progetto merita basi solide."
   },
   "solar": {
@@ -397,10 +403,6 @@
       "eyebrow": "Servizi",
       "title": "Dalla copertura industriale al parco solare.",
       "items": [
-        {
-          "title": "Fotovoltaico commerciale e industriale",
-          "text": "Impianti in autoconsumo su coperture e pensiline, dimensionati sui profili di carico reali."
-        },
         {
           "title": "Sviluppo parchi solari",
           "text": "Ricerca terreni, iter autorizzativo, progettazione e costruzione di impianti utility-scale e agrivoltaici."
@@ -425,7 +427,7 @@
       "text": "Gestiamo internamente tutte le fasi tecniche che determinano tempi, costi e rendimento dell'impianto.",
       "stats": [
         {
-          "value": "85 MWp",
+          "value": "135 MWp",
           "label": "installati"
         },
         {
@@ -437,7 +439,7 @@
           "label": "monitoraggio"
         },
         {
-          "value": "2",
+          "value": "3",
           "label": "battipalo di proprietà"
         }
       ]
@@ -477,12 +479,32 @@
       "title": "Il team Fotovoltaico.",
       "members": [
         {
+          "name": "Abbas Aryan",
+          "role": "Amministratore"
+        },
+        {
           "name": "Khalid Mohsin",
           "role": "Project Manager"
         },
         {
-          "name": "Abbas Aryan",
-          "role": "Responsabile Operativo"
+          "name": "Khan Rehmat",
+          "role": "Project Manager"
+        },
+        {
+          "name": "Hussain Sadaqat",
+          "role": "Site Manager"
+        },
+        {
+          "name": "Azhar Jahanzalb",
+          "role": "Site Manager"
+        },
+        {
+          "name": "Hayat Khizar",
+          "role": "Site Manager"
+        },
+        {
+          "name": "Ali Zeeshan",
+          "role": "Site Manager"
         }
       ]
     },

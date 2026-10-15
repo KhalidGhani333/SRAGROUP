@@ -15,6 +15,7 @@ import cResidential from "@/assets/c-residential.webp";
 import cWarehouse from "@/assets/c-warehouse.webp";
 import { Reveal } from "@/components/site/Motion";
 import { ProjectCarousel } from "@/components/site/ProjectCarousel";
+import { TeamSection, type TeamMember } from "@/components/site/TeamSection";
 import { CTA, NumberedSteps, PageHero, SectionIntro, images } from "@/components/site/Site";
 import { useT } from "@/i18n/useT";
 
@@ -141,6 +142,14 @@ export function ConstructionPage() {
           title={t("construction.projects.title")}
         />
       </div>
+
+      <TeamSection
+        division="construction"
+        eyebrow={t("construction.team.eyebrow")}
+        title={t("construction.team.title")}
+        members={list<TeamMember>("construction.team.members")}
+        emptyText={t("construction.team.empty")}
+      />
 
       <CTA title={t("construction.cta")} division="construction" />
     </>

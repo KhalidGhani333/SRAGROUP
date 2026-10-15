@@ -23,6 +23,8 @@ import pileDriverSky from "@/assets/project images/pile-driver-blue-sky.jpeg";
 import rooftopCabling from "@/assets/project images/rooftop-pv-cable-trays.jpeg";
 import mountingStructures from "@/assets/project images/solar-mounting-structures-installation.jpeg";
 import parkHills from "@/assets/project images/solar-park-aerial-hills.jpeg";
+import solarSalerno from "@/assets/project images/solar-salerno.jpeg";
+import solarAlessandria from "@/assets/project images/solar-alessandria.jpeg";
 import type { Division, Lang } from "@/i18n/routes";
 
 export type { Division };
@@ -39,8 +41,8 @@ export type Project = {
   division: Division;
   title: Localized;
   location: string;
-  year: number;
-  metric: Localized;
+  year?: number;
+  metric?: Localized;
   summary: Localized;
   challenge: Localized;
   solution: Localized;
@@ -96,7 +98,7 @@ const projects: Project[] = [
     slug: "solar-park-valdichiana",
     division: "solar",
     title: { it: "Solar Park Valdichiana", en: "Valdichiana Solar Park" },
-    location: "Arezzo",
+    location: "Roma",
     year: 2025,
     metric: { it: "18,4 MWp", en: "18.4 MWp" },
     featured: true,
@@ -235,7 +237,7 @@ const projects: Project[] = [
     slug: "agrivoltaico-foggia",
     division: "solar",
     title: { it: "Impianto agrivoltaico", en: "Agrivoltaic Plant" },
-    location: "Foggia",
+    location: "Vicenza",
     year: 2024,
     metric: { it: "9,6 MWp", en: "9.6 MWp" },
     summary: {
@@ -305,7 +307,7 @@ const projects: Project[] = [
     slug: "polo-logistico-verona-storage",
     division: "solar",
     title: { it: "Polo logistico con accumulo", en: "Logistics Hub with Storage" },
-    location: "Verona",
+    location: "Napoli",
     year: 2026,
     metric: { it: "1,2 MWp + 2 MWh", en: "1.2 MWp + 2 MWh" },
     featured: false,
@@ -330,10 +332,45 @@ const projects: Project[] = [
     coverImage: sRoofRows,
     gallery: [sStorage, sEv, sInstall],
   },
+  // Year, capacity and case-study details await confirmed project information.
+  {
+    id: "s-005",
+    slug: "impianto-fotovoltaico-salerno",
+    division: "solar",
+    title: { it: "Impianto fotovoltaico Salerno", en: "Salerno Solar Plant" },
+    location: "Salerno",
+    summary: {
+      it: "Impianto fotovoltaico a Salerno.",
+      en: "Solar installation in Salerno.",
+    },
+    challenge: { it: "", en: "" },
+    solution: { it: "", en: "" },
+    keyFigures: [],
+    coverImage: solarSalerno,
+    gallery: [],
+  },
+  {
+    id: "s-006",
+    slug: "impianto-fotovoltaico-alessandria",
+    division: "solar",
+    title: { it: "Impianto fotovoltaico Alessandria", en: "Alessandria Solar Plant" },
+    location: "Alessandria",
+    summary: {
+      it: "Impianto fotovoltaico ad Alessandria.",
+      en: "Solar installation in Alessandria.",
+    },
+    challenge: { it: "", en: "" },
+    solution: { it: "", en: "" },
+    keyFigures: [],
+    coverImage: solarAlessandria,
+    gallery: [],
+  },
 ];
 
 export function getProjects(division?: Division): Project[] {
-  return division ? projects.filter((p) => p.division === division) : projects;
+  if (division) return projects.filter((p) => p.division === division);
+  // Keep the solar carousel's sequence together at the start of the full portfolio.
+  return [...getProjects("solar"), ...getProjects("construction")];
 }
 
 export function getFeaturedProjects(limit = 3): Project[] {

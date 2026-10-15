@@ -115,7 +115,7 @@
         "label": "projects completed"
       },
       {
-        "value": 85,
+        "value": 135,
         "decimals": 0,
         "suffix": " MWp",
         "label": "capacity installed"
@@ -232,7 +232,7 @@
         {
           "year": "2026",
           "title": "More than 180 projects completed",
-          "text": "Two divisions, one group and over 85 MWp installed across Italy."
+          "text": "Two divisions, one group and over 135 MWp installed across Italy."
         }
       ]
     },
@@ -384,6 +384,12 @@
       "eyebrow": "Construction projects",
       "title": "Work delivered for our clients."
     },
+    "team": {
+      "eyebrow": "Our team",
+      "title": "Our construction team.",
+      "empty": "Meet our team soon.",
+      "members": []
+    },
     "cta": "Your project deserves solid foundations."
   },
   "solar": {
@@ -397,10 +403,6 @@
       "eyebrow": "Services",
       "title": "From industrial rooftops to solar parks.",
       "items": [
-        {
-          "title": "Commercial and industrial PV",
-          "text": "Self-consumption systems on roofs and carports, sized on real load profiles."
-        },
         {
           "title": "Solar park development",
           "text": "Land sourcing, permitting, design and construction of utility-scale and agrivoltaic plants."
@@ -425,7 +427,7 @@
       "text": "We handle in-house every technical phase that determines a plant's schedule, cost and output.",
       "stats": [
         {
-          "value": "85 MWp",
+          "value": "135 MWp",
           "label": "installed"
         },
         {
@@ -437,7 +439,7 @@
           "label": "availability"
         },
         {
-          "value": "2",
+          "value": "3",
           "label": "owned pile drivers"
         }
       ]
@@ -477,12 +479,32 @@
       "title": "Our solar team.",
       "members": [
         {
+          "name": "Abbas Aryan",
+          "role": "Administrator"
+        },
+        {
           "name": "Khalid Mohsin",
           "role": "Project Manager"
         },
         {
-          "name": "Abbas Aryan",
-          "role": "Operations Manager"
+          "name": "Khan Rehmat",
+          "role": "Project Manager"
+        },
+        {
+          "name": "Hussain Sadaqat",
+          "role": "Site Manager"
+        },
+        {
+          "name": "Azhar Jahanzalb",
+          "role": "Site Manager"
+        },
+        {
+          "name": "Hayat Khizar",
+          "role": "Site Manager"
+        },
+        {
+          "name": "Ali Zeeshan",
+          "role": "Site Manager"
         }
       ]
     },

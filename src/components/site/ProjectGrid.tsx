@@ -41,16 +41,19 @@ export function ProjectCard({
         </div>
         <div>
           <p className="text-[.68rem] font-semibold tracking-[.18em] text-offwhite/65 uppercase">
-            {project.location} · {project.year}
+            {project.location}
+            {project.year !== undefined && <> · {project.year}</>}
           </p>
           <h3
             className={`mt-3 font-semibold tracking-tight ${size === "large" ? "text-2xl md:text-4xl" : "text-2xl"}`}
           >
             {title}
           </h3>
-          <div className="mt-5 border-t border-offwhite/15 pt-4">
-            <p className="font-display text-lg font-semibold">{localize(project.metric, lang)}</p>
-          </div>
+          {project.metric && (
+            <div className="mt-5 border-t border-offwhite/15 pt-4">
+              <p className="font-display text-lg font-semibold">{localize(project.metric, lang)}</p>
+            </div>
+          )}
         </div>
       </div>
       <span
