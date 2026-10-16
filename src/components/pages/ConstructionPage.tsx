@@ -45,6 +45,48 @@ export function ConstructionPage() {
         breadcrumb={[{ label: t("nav.construction") }]}
       />
 
+      <div className="border-t border-border">
+        <ProjectCarousel
+          division="construction"
+          eyebrow={t("construction.projects.eyebrow")}
+          title={t("construction.projects.title")}
+        />
+      </div>
+
+      <section className="noise relative bg-charcoal py-28 text-offwhite">
+        <div className="site-container">
+          <SectionIntro
+            eyebrow={t("construction.services.eyebrow")}
+            title={t("construction.services.title")}
+            division="construction"
+            onDark
+          />
+          <ul className="mt-14 grid gap-px bg-offwhite/10 sm:grid-cols-2 lg:grid-cols-3">
+            {list<Card>("construction.services.items").map((item, i) => {
+              const Icon = serviceIcons[i] ?? Hammer;
+              return (
+                <li
+                  key={item.title}
+                  className="group relative bg-charcoal transition-colors duration-500 hover:bg-slate"
+                >
+                  <span
+                    className="absolute top-0 left-0 h-0.5 w-0 bg-construction transition-all duration-500 group-hover:w-full"
+                    aria-hidden
+                  />
+                  <Reveal delay={(i % 3) * 0.06} className="h-full p-8 md:p-10">
+                    <span className="grid size-14 place-items-center border border-offwhite/15 text-construction transition-colors duration-500 group-hover:border-construction group-hover:bg-construction group-hover:text-charcoal">
+                      <Icon className="size-6" strokeWidth={1.5} aria-hidden />
+                    </span>
+                    <h3 className="mt-12 text-xl font-semibold tracking-tight">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-offwhite/60">{item.text}</p>
+                  </Reveal>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
       <section className="site-container py-24">
         <SectionIntro
           eyebrow={t("construction.sectors.eyebrow")}
@@ -90,39 +132,13 @@ export function ConstructionPage() {
         </ul>
       </section>
 
-      <section className="noise relative bg-charcoal py-28 text-offwhite">
-        <div className="site-container">
-          <SectionIntro
-            eyebrow={t("construction.services.eyebrow")}
-            title={t("construction.services.title")}
-            division="construction"
-            onDark
-          />
-          <ul className="mt-14 grid gap-px bg-offwhite/10 sm:grid-cols-2 lg:grid-cols-3">
-            {list<Card>("construction.services.items").map((item, i) => {
-              const Icon = serviceIcons[i] ?? Hammer;
-              return (
-                <li
-                  key={item.title}
-                  className="group relative bg-charcoal transition-colors duration-500 hover:bg-slate"
-                >
-                  <span
-                    className="absolute top-0 left-0 h-0.5 w-0 bg-construction transition-all duration-500 group-hover:w-full"
-                    aria-hidden
-                  />
-                  <Reveal delay={(i % 3) * 0.06} className="h-full p-8 md:p-10">
-                    <span className="grid size-14 place-items-center border border-offwhite/15 text-construction transition-colors duration-500 group-hover:border-construction group-hover:bg-construction group-hover:text-charcoal">
-                      <Icon className="size-6" strokeWidth={1.5} aria-hidden />
-                    </span>
-                    <h3 className="mt-12 text-xl font-semibold tracking-tight">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-offwhite/60">{item.text}</p>
-                  </Reveal>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+      <TeamSection
+        division="construction"
+        eyebrow={t("construction.team.eyebrow")}
+        title={t("construction.team.title")}
+        members={list<TeamMember>("construction.team.members")}
+        emptyText={t("construction.team.empty")}
+      />
 
       <section className="site-container py-24">
         <SectionIntro
@@ -134,22 +150,6 @@ export function ConstructionPage() {
           <NumberedSteps items={list<Card>("construction.method.items")} division="construction" />
         </div>
       </section>
-
-      <div className="border-t border-border">
-        <ProjectCarousel
-          division="construction"
-          eyebrow={t("construction.projects.eyebrow")}
-          title={t("construction.projects.title")}
-        />
-      </div>
-
-      <TeamSection
-        division="construction"
-        eyebrow={t("construction.team.eyebrow")}
-        title={t("construction.team.title")}
-        members={list<TeamMember>("construction.team.members")}
-        emptyText={t("construction.team.empty")}
-      />
 
       <CTA title={t("construction.cta")} division="construction" />
     </>

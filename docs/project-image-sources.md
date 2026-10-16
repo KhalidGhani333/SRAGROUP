@@ -1,13 +1,14 @@
 # Project image sources
 
-The following stock photographs illustrate the Salerno and Alessandria project
-cards. They are not verified photographs of those sites.
+The Salerno and Alessandria project cards use the replacement photographs
+supplied by the user on 2026-10-16.
 
 | Local asset | Photographer | Source | License |
 | --- | --- | --- | --- |
-| `src/assets/project images/solar-salerno.jpeg` | Tom Fisk | [Solar Panels in a Field](https://www.pexels.com/photo/solar-panels-in-a-field-13932269/) | [Pexels License](https://www.pexels.com/license/) |
-| `src/assets/project images/solar-alessandria.jpeg` | K | [Solar Panels in a Solar Farm](https://www.pexels.com/photo/solar-panels-in-a-solar-farm-9229392/) | [Pexels License](https://www.pexels.com/license/) |
+| `src/assets/project images/solar-salerno.jpeg` | Not specified | User-provided aerial site photograph, 2026-10-16 | User supplied |
+| `src/assets/project images/solar-alessandria.jpeg` | Not specified | User-provided photograph of solar mounting structures at sunset, 2026-10-16 | User supplied |
 
-Downloaded at 1600px wide on 2026-10-15 and stored locally so rendering does not
-depend on a third-party image server. Years and capacities for these two projects
-are omitted until confirmed.
+Both assets are stored locally so rendering does not depend on a third-party
+image server. The Solar carousel and Projects page read these images from
+`src/data/projects.ts`. Years await confirmation; capacity lines are marked as
+unconfirmed.

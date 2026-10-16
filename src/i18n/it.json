@@ -281,11 +281,11 @@
           "role": "Responsabile Operativo"
         },
         {
-          "name": "Khan Rafaqat",
+          "name": "Hussain Rafaqat",
           "role": "Socio"
         },
         {
-          "name": "Khan Sadaqat",
+          "name": "Hussain Sadaqat",
           "role": "Socio"
         },
         {
@@ -630,6 +630,7 @@
     },
     "map": {
       "title": "Mappa della sede SRAGROUP",
+      "heading": "La nostra sede a Suzzara.",
       "eyebrow": "Sede",
       "consentText": "La mappa è fornita da Google e può impostare cookie di terze parti.",
       "load": "Mostra la mappa"

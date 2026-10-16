@@ -24,6 +24,15 @@ export function ContactPage() {
         compact
       />
 
+      <section id="preventivo" className="scroll-mt-24 border-b border-border bg-card">
+        <div className="site-container py-24">
+          <SectionIntro eyebrow={t("contact.form.eyebrow")} title={t("contact.form.title")} />
+          <div className="mx-auto max-w-4xl">
+            <QuoteForm />
+          </div>
+        </div>
+      </section>
+
       <section className="site-container py-28 md:py-32">
         <SectionIntro
           eyebrow={t("contact.departments.eyebrow")}
@@ -99,11 +108,16 @@ export function ContactPage() {
         </ul>
       </section>
 
-      <section className="grid border-t border-border lg:grid-cols-[1fr_1.15fr]">
-        <MapPanel />
-        <div className="bg-card p-6 sm:p-10 lg:p-14" id="preventivo">
-          <SectionIntro eyebrow={t("contact.form.eyebrow")} title={t("contact.form.title")} />
-          <QuoteForm />
+      <section className="border-t border-border">
+        <div className="site-container py-24">
+          <SectionIntro
+            eyebrow={t("contact.map.eyebrow")}
+            title={t("contact.map.heading")}
+            text={company.officeAddress}
+          />
+          <div className="mt-12">
+            <MapPanel />
+          </div>
         </div>
       </section>
     </>
@@ -117,7 +131,7 @@ function MapPanel() {
   const [requested, setRequested] = useState(false);
   const src = `https://www.google.com/maps?q=${encodeURIComponent(company.mapQuery)}&output=embed`;
   return (
-    <div className="relative min-h-[420px] bg-charcoal text-offwhite lg:min-h-full">
+    <div className="relative min-h-[420px] bg-charcoal text-offwhite md:min-h-[520px]">
       {marketing || requested ? (
         <iframe
           title={t("contact.map.title")}
@@ -130,7 +144,7 @@ function MapPanel() {
         <div className="grid-lines absolute inset-0 flex flex-col items-start justify-end gap-5 p-8 text-offwhite sm:p-12">
           <p className="eyebrow text-steel">{t("contact.map.eyebrow")}</p>
           <p className="flex items-start gap-3 font-display text-2xl font-semibold">
-            <MapPin className="mt-1 size-6 shrink-0" aria-hidden /> {company.address}
+            <MapPin className="mt-1 size-6 shrink-0" aria-hidden /> {company.officeAddress}
           </p>
           <p className="max-w-sm text-sm text-offwhite/60">{t("contact.map.consentText")}</p>
           <Button

@@ -281,11 +281,11 @@
           "role": "Operations Manager"
         },
         {
-          "name": "Khan Rafaqat",
+          "name": "Hussain Rafaqat",
           "role": "Business Partner"
         },
         {
-          "name": "Khan Sadaqat",
+          "name": "Hussain Sadaqat",
           "role": "Business Partner"
         },
         {
@@ -630,6 +630,7 @@
     },
     "map": {
       "title": "Map of SRAGROUP's office",
+      "heading": "Our office in Suzzara.",
       "eyebrow": "Office",
       "consentText": "The map is provided by Google and may set third-party cookies.",
       "load": "Show map"

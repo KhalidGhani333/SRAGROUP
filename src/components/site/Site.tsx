@@ -286,11 +286,6 @@ export function SiteFooter() {
               {t("footer.tagline")}
             </p>
             <SocialLinks />
-            <p className="mt-6 text-sm leading-6 text-offwhite/50">
-              {company.legalName}
-              <br />
-              {company.address}
-            </p>
           </div>
           <div>
             <p className="eyebrow text-offwhite/40">{t("footer.navigation")}</p>

@@ -96,6 +96,13 @@ export function SolarPage() {
         </div>
       </section>
 
+      <TeamSection
+        division="solar"
+        eyebrow={t("solar.team.eyebrow")}
+        title={t("solar.team.title")}
+        members={list<TeamMember>("solar.team.members")}
+      />
+
       <section className="site-container py-24">
         <SectionIntro
           eyebrow={t("solar.process.eyebrow")}
@@ -106,13 +113,6 @@ export function SolarPage() {
           <NumberedSteps items={list<Card>("solar.process.items")} division="solar" />
         </div>
       </section>
-
-      <TeamSection
-        division="solar"
-        eyebrow={t("solar.team.eyebrow")}
-        title={t("solar.team.title")}
-        members={list<TeamMember>("solar.team.members")}
-      />
 
       <CTA title={t("solar.cta")} division="solar" />
     </>

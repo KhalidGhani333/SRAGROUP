@@ -339,6 +339,7 @@ const projects: Project[] = [
     division: "solar",
     title: { it: "Impianto fotovoltaico Salerno", en: "Salerno Solar Plant" },
     location: "Salerno",
+    metric: { it: "MWp · da confermare", en: "MWp · to be confirmed" },
     summary: {
       it: "Impianto fotovoltaico a Salerno.",
       en: "Solar installation in Salerno.",
@@ -355,6 +356,7 @@ const projects: Project[] = [
     division: "solar",
     title: { it: "Impianto fotovoltaico Alessandria", en: "Alessandria Solar Plant" },
     location: "Alessandria",
+    metric: { it: "MWp · da confermare", en: "MWp · to be confirmed" },
     summary: {
       it: "Impianto fotovoltaico ad Alessandria.",
       en: "Solar installation in Alessandria.",
