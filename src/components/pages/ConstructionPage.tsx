@@ -136,8 +136,7 @@ export function ConstructionPage() {
         division="construction"
         eyebrow={t("construction.team.eyebrow")}
         title={t("construction.team.title")}
-        members={list<TeamMember>("construction.team.members")}
-        emptyText={t("construction.team.empty")}
+        members={list<TeamMember>("solar.team.members")}
       />
 
       <section className="site-container py-24">

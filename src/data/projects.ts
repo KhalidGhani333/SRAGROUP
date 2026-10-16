@@ -332,14 +332,15 @@ const projects: Project[] = [
     coverImage: sRoofRows,
     gallery: [sStorage, sEv, sInstall],
   },
-  // Year, capacity and case-study details await confirmed project information.
+  // Years and case-study details await confirmation. The next two capacities are
+  // illustrative demo values chosen at the user's request, not verified site data.
   {
     id: "s-005",
     slug: "impianto-fotovoltaico-salerno",
     division: "solar",
     title: { it: "Impianto fotovoltaico Salerno", en: "Salerno Solar Plant" },
     location: "Salerno",
-    metric: { it: "MWp · da confermare", en: "MWp · to be confirmed" },
+    metric: { it: "4,5 MWp", en: "4.5 MWp" },
     summary: {
       it: "Impianto fotovoltaico a Salerno.",
       en: "Solar installation in Salerno.",
@@ -356,7 +357,7 @@ const projects: Project[] = [
     division: "solar",
     title: { it: "Impianto fotovoltaico Alessandria", en: "Alessandria Solar Plant" },
     location: "Alessandria",
-    metric: { it: "MWp · da confermare", en: "MWp · to be confirmed" },
+    metric: { it: "6,8 MWp", en: "6.8 MWp" },
     summary: {
       it: "Impianto fotovoltaico ad Alessandria.",
       en: "Solar installation in Alessandria.",

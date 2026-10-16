@@ -10,5 +10,6 @@ supplied by the user on 2026-10-16.
 
 Both assets are stored locally so rendering does not depend on a third-party
 image server. The Solar carousel and Projects page read these images from
-`src/data/projects.ts`. Years await confirmation; capacity lines are marked as
-unconfirmed.
+`src/data/projects.ts`. Years await confirmation. On 2026-10-17, at the user's
+request, illustrative capacities were added: Salerno 4.5 MWp and Alessandria
+6.8 MWp. These demo figures are not verified project capacities.

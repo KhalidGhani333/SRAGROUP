@@ -386,9 +386,7 @@
     },
     "team": {
       "eyebrow": "Our team",
-      "title": "Our construction team.",
-      "empty": "Meet our team soon.",
-      "members": []
+      "title": "Our construction team."
     },
     "cta": "Your project deserves solid foundations."
   },
