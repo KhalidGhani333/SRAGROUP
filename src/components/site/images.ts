@@ -1,6 +1,6 @@
 import constructionHero from "@/assets/construction-hero.webp";
 import solarHero from "@/assets/project images/agrivoltaic-site-engineer-walking.jpeg";
-import solarPageHero from "@/assets/project images/solar-park-aerial-canal.jpeg";
+import solarPageHero from "@/assets/project images/solar-valmont-benevento.jpg";
 import solarDivision from "@/assets/project images/solar-park-aerial-farmland.jpeg";
 import solarCta from "@/assets/project images/ground-mounted-pv-urban-wide.jpeg";
 import cBlueprint from "@/assets/c-blueprint.webp";

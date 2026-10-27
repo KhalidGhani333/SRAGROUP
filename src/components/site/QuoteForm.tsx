@@ -5,7 +5,7 @@ import type { LucideIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { useForm, type FieldError } from "react-hook-form";
 import { Trans } from "react-i18next";
-import { z } from "zod";
+import { leadSchema, type LeadForm } from "@/lib/leadSchema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,76 +19,16 @@ import { LocalizedLink } from "./LocalizedLink";
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
 const divisions: LeadDivision[] = ["construction", "solar", "general"];
 const projectTypes = ["industrial", "commercial", "residential"] as const;
-const installationTypes = ["roof", "ground", "park"] as const;
+const installationTypes = ["roof", "park"] as const;
 const timelines = ["asap", "3to6", "6to12", "over12", "unknown"] as const;
 
-const isPositiveNumber = (v: string) => {
-  const n = Number(
-    v
-      .replace(/\s/g, "")
-      .replace(/\.(?=\d{3}\b)/g, "")
-      .replace(",", "."),
-  );
-  return Number.isFinite(n) && n > 0;
-};
-
-// Error messages are translation keys under contact.form.errors, so the schema is language-neutral.
-const required = z.string().trim().min(1, "required");
-const leadSchema = z
-  .object({
-    division: z.string().refine((v) => divisions.includes(v as LeadDivision), "required"),
-    projectType: z.string(),
-    area: z.string().trim(),
-    installationType: z.string(),
-    sizingMode: z.enum(["power", "bill"]),
-    power: z.string().trim(),
-    bill: z.string().trim(),
-    location: z.string().trim(),
-    timeline: z.string(),
-    subject: z.string().trim(),
-    firstName: required,
-    lastName: required,
-    company: required,
-    role: z.string().trim(),
-    email: required.email("email"),
-    phone: required.regex(/^\+?[0-9\s().-]{6,20}$/, "phone"),
-    message: required,
-    gdpr: z.boolean().refine((v) => v, "gdpr"),
-    marketing: z.boolean(),
-  })
-  .superRefine((d, ctx) => {
-    const need = (path: keyof typeof d, ok: boolean, message = "required") => {
-      if (!ok) ctx.addIssue({ code: z.ZodIssueCode.custom, path: [path], message });
-    };
-    const number = (path: "area" | "power" | "bill") => {
-      const v = d[path];
-      need(path, v !== "" && isPositiveNumber(v), v === "" ? "required" : "number");
-    };
-    if (d.division === "construction") {
-      need("projectType", d.projectType !== "");
-      number("area");
-    }
-    if (d.division === "solar") {
-      need("installationType", d.installationType !== "");
-      number(d.sizingMode);
-    }
-    if (d.division === "construction" || d.division === "solar") {
-      need("location", d.location !== "");
-      need("timeline", d.timeline !== "");
-    }
-    if (d.division === "general") need("subject", d.subject !== "");
-  });
-
-type LeadForm = z.infer<typeof leadSchema>;
-
 const emptyForm: LeadForm = {
-  division: "",
+  division: "general",
   projectType: "",
   area: "",
   installationType: "",
   sizingMode: "power",
   power: "",
-  bill: "",
   location: "",
   timeline: "",
   subject: "",
@@ -100,7 +40,6 @@ const emptyForm: LeadForm = {
   phone: "",
   message: "",
   gdpr: false,
-  marketing: false,
 };
 
 const divisionIcons: Record<LeadDivision, LucideIcon> = {
@@ -131,7 +70,7 @@ export function QuoteForm() {
     formState: { errors, isSubmitting, submitCount },
   } = useForm<LeadForm>({
     resolver: zodResolver(leadSchema),
-    defaultValues: { ...emptyForm, division: preselected ?? "" },
+    defaultValues: { ...emptyForm, division: preselected ?? "general" },
     mode: "onTouched",
   });
 
@@ -144,7 +83,6 @@ export function QuoteForm() {
   }, [status]);
 
   const division = watch("division") as LeadDivision | "";
-  const sizingMode = watch("sizingMode");
   const err = (key?: FieldError) =>
     key?.message ? t(`contact.form.errors.${key.message}`) : undefined;
 
@@ -162,7 +100,7 @@ export function QuoteForm() {
         : d === "solar"
           ? {
               installationType: data.installationType,
-              [data.sizingMode === "power" ? "powerKwp" : "annualBillEur"]: data[data.sizingMode],
+              powerMwp: data.power,
               location: data.location,
               timeline: data.timeline,
             }
@@ -181,7 +119,7 @@ export function QuoteForm() {
         },
         message: data.message,
         ...(file ? { attachmentName: file.name } : {}),
-        consent: { privacy: true, marketing: data.marketing },
+        consent: { privacy: data.gdpr, marketing: false },
         meta: {
           lang,
           page: location.href,
@@ -214,7 +152,7 @@ export function QuoteForm() {
           variant="outline"
           className="mt-6 rounded-none"
           onClick={() => {
-            reset({ ...emptyForm, division: preselected ?? "" });
+            reset({ ...emptyForm, division: preselected ?? "general" });
             startedAt.current = Date.now();
             setFile(null);
             setStatus("idle");
@@ -243,7 +181,7 @@ export function QuoteForm() {
 
       <Step number={1} title={t("contact.form.step1")}>
         <fieldset aria-describedby={errors.division ? "division-error" : undefined}>
-          <legend className="mb-4 text-sm font-medium">{t("contact.form.step1Question")} *</legend>
+          <legend className="mb-4 text-sm font-medium">{t("contact.form.step1Question")}</legend>
           <div className="grid gap-3 sm:grid-cols-3">
             {divisions.map((d) => {
               const Icon = divisionIcons[d];
@@ -292,7 +230,7 @@ export function QuoteForm() {
                   }))}
                   register={register("projectType")}
                 />
-                <Field label={t("contact.form.area")} required error={err(errors.area)}>
+                <Field label={t("contact.form.area")} error={err(errors.area)}>
                   {(a) => (
                     <Input
                       {...a}
@@ -317,51 +255,29 @@ export function QuoteForm() {
                 />
                 <ChoiceGroup
                   label={t("contact.form.sizing")}
-                  options={(["power", "bill"] as const).map((v) => ({
+                  options={(["power"] as const).map((v) => ({
                     value: v,
                     label: t(`contact.form.sizingModes.${v}`),
                   }))}
                   register={register("sizingMode")}
                   span={1}
                 />
-                {sizingMode === "power" ? (
-                  <Field
-                    key="power"
-                    label={t("contact.form.power")}
-                    required
-                    error={err(errors.power)}
-                  >
-                    {(a) => (
-                      <Input
-                        {...a}
-                        inputMode="decimal"
-                        className="h-11 rounded-none"
-                        {...register("power")}
-                      />
-                    )}
-                  </Field>
-                ) : (
-                  <Field
-                    key="bill"
-                    label={t("contact.form.bill")}
-                    required
-                    error={err(errors.bill)}
-                  >
-                    {(a) => (
-                      <Input
-                        {...a}
-                        inputMode="decimal"
-                        className="h-11 rounded-none"
-                        {...register("bill")}
-                      />
-                    )}
-                  </Field>
-                )}
+
+                <Field key="power" label={t("contact.form.power")} error={err(errors.power)}>
+                  {(a) => (
+                    <Input
+                      {...a}
+                      inputMode="decimal"
+                      className="h-11 rounded-none"
+                      {...register("power")}
+                    />
+                  )}
+                </Field>
               </>
             )}
             {(division === "construction" || division === "solar") && (
               <>
-                <Field label={t("contact.form.location")} required error={err(errors.location)}>
+                <Field label={t("contact.form.location")} error={err(errors.location)}>
                   {(a) => (
                     <Input
                       {...a}
@@ -372,7 +288,7 @@ export function QuoteForm() {
                     />
                   )}
                 </Field>
-                <Field label={t("contact.form.timeline")} required error={err(errors.timeline)}>
+                <Field label={t("contact.form.timeline")} error={err(errors.timeline)}>
                   {(a) => (
                     <select
                       {...a}
@@ -391,12 +307,7 @@ export function QuoteForm() {
               </>
             )}
             {division === "general" && (
-              <Field
-                label={t("contact.form.subject")}
-                required
-                error={err(errors.subject)}
-                span={2}
-              >
+              <Field label={t("contact.form.subject")} error={err(errors.subject)} span={2}>
                 {(a) => <Input {...a} className="h-11 rounded-none" {...register("subject")} />}
               </Field>
             )}
@@ -417,7 +328,7 @@ export function QuoteForm() {
                 />
               )}
             </Field>
-            <Field label={t("contact.form.lastName")} required error={err(errors.lastName)}>
+            <Field label={t("contact.form.lastName")} error={err(errors.lastName)}>
               {(a) => (
                 <Input
                   {...a}
@@ -427,7 +338,7 @@ export function QuoteForm() {
                 />
               )}
             </Field>
-            <Field label={t("contact.form.company")} required error={err(errors.company)}>
+            <Field label={t("contact.form.company")} error={err(errors.company)}>
               {(a) => (
                 <Input
                   {...a}
@@ -469,7 +380,7 @@ export function QuoteForm() {
                 />
               )}
             </Field>
-            <Field label={t("contact.form.message")} required error={err(errors.message)} span={2}>
+            <Field label={t("contact.form.message")} error={err(errors.message)} span={2}>
               {(a) => (
                 <Textarea
                   {...a}
@@ -560,14 +471,6 @@ export function QuoteForm() {
                 </label>
                 <ErrorText id="gdpr-error" message={err(errors.gdpr)} />
               </div>
-              <label className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
-                <input
-                  type="checkbox"
-                  className="mt-1 size-4 shrink-0 accent-foreground"
-                  {...register("marketing")}
-                />
-                <span>{t("contact.form.marketing")}</span>
-              </label>
             </div>
           </div>
         </Step>
@@ -677,7 +580,7 @@ function ChoiceGroup({
       className={span === 2 ? "sm:col-span-2" : ""}
       aria-describedby={error ? `${id}-error` : undefined}
     >
-      <legend className="text-sm font-medium">{label} *</legend>
+      <legend className="text-sm font-medium">{label}</legend>
       <div className="mt-2 flex flex-wrap gap-2">
         {options.map((o) => (
           <label

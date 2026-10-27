@@ -123,6 +123,7 @@ const ADMIN_IT = [
     'Ground-mounted' => 'A terra',
     'Solar park' => 'Parco solare',
     'Power (kWp)' => 'Potenza (kWp)',
+    'Power (MWp)' => 'Potenza (MWp)',
     'Annual energy bill (€)' => 'Bolletta energetica annua (€)',
     'Subject' => 'Oggetto',
     'As soon as possible' => 'Il prima possibile',

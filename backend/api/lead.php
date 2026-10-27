@@ -57,12 +57,12 @@ try {
         'INSERT INTO leads (division, first_name, last_name, company, job_role, email, phone, message, details,
             attachment_name, attachment_path, attachment_size, consent_privacy, consent_marketing,
             lang, source_page, ip, user_agent, submitted_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?)',
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
         [
             $lead['division'], $lead['first_name'], $lead['last_name'], $lead['company'], $lead['job_role'],
             $lead['email'], $lead['phone'], $lead['message'], json_encode($lead['details'], JSON_UNESCAPED_UNICODE),
             $attachment['name'] ?? null, $attachment['path'] ?? null, $attachment['size'] ?? null,
-            $lead['consent_marketing'], $lead['lang'], $lead['source_page'], client_ip(),
+            $lead['consent_privacy'], $lead['consent_marketing'], $lead['lang'], $lead['source_page'], client_ip(),
             mb_substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 255), now(),
         ],
     );
@@ -108,6 +108,9 @@ function validate_lead(array $p, array &$errors): array
     $rawDetails = is_array($p['details'] ?? null) ? $p['details'] : [];
 
     $division = str_field($p, 'division', 20);
+    if ($division === '') {
+        $division = 'general';
+    }
     if (!isset(DIVISIONS[$division])) {
         $errors['division'] = 'required';
         $division = 'general';
@@ -122,13 +125,14 @@ function validate_lead(array $p, array &$errors): array
         'email' => mb_strtolower(str_field($contact, 'email', 190)),
         'phone' => str_field($contact, 'phone', 40),
         'message' => str_field($p, 'message', 5000),
+        'consent_privacy' => ($consent['privacy'] ?? false) === true ? 1 : 0,
         'consent_marketing' => !empty($consent['marketing']) ? 1 : 0,
         'lang' => str_field($meta, 'lang', 2) === 'en' ? 'en' : 'it',
         'source_page' => str_field($meta, 'page', 500),
         'details' => [],
     ];
 
-    foreach (['first_name', 'last_name', 'company', 'message'] as $key) {
+    foreach (['first_name'] as $key) {
         if ($lead[$key] === '') {
             $errors[$key] = 'required';
         }
@@ -138,9 +142,6 @@ function validate_lead(array $p, array &$errors): array
     }
     if (!preg_match('/^\+?[0-9\s().-]{6,20}$/', $lead['phone'])) {
         $errors['phone'] = 'phone';
-    }
-    if (($consent['privacy'] ?? false) !== true) {
-        $errors['consent'] = 'gdpr';
     }
 
     foreach (DETAIL_FIELDS[$division] as $key => $field) {

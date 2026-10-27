@@ -52,6 +52,8 @@ const DETAIL_FIELDS = [
     ],
     'solar' => [
         'installationType' => ['label' => 'Installation type', 'options' => ['roof' => 'Rooftop', 'ground' => 'Ground-mounted', 'park' => 'Solar park']],
+        'powerMwp' => ['label' => 'Power (MWp)'],
+        // Retain legacy units/options so existing enquiries remain correctly labelled.
         'powerKwp' => ['label' => 'Power (kWp)'],
         'annualBillEur' => ['label' => 'Annual energy bill (€)'],
         'location' => ['label' => 'Location'],
@@ -108,7 +110,7 @@ function lead_summary(array $lead): string
         ],
         'solar' => [
             $labels['installationType'] ?? null,
-            isset($d['powerKwp']) ? $d['powerKwp'] . ' kWp' : (isset($d['annualBillEur']) ? __('%s/yr bill', '€ ' . $d['annualBillEur']) : null),
+            isset($d['powerMwp']) ? $d['powerMwp'] . ' MWp' : (isset($d['powerKwp']) ? $d['powerKwp'] . ' kWp' : (isset($d['annualBillEur']) ? __('%s/yr bill', '€ ' . $d['annualBillEur']) : null)),
             $d['location'] ?? null,
         ],
         default => [$d['subject'] ?? null],

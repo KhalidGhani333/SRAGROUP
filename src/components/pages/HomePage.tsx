@@ -1,38 +1,32 @@
 import {
   ArrowRight,
   ArrowUpRight,
-  BadgeCheck,
-  CalendarCheck,
   Check,
-  DraftingCompass,
-  KeyRound,
-  Leaf,
+  ClipboardList,
+  Construction,
+  Handshake,
+  MapPin,
   ShieldCheck,
+  Users,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { accent } from "@/components/site/accent";
 import { LocalizedLink } from "@/components/site/LocalizedLink";
-import { CountUp, Marquee, Reveal, RevealText } from "@/components/site/Motion";
+import { Marquee, Reveal, RevealText } from "@/components/site/Motion";
 import { ProjectList } from "@/components/site/ProjectGrid";
 import { CTA, Eyebrow, LogoMark, ScrollCue, SectionIntro, images } from "@/components/site/Site";
 import { getFeaturedProjects, type Division } from "@/data/projects";
+import { OperationalStats, type OperationalStat } from "@/components/site/OperationalStats";
 import { useT } from "@/i18n/useT";
 
-type Stat = { value: number; decimals: number; suffix: string; label: string };
+type Stat = Omit<OperationalStat, "value"> & { value: number; suffix: string };
 type Card = { title: string; text: string };
 
-const whyIcons: LucideIcon[] = [
-  ShieldCheck,
-  BadgeCheck,
-  KeyRound,
-  DraftingCompass,
-  CalendarCheck,
-  Leaf,
-];
+const whyIcons: LucideIcon[] = [Users, Construction, ClipboardList, ShieldCheck, MapPin, Handshake];
 
 export function HomePage() {
-  const { t, lang, list } = useT();
+  const { t, list } = useT();
   return (
     <>
       <h1 className="sr-only">{t("home.srTitle")}</h1>
@@ -98,21 +92,17 @@ export function HomePage() {
               </LocalizedLink>
             </Reveal>
           </div>
-          <dl
+          <div
+            className="min-w-0 bg-charcoal p-6 text-offwhite sm:p-8"
             aria-label={t("home.statsLabel")}
-            className="grid grid-cols-2 gap-px self-end border border-border bg-border"
           >
-            {list<Stat>("home.stats").map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08} className="bg-background">
-                <div className="flex h-full flex-col-reverse justify-end p-5 sm:p-8 xl:p-10">
-                  <dt className="mt-3 text-sm text-muted-foreground">{s.label}</dt>
-                  <dd className="font-display text-[clamp(1.75rem,8.5vw,2.25rem)] leading-none font-semibold tracking-tight whitespace-nowrap sm:text-5xl lg:text-[clamp(2.5rem,3.4vw,3.75rem)]">
-                    <CountUp value={s.value} decimals={s.decimals} suffix={s.suffix} lang={lang} />
-                  </dd>
-                </div>
-              </Reveal>
-            ))}
-          </dl>
+            <OperationalStats
+              stats={list<Stat>("home.stats").map((stat) => ({
+                ...stat,
+                value: String(stat.value) + stat.suffix,
+              }))}
+            />
+          </div>
         </div>
       </section>
 
@@ -188,7 +178,12 @@ export function HomePage() {
         </div>
       </section>
 
-      <CTA title={t("home.cta")} />
+      <CTA
+        title={t("home.cta")}
+        text={t("home.ctaText")}
+        eyebrow={t("home.ctaEyebrow")}
+        textOnLeft
+      />
     </>
   );
 }
@@ -203,18 +198,34 @@ function HeroHalf({
   index: string;
 }) {
   const { t } = useT();
+  const solar = division === "solar";
   return (
     <div className="group relative isolate flex min-h-[50svh] flex-1 overflow-hidden transition-[flex-grow] duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:min-h-0 md:hover:flex-[1.35]">
       <img
         src={image}
         alt=""
-        className="animate-ken-burns absolute inset-0 -z-20 h-full w-full object-cover"
-        width={1600}
-        height={1008}
+        className={`absolute inset-0 -z-20 h-full w-full object-cover ${solar ? "object-[70%_50%]" : "animate-ken-burns"}`}
+        width={solar ? 944 : 1600}
+        height={solar ? 1666 : 1008}
         fetchPriority="high"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-charcoal via-charcoal/45 to-charcoal/30 transition-opacity duration-700 group-hover:opacity-80" />
-      <div className="grid-lines absolute inset-0 -z-10 text-offwhite opacity-50" aria-hidden />
+      {solar ? (
+        <>
+          <div
+            className="absolute inset-y-0 left-0 -z-10 w-3/4 bg-gradient-to-r from-charcoal/65 via-charcoal/30 to-transparent"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-x-0 bottom-0 -z-10 h-2/5 bg-gradient-to-t from-charcoal/30 to-transparent"
+            aria-hidden
+          />
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-charcoal via-charcoal/45 to-charcoal/30 transition-opacity duration-700 group-hover:opacity-80" />
+          <div className="grid-lines absolute inset-0 -z-10 text-offwhite opacity-50" aria-hidden />
+        </>
+      )}
       <div
         className={`flex w-full flex-col justify-between gap-4 p-6 text-offwhite sm:p-10 md:p-14 md:pt-36 ${division === "construction" ? "pt-24 sm:pt-28" : "pt-6 sm:pt-10"}`}
       >
@@ -223,7 +234,9 @@ function HeroHalf({
             {index}
           </p>
         </Reveal>
-        <div className="max-w-xl">
+        <div
+          className={solar ? "max-w-[74%] [text-shadow:0_2px_12px_rgba(0,0,0,.65)]" : "max-w-xl"}
+        >
           <Reveal immediate delay={division === "construction" ? 0.2 : 0.35}>
             <Eyebrow className={accent[division].textOnDark}>
               {t(`home.hero.${division}.eyebrow`)}
@@ -236,7 +249,9 @@ function HeroHalf({
             className="mt-4 text-[clamp(1.75rem,7vw,2.25rem)] leading-[1.05] font-semibold tracking-[-0.035em] md:mt-5 md:text-[clamp(2.125rem,3.6vw,3.5rem)]"
           />
           <Reveal immediate delay={division === "construction" ? 0.6 : 0.75}>
-            <p className="mt-3 hidden max-w-md text-sm leading-6 text-offwhite/75 min-[380px]:block sm:text-base sm:leading-7 md:mt-5">
+            <p
+              className={`mt-3 hidden max-w-md text-sm leading-6 min-[380px]:block sm:text-base sm:leading-7 md:mt-5 ${solar ? "text-offwhite/90" : "text-offwhite/75"}`}
+            >
               {t(`home.hero.${division}.text`)}
             </p>
             <Button
@@ -272,7 +287,7 @@ function DivisionPanel({
   index: string;
 }) {
   const { t, list } = useT();
-  const services = list<Card>(`${division}.services.items`).slice(0, 4);
+  const services = list<string>(`home.divisions.${division}.services`);
   return (
     <article className="group relative isolate flex min-h-[680px] overflow-hidden p-6 text-offwhite sm:p-8 lg:p-10 xl:p-14">
       <img
@@ -296,6 +311,9 @@ function DivisionPanel({
           </span>
         </div>
         <Reveal>
+          <p className="mb-4 text-xs font-semibold tracking-widest text-offwhite/60">
+            {t(`home.divisions.${division}.company`)}
+          </p>
           <h2 className="text-[clamp(1.875rem,8vw,2.5rem)] font-semibold tracking-[-0.035em] [overflow-wrap:anywhere] md:text-[clamp(1.875rem,3.4vw,3.25rem)]">
             {t(`home.divisions.${division}.title`)}
           </h2>
@@ -308,11 +326,11 @@ function DivisionPanel({
           <ul className="mt-4 grid gap-x-6 sm:grid-cols-2">
             {services.map((s) => (
               <li
-                key={s.title}
+                key={s}
                 className="flex items-center gap-3 border-b border-offwhite/10 py-3 text-sm"
               >
                 <Check className={`size-4 shrink-0 ${accent[division].textOnDark}`} aria-hidden />
-                {s.title}
+                {s}
               </li>
             ))}
           </ul>

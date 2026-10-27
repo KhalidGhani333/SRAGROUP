@@ -23,8 +23,12 @@ import pileDriverSky from "@/assets/project images/pile-driver-blue-sky.jpeg";
 import rooftopCabling from "@/assets/project images/rooftop-pv-cable-trays.jpeg";
 import mountingStructures from "@/assets/project images/solar-mounting-structures-installation.jpeg";
 import parkHills from "@/assets/project images/solar-park-aerial-hills.jpeg";
-import solarSalerno from "@/assets/project images/solar-salerno.jpeg";
-import solarAlessandria from "@/assets/project images/solar-alessandria.jpeg";
+import fixedBipole from "@/assets/project images/solar-fixed-bipole.jpg";
+import trackerAxial from "@/assets/project images/solar-tracker-axial.jpg";
+import solarComal from "@/assets/project images/solar-comal-2026.jpg";
+import solarPvh from "@/assets/project images/solar-pvh-2026.jpg";
+import solarArctech from "@/assets/project images/solar-arctech-2026.jpg";
+import solarValmont from "@/assets/project images/solar-valmont-benevento.jpg";
 import type { Division, Lang } from "@/i18n/routes";
 
 export type { Division };
@@ -97,10 +101,10 @@ const projects: Project[] = [
     id: "s-001",
     slug: "solar-park-valdichiana",
     division: "solar",
-    title: { it: "Solar Park Valdichiana", en: "Valdichiana Solar Park" },
+    title: { it: "Impianto Struttura Fissa Bipalo", en: "Fixed Bipole Structure Installation" },
     location: "Roma",
-    year: 2025,
-    metric: { it: "18,4 MWp", en: "18.4 MWp" },
+    year: 2026,
+    metric: { it: "10 MWp", en: "10 MWp" },
     featured: true,
     summary: {
       it: "Parco fotovoltaico a terra con inseguitori monoassiali, sviluppato dall'autorizzazione alla connessione in alta tensione.",
@@ -117,7 +121,7 @@ const projects: Project[] = [
     keyFigures: [
       {
         label: { it: "Potenza installata", en: "Installed capacity" },
-        value: { it: "18,4 MWp", en: "18.4 MWp" },
+        value: { it: "10 MWp", en: "10 MWp" },
       },
       {
         label: { it: "Produzione annua", en: "Annual output" },
@@ -129,7 +133,7 @@ const projects: Project[] = [
       },
       { label: { it: "Moduli", en: "Modules" }, value: { it: "32.300", en: "32,300" } },
     ],
-    coverImage: parkHills,
+    coverImage: fixedBipole,
     gallery: [mountingStructures, pileDriverSky],
   },
   {
@@ -172,9 +176,9 @@ const projects: Project[] = [
     id: "s-002",
     slug: "copertura-industriale-bergamo",
     division: "solar",
-    title: { it: "Copertura industriale", en: "Industrial Rooftop" },
+    title: { it: "Revamping Industriale", en: "Industrial Revamping" },
     location: "Bergamo",
-    year: 2025,
+    year: 2026,
     metric: { it: "2,8 MWp", en: "2.8 MWp" },
     summary: {
       it: "Impianto in autoconsumo sulla copertura di uno stabilimento metalmeccanico, con rifacimento del tetto e rimozione dell'amianto.",
@@ -236,10 +240,10 @@ const projects: Project[] = [
     id: "s-003",
     slug: "agrivoltaico-foggia",
     division: "solar",
-    title: { it: "Impianto agrivoltaico", en: "Agrivoltaic Plant" },
-    location: "Vicenza",
-    year: 2024,
-    metric: { it: "9,6 MWp", en: "9.6 MWp" },
+    title: { it: "Agrivoltaico PVH", en: "PVH Agrivoltaic" },
+    location: "Caserta",
+    year: 2026,
+    metric: { it: "7,3 MWp", en: "7.3 MWp" },
     summary: {
       it: "Impianto agrivoltaico elevato che mantiene la coltivazione sotto i moduli, con monitoraggio agronomico integrato.",
       en: "An elevated agrivoltaic plant that keeps crops growing beneath the modules, with integrated agronomic monitoring.",
@@ -253,7 +257,7 @@ const projects: Project[] = [
       en: "Raised structures with wide row spacing, chosen together with the farm, plus microclimate sensors to track yield and water use.",
     },
     keyFigures: [
-      { label: { it: "Potenza", en: "Capacity" }, value: { it: "9,6 MWp", en: "9.6 MWp" } },
+      { label: { it: "Potenza", en: "Capacity" }, value: { it: "7,3 MWp", en: "7.3 MWp" } },
       { label: { it: "Superficie agricola", en: "Farmland retained" }, value: "92%" },
       {
         label: { it: "Produzione annua", en: "Annual output" },
@@ -264,7 +268,7 @@ const projects: Project[] = [
         value: { it: "2,6 m", en: "2.6 m" },
       },
     ],
-    coverImage: agrivoltaicLift,
+    coverImage: solarPvh,
     gallery: [agrivoltaicUnderside],
   },
   {
@@ -306,10 +310,10 @@ const projects: Project[] = [
     id: "s-004",
     slug: "polo-logistico-verona-storage",
     division: "solar",
-    title: { it: "Polo logistico con accumulo", en: "Logistics Hub with Storage" },
-    location: "Napoli",
+    title: { it: "Tracker Axial", en: "Axial Tracker" },
+    location: "Avellino",
     year: 2026,
-    metric: { it: "1,2 MWp + 2 MWh", en: "1.2 MWp + 2 MWh" },
+    metric: { it: "8,5 MWp", en: "8.5 MWp" },
     featured: false,
     summary: {
       it: "Impianto su copertura con sistema di accumulo e 40 punti di ricarica per la flotta elettrica aziendale.",
@@ -324,56 +328,82 @@ const projects: Project[] = [
       en: "Storage sized on real load profiles, with energy management shifting daytime generation to overnight charging.",
     },
     keyFigures: [
-      { label: { it: "Fotovoltaico", en: "Solar" }, value: { it: "1,2 MWp", en: "1.2 MWp" } },
+      { label: { it: "Fotovoltaico", en: "Solar" }, value: { it: "8,5 MWp", en: "8.5 MWp" } },
       { label: { it: "Accumulo", en: "Storage" }, value: "2 MWh" },
       { label: { it: "Punti di ricarica", en: "Charging points" }, value: "40" },
       { label: { it: "Riduzione costi energia", en: "Energy cost reduction" }, value: "-46%" },
     ],
-    coverImage: sRoofRows,
+    coverImage: trackerAxial,
     gallery: [sStorage, sEv, sInstall],
   },
-  // Years and case-study details await confirmation. The next two capacities are
-  // illustrative demo values chosen at the user's request, not verified site data.
+  // Year and capacity supplied by the user; case-study details await confirmation.
   {
     id: "s-005",
     slug: "impianto-fotovoltaico-salerno",
     division: "solar",
-    title: { it: "Impianto fotovoltaico Salerno", en: "Salerno Solar Plant" },
-    location: "Salerno",
-    metric: { it: "4,5 MWp", en: "4.5 MWp" },
+    title: { it: "Agrivoltaico Arctech Solar", en: "Arctech Solar Agrivoltaic" },
+    location: "Rovigo",
+    year: 2026,
+    metric: { it: "5,2 MWp", en: "5.2 MWp" },
     summary: {
-      it: "Impianto fotovoltaico a Salerno.",
-      en: "Solar installation in Salerno.",
+      it: "Impianto agrivoltaico Arctech Solar a Rovigo.",
+      en: "Arctech Solar agrivoltaic installation in Rovigo.",
     },
     challenge: { it: "", en: "" },
     solution: { it: "", en: "" },
     keyFigures: [],
-    coverImage: solarSalerno,
+    coverImage: solarArctech,
     gallery: [],
   },
+  // Project name, location, year and capacity supplied in the 2026-10-23 change document.
   {
     id: "s-006",
     slug: "impianto-fotovoltaico-alessandria",
     division: "solar",
-    title: { it: "Impianto fotovoltaico Alessandria", en: "Alessandria Solar Plant" },
-    location: "Alessandria",
-    metric: { it: "6,8 MWp", en: "6.8 MWp" },
+    title: { it: "Tracker Comal", en: "Comal Tracker" },
+    location: "Rovigo",
+    year: 2026,
+    metric: { it: "7,3 MWp", en: "7.3 MWp" },
     summary: {
-      it: "Impianto fotovoltaico ad Alessandria.",
-      en: "Solar installation in Alessandria.",
+      it: "Impianto fotovoltaico con tracker Comal a Rovigo.",
+      en: "Solar installation with Comal trackers in Rovigo.",
     },
     challenge: { it: "", en: "" },
     solution: { it: "", en: "" },
     keyFigures: [],
-    coverImage: solarAlessandria,
+    coverImage: solarComal,
+    gallery: [],
+  },
+  // Supplied in the client's 27 October change document.
+  {
+    id: "s-007",
+    slug: "agrivoltaico-valmont-benevento",
+    division: "solar",
+    title: { it: "Agrivoltaico Valmont", en: "Valmont Agrivoltaic" },
+    location: "Benevento",
+    year: 2026,
+    metric: { it: "10 MWp", en: "10 MWp" },
+    summary: {
+      it: "Impianto agrivoltaico Valmont a Benevento.",
+      en: "Valmont agrivoltaic installation in Benevento.",
+    },
+    challenge: { it: "", en: "" },
+    solution: { it: "", en: "" },
+    keyFigures: [{ label: { it: "Potenza", en: "Capacity" }, value: "10 MWp" }],
+    coverImage: solarValmont,
     gallery: [],
   },
 ];
 
 export function getProjects(division?: Division): Project[] {
   if (division) return projects.filter((p) => p.division === division);
-  // Keep the solar carousel's sequence together at the start of the full portfolio.
-  return [...getProjects("solar"), ...getProjects("construction")];
+  const solar = getProjects("solar");
+  const construction = getProjects("construction");
+  // Mix divisions in the full portfolio while preserving each division's sequence.
+  return Array.from({ length: Math.max(solar.length, construction.length) }, (_, i) => [
+    solar[i],
+    construction[i],
+  ]).flatMap((pair) => pair.filter((project): project is Project => Boolean(project)));
 }
 
 export function getFeaturedProjects(limit = 3): Project[] {

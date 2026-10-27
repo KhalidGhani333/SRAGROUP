@@ -68,7 +68,7 @@
     "contact": "Contact"
   },
   "footer": {
-    "tagline": "We build spaces and generate energy for forward-looking businesses.",
+    "tagline": "Two divisions, one mission: turning projects into results.",
     "navigation": "Navigation",
     "contacts": "Direct contacts",
     "legal": "Legal",
@@ -91,88 +91,111 @@
     "hero": {
       "construction": {
         "eyebrow": "Construction",
-        "title": "Solid spaces. Lasting value.",
-        "text": "General contractor for industrial, commercial and residential projects."
+        "title": "Building value. Since 2009.",
+        "text": "Construction experience, specialist crews and professional machinery for building, renovation and refurbishment projects across Italy."
       },
       "solar": {
         "eyebrow": "Solar",
-        "title": "Energy that powers the future.",
-        "text": "High-performance systems for businesses and large surfaces."
+        "title": "Giving structure to the energy of the future.",
+        "text": "Specialists in the mechanical assembly of solar and agrivoltaic installations, from pile driving to fixed structures, trackers and modules, through to revamping."
       }
     },
     "statsLabel": "SRAGROUP in numbers",
     "stats": [
       {
-        "value": 25,
+        "value": 2009,
         "decimals": 0,
-        "suffix": "+",
-        "label": "years of experience"
+        "suffix": "",
+        "division": "construction",
+        "label": "Construction experience",
+        "text": "Experience gained in the industry since 2009"
       },
       {
-        "value": 180,
+        "value": 35,
         "decimals": 0,
-        "suffix": "+",
-        "label": "projects completed"
+        "suffix": "",
+        "division": "construction",
+        "label": "Specialist staff",
+        "text": "Qualified personnel for construction work"
       },
       {
-        "value": 135,
+        "value": 92,
         "decimals": 0,
-        "suffix": " MWp",
-        "label": "capacity installed"
+        "suffix": "",
+        "division": "solar",
+        "label": "Operational staff",
+        "text": "Specialist crews for solar assembly"
       },
       {
-        "value": 98,
+        "value": 100,
         "decimals": 0,
-        "suffix": "%",
-        "label": "on-time delivery"
+        "suffix": "+ MWp",
+        "division": "solar",
+        "label": "Total installed capacity",
+        "text": "Solar and agrivoltaic installations with work carried out by our crews",
+        "detail": "in 2026"
       }
     ],
     "intro": {
       "eyebrow": "One group",
-      "title": "From materials to energy, one integrated vision.",
-      "text": "Two specialist divisions, one project culture: expertise, accountability and direct control of every phase.",
+      "title": "The strength to build. The energy to innovate.",
+      "text": "Two specialist divisions, qualified crews and professional equipment serving businesses and major clients.",
       "cta": "About us"
     },
     "divisions": {
       "eyebrow": "Division",
       "construction": {
-        "title": "Construction",
-        "text": "Industrial, office and residential buildings delivered with rigorous execution."
+        "title": "Building quality. Since 2009.",
+        "text": "Construction experience, qualified personnel and professional equipment for building, renovation and refurbishment projects across Italy.",
+        "company": "SRA COSTRUZIONI SRLS",
+        "services": [
+          "Renovation and masonry work",
+          "External wall insulation",
+          "Traditional and machine-applied plastering",
+          "Roofing, waterproofing and finishes"
+        ]
       },
       "solar": {
-        "title": "Solar",
-        "text": "Complete energy solutions, from design to plant operation."
+        "title": "Giving structure to energy.",
+        "text": "Specialist crews and professional equipment for the mechanical construction of solar and agrivoltaic installations, from pile driving to structure assembly and module installation.",
+        "company": "SRA GROUP SRL — SOLAR",
+        "services": [
+          "Pile driving and installation",
+          "Fixed structure and tracker assembly",
+          "Solar module installation",
+          "Plant revamping and completion"
+        ]
       },
       "services": "Core services"
     },
     "why": {
       "eyebrow": "Why SRAGROUP",
-      "title": "Six reasons to trust us with your next project.",
-      "text": "We work with an industrial method: structured processes, clear accountability and a single point of contact from concept to handover.",
+      "title": "Our strength is what sets us apart.",
+      "text": "Two specialist divisions, one organisation. Experience, qualified personnel and professional equipment to deliver reliability, efficiency and quality on every site.",
       "items": [
         {
-          "title": "Safety first",
-          "text": "A structured safety management system, ongoing training and weekly site audits. Our target: zero injuries."
+          "title": "Qualified personnel",
+          "text": "Specialist crews organised to handle construction work and solar assembly of varying complexity."
         },
         {
-          "title": "Guaranteed quality",
-          "text": "Rigorous quality processes with documented checks at every stage, from tendering to final handover."
+          "title": "Our own vehicles and equipment",
+          "text": "Professional machinery, specialist tools and operational vehicles for greater independence in carrying out work."
         },
         {
-          "title": "Turnkey delivery",
-          "text": "Design, permitting, construction and commissioning under one contract and one responsibility."
+          "title": "Site organisation",
+          "text": "Resource planning, crew coordination and operational management aligned with project requirements."
         },
         {
-          "title": "In-house engineering",
-          "text": "Structural, MEP and energy engineers on staff: fast technical decisions and no diluted accountability."
+          "title": "Safety and professionalism",
+          "text": "Attention to personnel training, site documentation and the application of safety procedures."
         },
         {
-          "title": "On-time delivery",
-          "text": "Detailed planning and continuous monitoring: 98% of projects are handed over within contract dates."
+          "title": "Nationwide operations",
+          "text": "Organised crews available for projects and subcontracting across Italian regions, ready to mobilise according to project needs."
         },
         {
-          "title": "Real sustainability",
-          "text": "Environmental care on every site, low-impact materials and renewable energy built into our projects."
+          "title": "Reliability and collaboration",
+          "text": "An operational approach based on direct communication, organisational flexibility and ongoing collaboration with clients and main contractors."
         }
       ],
       "badge": "The SRAGROUP method"
@@ -184,55 +207,44 @@
     },
     "cta": "Let's talk about your next project.",
     "marquee": [
-      "Steel structures",
-      "Reinforced concrete",
-      "Turnkey delivery",
-      "Solar parks",
-      "Industrial PV",
-      "Storage and EV charging",
-      "Design and build",
-      "O&M"
-    ]
+      "External wall insulation",
+      "Solar assembly",
+      "Machine-applied plastering",
+      "Pile driving",
+      "Building renovations",
+      "Fixed structures and trackers",
+      "Roofing and waterproofing",
+      "Solar module installation",
+      "Skimming and finishes",
+      "Solar revamping"
+    ],
+    "ctaText": "Tell us your goals and constraints: a technical lead will respond with an initial proposal.",
+    "ctaEyebrow": "Contact"
   },
   "about": {
     "hero": {
       "eyebrow": "About us",
-      "title": "Hands-on experience. Industrial vision.",
-      "text": "For more than twenty-five years we have turned technical complexity into reliable, efficient and measurable results."
+      "title": "Building the present. Powering the future.",
+      "text": "Two sectors, one vision: expertise, organisation and quality in the delivery of construction work and solar installations."
     },
     "history": {
       "eyebrow": "Our history",
       "title": "Grown on site, one project at a time.",
       "items": [
         {
-          "year": "2001",
-          "title": "SRA Costruzioni is founded",
-          "text": "The company starts in Milan as a general contractor for industrial buildings."
+          "year": "2009",
+          "title": "Our roots in construction",
+          "text": "Our journey begins in construction, where we gain experience in renovation, refurbishment and building work, developing solid expertise and a deep understanding of the site over time."
         },
         {
-          "year": "2008",
-          "title": "First national contracts",
-          "text": "We deliver our first logistics hubs outside Lombardy and obtain SOA qualification."
-        },
-        {
-          "year": "2013",
-          "title": "The Solar division is born",
-          "text": "From the roofs of our own buildings to the first plants for third-party clients."
-        },
-        {
-          "year": "2019",
-          "title": "Integrated certified system",
-          "text": "Quality, environment and safety certified to ISO 9001, 14001 and 45001."
-        },
-        {
-          "year": "2022",
-          "title": "First utility-scale solar park",
-          "text": "We develop and connect our first ground-mounted plant above 10 MWp."
+          "year": "2021",
+          "title": "Entering the solar sector",
+          "text": "We expand into renewable energy, specialising in the mechanical construction of industrial solar installations. An evolution that brings together operational experience, innovation and new expertise."
         },
         {
           "year": "2026",
-          "title": "More than 180 projects completed",
-          "text": "Two divisions, one group and over 135 MWp installed across Italy."
+          "title": "One group, two sectors, one vision",
+          "text": "Today we operate throughout Italy through two specialist divisions, Construction and Solar. Qualified crews, dedicated equipment and a structured organisation allow us to take on complex contracts with reliability, quality and operational continuity."
         }
       ]
     },
@@ -240,36 +252,57 @@
       "eyebrow": "Mission and vision",
       "title": "Infrastructure that improves the way businesses work and produce.",
       "missionLabel": "Mission",
-      "mission": "To design and build reliable buildings and energy systems, focusing on technical quality, schedule control and a transparent relationship with every client.",
+      "mission": "To deliver construction work and solar installations with high standards of quality, safety and efficiency. Through qualified personnel, organisation and attention to detail, we support our partners at every operational stage with professionalism and respect for our commitments.",
       "visionLabel": "Vision",
-      "vision": "To be the partner of choice for Italian businesses that want to grow in efficient spaces powered by clean energy.",
-      "values": ["Precision", "Safety", "Quality", "Accountability"]
+      "vision": "To be a national reference in construction and solar energy, distinguished by operational strength, expertise and reliability. To continually invest in people, equipment and organisation to take on increasingly ambitious projects.",
+      "values": [
+        {
+          "title": "Precision",
+          "text": "Care for detail and attention in every task."
+        },
+        {
+          "title": "Safety",
+          "text": "Protecting people and following procedures."
+        },
+        {
+          "title": "Quality",
+          "text": "Technical expertise and high standards."
+        },
+        {
+          "title": "Reliability",
+          "text": "Professionalism, organisation and respect for commitments."
+        }
+      ],
+      "missionTitle": "Turning expertise and experience into tangible results.",
+      "visionTitle": "Growing together, building lasting value."
     },
     "standards": {
-      "eyebrow": "Safety and quality",
-      "title": "Quality and safety are not statements: they are processes.",
-      "hse": {
-        "title": "HSE policy",
-        "text": "Health, safety and the environment guide every decision, from design to site management.",
-        "points": [
-          "Site-specific safety plans for every project",
-          "Regular training for all staff",
-          "Subcontractor pre-qualification and monitoring",
-          "Near-miss analysis with tracked corrective actions",
-          "Waste management and reduced site emissions"
-        ]
-      },
-      "quality": {
-        "title": "Quality control",
-        "text": "A five-step process checks every work package before it can become a problem.",
-        "steps": [
-          "Review of design and contract requirements",
-          "Supplier and material qualification",
-          "Inspection and test plans for each work package",
-          "Testing, commissioning and as-built documentation",
-          "Client satisfaction review"
-        ]
-      }
+      "eyebrow": "Organisation and operational capability",
+      "title": "Our strength is turning projects into results.",
+      "cards": [
+        {
+          "title": "Specialist crews",
+          "text": "Qualified personnel and organised crews for construction and solar work, with expertise, flexibility and operational continuity.",
+          "points": [
+            "Crews dedicated to construction and solar",
+            "Qualified personnel for specialist work",
+            "Efficient organisation of site activities",
+            "Flexibility in managing operational resources",
+            "Ability to work on multiple sites simultaneously"
+          ]
+        },
+        {
+          "title": "Equipment and operational independence",
+          "text": "We invest in equipment, vehicles and operational resources to deliver efficiency, independence and reliability even on the most demanding sites.",
+          "points": [
+            "Professional vehicles and equipment available",
+            "Specialist machinery for construction and solar",
+            "Independent management of key site activities",
+            "Optimising site time and resources",
+            "Operational support for projects of varying complexity"
+          ]
+        }
+      ]
     },
     "leadership": {
       "eyebrow": "Leadership",
@@ -294,29 +327,35 @@
         }
       ]
     },
-    "cta": "Let's build the next chapter together."
+    "cta": "Great projects begin with strong partnerships.",
+    "ctaText": "Have a project to deliver? We bring experience, specialist personnel and organisational capability to turn your requirements into tangible results."
   },
   "construction": {
     "hero": {
       "eyebrow": "Construction Division",
       "title": "We build certainty.",
-      "text": "From design to handover, we coordinate people, skills and resources to deliver complex projects without compromise."
+      "text": "Specialists in construction, renovation and refurbishment, we bring experience, qualified crews and organisational capability to projects of every size.",
+      "tagline": "Reliability, expertise and quality. Across Italy."
     },
     "sectors": {
       "eyebrow": "Sectors",
-      "title": "Broad expertise, end-to-end control.",
+      "title": "One expertise, many sectors.",
       "items": [
         {
-          "title": "Industrial",
-          "text": "Manufacturing plants, logistics hubs, automated warehouses and redevelopment of existing sites."
+          "title": "Industrial buildings",
+          "text": "Construction, maintenance and refurbishment of industrial buildings, factories and production facilities. Specialist personnel carry out masonry, plastering, flooring, insulation and finishes."
         },
         {
-          "title": "Commercial",
-          "text": "High-efficiency offices and retail spaces, designed to last and to be used."
+          "title": "Commercial and office buildings",
+          "text": "Building work for offices, retail premises and business facilities, including renovation, drywall, suspended ceilings, flooring and interior and exterior finishes."
         },
         {
-          "title": "Residential",
-          "text": "Contemporary, comfortable residential developments with high energy ratings."
+          "title": "Residential buildings",
+          "text": "Renovation and refurbishment of homes and apartment buildings, including facades, external insulation, roofing, plastering and finishing work."
+        },
+        {
+          "title": "Public and school buildings",
+          "text": "Maintenance, refurbishment and completion of public buildings, schools and community facilities, including specialist subcontracting work."
         }
       ]
     },
@@ -325,28 +364,36 @@
       "title": "One partner for the whole process.",
       "items": [
         {
-          "title": "Steel structures",
-          "text": "Structural steelwork, long spans and overhead cranes, with shop prefabrication."
+          "title": "Traditional and machine-applied plastering",
+          "text": "Interior and exterior plastering, using premixed and traditional materials, professional plastering machines and specialist personnel."
         },
         {
-          "title": "Reinforced concrete",
-          "text": "Foundations, cast-in-place and precast structures, retaining works."
+          "title": "External wall insulation",
+          "text": "External insulation systems using EPS, mineral wool and high-performance materials, complete with reinforced base coat and finish."
         },
         {
-          "title": "Renovation",
-          "text": "Structural and energy upgrades of existing buildings, including while in use."
+          "title": "Facade skimming and finishes",
+          "text": "Reinforced skimming, repairs, thin-coat renders, decorative coatings and finishes for residential, commercial and industrial buildings."
         },
         {
-          "title": "Turnkey projects",
-          "text": "One contract with fixed price and schedule, from design to commissioning."
+          "title": "Roofing and waterproofing",
+          "text": "Roof refurbishment, membrane installation, insulation systems, roof coverings, gutters and sheet metal work."
         },
         {
-          "title": "Design and build",
-          "text": "Integrated design and construction to reduce clashes, time and variations."
+          "title": "Masonry and building work",
+          "text": "Masonry, partition walls, infill walls, demolition, repair and renovation work."
         },
         {
-          "title": "Site management",
-          "text": "Project management, safety, cost control and subcontractor coordination."
+          "title": "Flooring and wall coverings",
+          "text": "Installation of interior and exterior flooring and wall coverings, subfloor preparation and finishing work."
+        },
+        {
+          "title": "Drywall and interior work",
+          "text": "Partition walls, wall linings, suspended ceilings, dry construction systems and interior finishing."
+        },
+        {
+          "title": "Subcontracting and specialist crews",
+          "text": "Qualified, equipped crews for construction subcontracting, with operational organisation on sites across Italy."
         }
       ]
     },
@@ -355,28 +402,28 @@
       "title": "Six phases, constant control.",
       "items": [
         {
-          "title": "Analysis",
-          "text": "Goals, constraints, technical and financial feasibility."
+          "title": "Assessment and site survey",
+          "text": "Assessing the work required, checking site conditions and identifying the most efficient operational solutions."
         },
         {
-          "title": "Design",
-          "text": "BIM coordination across architecture, structure and MEP."
+          "title": "Quotation and planning",
+          "text": "Preparing the quotation, defining timescales and scheduling the resources required."
         },
         {
-          "title": "Planning",
-          "text": "Schedule, budget, procurement and logistics."
+          "title": "Site organisation",
+          "text": "Mobilising specialist crews, preparing equipment and coordinating operational activities."
         },
         {
-          "title": "Execution",
-          "text": "Direct site management and quality control."
+          "title": "Execution of works",
+          "text": "Carrying out construction work with qualified personnel, professional machinery and attention to safety."
         },
         {
-          "title": "Delivery",
-          "text": "Testing, as-built documentation and training."
+          "title": "Quality checks and inspection",
+          "text": "Monitoring progress, checking completed work and ensuring compliance with technical specifications."
         },
         {
-          "title": "Aftercare",
-          "text": "Planned maintenance and post-handover warranty."
+          "title": "Completion and handover",
+          "text": "Completing the work, addressing any remedial items and handing over in accordance with the contract."
         }
       ]
     },
@@ -388,7 +435,38 @@
       "eyebrow": "Our team",
       "title": "Our construction team."
     },
-    "cta": "Your project deserves solid foundations."
+    "cta": "Your project deserves solid foundations.",
+    "capabilities": {
+      "eyebrow": "SRA CONSTRUCTION — OUR NUMBERS",
+      "title": "Strength measured in results.",
+      "text": "Construction experience since 2009, combined with qualified personnel, professional equipment and operational organisation.",
+      "stats": [
+        {
+          "value": "2009",
+          "label": "Construction experience",
+          "text": "Experience gained in the construction industry since 2009"
+        },
+        {
+          "value": "35",
+          "label": "Staff",
+          "text": "Bricklayers, plasterers and specialist workers"
+        },
+        {
+          "value": "100%",
+          "label": "Nationwide operations",
+          "text": "Available for sites throughout Italy"
+        },
+        {
+          "value": "360°",
+          "label": "Operational capability",
+          "text": "Qualified crews, machinery and professional equipment"
+        }
+      ]
+    },
+    "ctaSubtitle": "Experience, expertise and reliability for your construction projects.",
+    "ctaDescription": "Since 2009, we have served the construction industry with specialist crews, professional machinery and a structured organisation for building, renovation and refurbishment projects across Italy.",
+    "ctaText": "Contact us to discuss your project. We are available for new contracts and subcontracting partnerships.",
+    "ctaCall": "Contact us"
   },
   "solar": {
     "hero": {
@@ -399,23 +477,27 @@
     "services": {
       "collageLabel": "SRA GROUP at work on solar sites",
       "eyebrow": "Services",
-      "title": "From industrial rooftops to solar parks.",
+      "title": "SOLAR DIVISION – OUR SERVICES",
       "items": [
         {
-          "title": "Solar park development",
-          "text": "Land sourcing, permitting, design and construction of utility-scale and agrivoltaic plants."
+          "title": "Pile driving for solar installations",
+          "subtitle": "Foundations and solar park preparation",
+          "text": "We carry out pile driving for ground-mounted and agrivoltaic installations. With two pile drivers of our own and specialist personnel, we deliver operational independence, precision and fast execution."
         },
         {
-          "title": "Energy efficiency",
-          "text": "Energy audits, consumption monitoring and measures to reduce demand."
+          "title": "Fixed structure and tracker assembly",
+          "subtitle": "Mechanical installation of solar systems",
+          "text": "We specialise in assembling fixed steel structures, single-post and double-post systems, and solar trackers. Our qualified crews work on industrial solar installations and large-scale solar parks."
         },
         {
-          "title": "Maintenance and O&M",
-          "text": "Preventive and corrective maintenance, module cleaning and performance guarantees."
+          "title": "Solar module installation",
+          "subtitle": "Professional panel placement and fixing",
+          "text": "We position and mechanically secure solar modules on ground-mounted structures, trackers and industrial rooftops, ensuring precision, safety and compliance with the project's technical specifications."
         },
         {
-          "title": "Storage and EV charging",
-          "text": "Battery storage and charging infrastructure integrated with the solar plant."
+          "title": "Solar plant revamping and maintenance",
+          "subtitle": "Upgrading and completing solar installations",
+          "text": "We carry out revamping, module replacement, mechanical repairs, fastener tightening, panel cleaning and completion work on existing solar installations."
         }
       ]
     },
@@ -425,19 +507,21 @@
       "text": "We handle in-house every technical phase that determines a plant's schedule, cost and output.",
       "stats": [
         {
-          "value": "135 MWp",
+          "value": "+100",
+          "unit": "MWp",
+          "detail": "in 2026",
           "label": "installed"
         },
         {
-          "value": "100+",
+          "value": "90",
           "label": "employees"
         },
         {
-          "value": "24/7",
-          "label": "availability"
+          "value": "100%",
+          "label": "Operating nationwide"
         },
         {
-          "value": "3",
+          "value": "2",
           "label": "owned pile drivers"
         }
       ]
@@ -447,28 +531,28 @@
       "title": "A clear path to energy independence.",
       "items": [
         {
-          "title": "Feasibility study",
-          "text": "Analysis of consumption, available surfaces and financial return."
+          "title": "Site preparation",
+          "text": "Organising crews, preparing equipment and moving materials for the start of site works."
         },
         {
-          "title": "Design",
-          "text": "Sizing, layout and yield simulation."
+          "title": "Pile driving",
+          "text": "Driving foundation piles using our own pile drivers, in accordance with the specified levels and design requirements."
         },
         {
-          "title": "Permits",
-          "text": "Building, environmental and grid applications."
+          "title": "Structure assembly",
+          "text": "Assembly and installation of fixed steel structures, single-post and double-post systems, and trackers for solar installations."
         },
         {
-          "title": "Installation",
-          "text": "A coordinated, safe and documented site."
+          "title": "Module installation",
+          "text": "Positioning and mechanically securing solar panels on ground-mounted structures, trackers and industrial rooftops."
         },
         {
-          "title": "Grid connection",
-          "text": "Testing, connection and commissioning."
+          "title": "Tightening and inspections",
+          "text": "Checking fixings, tightening with torque wrenches and performing mechanical inspections in accordance with technical specifications."
         },
         {
-          "title": "Monitoring and maintenance",
-          "text": "Continuous monitoring and O&M for the life of the plant."
+          "title": "Completion and remedial works",
+          "text": "Carrying out finishing work, resolving punch list items and completing mechanical remedial works for handover."
         }
       ]
     },
@@ -478,7 +562,7 @@
       "members": [
         {
           "name": "Abbas Aryan",
-          "role": "Administrator"
+          "role": "Operations Manager"
         },
         {
           "name": "Khalid Mohsin",
@@ -493,7 +577,7 @@
           "role": "Site Manager"
         },
         {
-          "name": "Azhar Jahanzalb",
+          "name": "Azhar Jahanzaib",
           "role": "Site Manager"
         },
         {
@@ -510,7 +594,10 @@
       "eyebrow": "Solar projects",
       "title": "Plants in operation across Italy."
     },
-    "cta": "Turn sunlight into a competitive advantage."
+    "cta": "Your operational partner for solar projects.",
+    "ctaText": "Do you have a solar installation to build or a site to complete? SRA Group provides specialist crews, qualified personnel and its own equipment to ensure speed, quality and reliability at every stage of mechanical assembly. Contact us to discuss working together and receive a tailored quote.",
+    "ctaRequest": "REQUEST A QUOTE",
+    "ctaCall": "TALK TO US"
   },
   "projects": {
     "hero": {
@@ -553,7 +640,7 @@
     "form": {
       "eyebrow": "Quote",
       "title": "Tell us about your project.",
-      "requiredNote": "Fields marked with * are required.",
+      "requiredNote": "Only name, email and phone are required.",
       "step1": "Division",
       "step1Question": "What do you need?",
       "step2": "Project details",
@@ -584,16 +671,13 @@
       "installationType": "Installation type",
       "installationTypes": {
         "roof": "Rooftop",
-        "ground": "Ground-mounted",
         "park": "Solar park"
       },
       "sizing": "Sizing",
       "sizingModes": {
-        "power": "Capacity (kWp)",
-        "bill": "Annual energy bill (€)"
+        "power": "Capacity (MWp)"
       },
-      "power": "Approximate capacity (kWp)",
-      "bill": "Annual energy spend (€)",
+      "power": "Approximate capacity (MWp)",
       "subject": "Subject",
       "firstName": "First name",
       "lastName": "Last name",
@@ -608,7 +692,7 @@
       "fileButton": "Choose file",
       "fileRemove": "Remove attachment",
       "fileNone": "No file selected",
-      "gdpr": "I have read the <0>privacy notice</0> and consent to the processing of my data to handle this request. *",
+      "gdpr": "I have read the <0>privacy policy</0>.",
       "marketing": "I agree to receive marketing communications and updates from SRAGROUP (optional).",
       "submit": "Send request",
       "submitting": "Sending…",

@@ -68,7 +68,7 @@
     "contact": "Contatti"
   },
   "footer": {
-    "tagline": "Costruiamo spazi e produciamo energia per imprese che guardano avanti.",
+    "tagline": "Due divisioni, un'unica missione: trasformare progetti in risultati.",
     "navigation": "Navigazione",
     "contacts": "Contatti diretti",
     "legal": "Informazioni legali",
@@ -91,88 +91,111 @@
     "hero": {
       "construction": {
         "eyebrow": "Costruzioni",
-        "title": "Spazi solidi. Valore duraturo.",
-        "text": "General contractor per interventi industriali, commerciali e residenziali."
+        "title": "Costruiamo valore. Dal 2009.",
+        "text": "Esperienza nel settore edile, squadre specializzate e macchinari professionali per interventi di costruzione, ristrutturazione e riqualificazione su tutto il territorio nazionale."
       },
       "solar": {
         "eyebrow": "Fotovoltaico",
-        "title": "Energia che genera futuro.",
-        "text": "Impianti ad alte prestazioni per imprese e grandi superfici."
+        "title": "Diamo struttura all'energia del futuro.",
+        "text": "Specializzati nel montaggio meccanico di impianti fotovoltaici e agrivoltaici, dalla battitura dei pali all'installazione di strutture fisse, tracker e moduli, fino agli interventi di revamping."
       }
     },
     "statsLabel": "SRAGROUP in numeri",
     "stats": [
       {
-        "value": 25,
+        "value": 2009,
         "decimals": 0,
-        "suffix": "+",
-        "label": "anni di esperienza"
+        "suffix": "",
+        "division": "construction",
+        "label": "Esperienza nell'edilizia",
+        "text": "Competenze maturate nel settore dal 2009"
       },
       {
-        "value": 180,
+        "value": 35,
         "decimals": 0,
-        "suffix": "+",
-        "label": "progetti completati"
+        "suffix": "",
+        "division": "construction",
+        "label": "Addetti specializzati",
+        "text": "Personale qualificato per lavorazioni edili"
       },
       {
-        "value": 135,
+        "value": 92,
         "decimals": 0,
-        "suffix": " MWp",
-        "label": "potenza installata"
+        "suffix": "",
+        "division": "solar",
+        "label": "Addetti operativi",
+        "text": "Squadre specializzate nel montaggio fotovoltaico"
       },
       {
-        "value": 98,
+        "value": 100,
         "decimals": 0,
-        "suffix": "%",
-        "label": "consegne puntuali"
+        "suffix": "+ MWp",
+        "division": "solar",
+        "label": "Potenza complessiva realizzata",
+        "text": "Impianti fotovoltaici e agrivoltaici con lavorazioni eseguite dalle nostre squadre",
+        "detail": "nel 2026"
       }
     ],
     "intro": {
       "eyebrow": "Un unico gruppo",
-      "title": "Dalla materia all'energia, una visione integrata.",
-      "text": "Due divisioni specialistiche, una sola cultura del progetto: competenza, responsabilità e controllo diretto di ogni fase.",
+      "title": "La forza di costruire. L'energia di innovare.",
+      "text": "Due divisioni specializzate, squadre qualificate e attrezzature professionali al servizio di imprese e grandi committenti.",
       "cta": "Scopri chi siamo"
     },
     "divisions": {
       "eyebrow": "Divisione",
       "construction": {
-        "title": "Costruzioni",
-        "text": "Edifici industriali, direzionali e residenziali realizzati con rigore esecutivo."
+        "title": "Costruiamo qualità. Dal 2009.",
+        "text": "Esperienza nel settore edile, personale qualificato e attrezzature professionali per interventi di costruzione, ristrutturazione e riqualificazione su tutto il territorio nazionale.",
+        "company": "SRA COSTRUZIONI SRLS",
+        "services": [
+          "Ristrutturazioni e opere murarie",
+          "Cappotti termici e isolamento",
+          "Intonaci tradizionali e meccanizzati",
+          "Coperture, impermeabilizzazioni e finiture"
+        ]
       },
       "solar": {
-        "title": "Fotovoltaico",
-        "text": "Soluzioni energetiche complete, dalla progettazione alla gestione dell'impianto."
+        "title": "Diamo struttura all'energia.",
+        "text": "Squadre specializzate e mezzi professionali per la realizzazione meccanica di impianti fotovoltaici e agrivoltaici, dalle attività di infissione pali fino al montaggio delle strutture e alla posa dei moduli.",
+        "company": "SRA GROUP SRL — FOTOVOLTAICO",
+        "services": [
+          "Battitura e infissione pali",
+          "Montaggio strutture fisse e tracker",
+          "Installazione moduli fotovoltaici",
+          "Revamping e completamento impianti"
+        ]
       },
       "services": "Servizi principali"
     },
     "why": {
       "eyebrow": "Perché SRAGROUP",
-      "title": "Sei ragioni per affidarci il vostro prossimo progetto.",
-      "text": "Lavoriamo con un metodo industriale: processi strutturati, responsabilità chiare e un unico referente dall'idea alla consegna.",
+      "title": "La nostra forza è ciò che ci distingue.",
+      "text": "Due divisioni specializzate, un'unica organizzazione. Esperienza, personale qualificato e mezzi professionali per garantire affidabilità, efficienza e qualità in ogni cantiere.",
       "items": [
         {
-          "title": "Sicurezza prima di tutto",
-          "text": "Sistema di gestione della sicurezza strutturato, formazione continua e audit di cantiere settimanali. Obiettivo: zero infortuni."
+          "title": "Personale qualificato",
+          "text": "Squadre di operai specializzati, organizzate per affrontare lavorazioni edili e montaggi fotovoltaici di diversa complessità."
         },
         {
-          "title": "Qualità garantita",
-          "text": "Processi di qualità rigorosi, con controlli documentati a ogni fase, dall'offerta alla consegna finale."
+          "title": "Mezzi e attrezzature proprie",
+          "text": "Disponibilità di macchinari professionali, attrezzature specialistiche e mezzi operativi per una maggiore autonomia nell'esecuzione dei lavori."
         },
         {
-          "title": "Chiavi in mano",
-          "text": "Progettazione, autorizzazioni, costruzione e collaudo sotto un unico contratto e un'unica responsabilità."
+          "title": "Organizzazione del cantiere",
+          "text": "Pianificazione delle risorse, coordinamento delle squadre e gestione operativa delle lavorazioni nel rispetto delle esigenze di commessa."
         },
         {
-          "title": "Ingegneria interna",
-          "text": "Strutturisti, impiantisti ed energy engineer in house: decisioni tecniche rapide e nessuna dispersione di responsabilità."
+          "title": "Sicurezza e professionalità",
+          "text": "Attenzione alla formazione del personale, alla documentazione di cantiere e all'applicazione delle procedure di sicurezza."
         },
         {
-          "title": "Tempi rispettati",
-          "text": "Pianificazione dettagliata e monitoraggio continuo: il 98% delle commesse è consegnato entro i termini contrattuali."
+          "title": "Operatività su scala nazionale",
+          "text": "Disponibilità di squadre organizzate per interventi e subappalti in diverse regioni italiane, con capacità di mobilitazione secondo le esigenze del progetto."
         },
         {
-          "title": "Sostenibilità concreta",
-          "text": "Attenzione all'ambiente in ogni cantiere, materiali a basso impatto ed energia rinnovabile integrata nei nostri progetti."
+          "title": "Affidabilità e collaborazione",
+          "text": "Un approccio operativo basato su comunicazione diretta, flessibilità organizzativa e collaborazione costante con committenti e imprese affidatarie."
         }
       ],
       "badge": "Il metodo SRAGROUP"
@@ -184,92 +207,102 @@
     },
     "cta": "Parliamo del vostro prossimo progetto.",
     "marquee": [
-      "Strutture in acciaio",
-      "Calcestruzzo armato",
-      "Chiavi in mano",
-      "Parchi solari",
-      "Fotovoltaico industriale",
-      "Accumulo e ricarica EV",
-      "Design & build",
-      "O&M"
-    ]
+      "Cappotti termici",
+      "Montaggi fotovoltaici",
+      "Intonaci meccanizzati",
+      "Battitura pali",
+      "Ristrutturazioni edili",
+      "Strutture fisse e tracker",
+      "Coperture e impermeabilizzazioni",
+      "Posa moduli fotovoltaici",
+      "Rasature e finiture",
+      "Revamping fotovoltaico"
+    ],
+    "ctaText": "Raccontateci obiettivi e vincoli: un referente tecnico vi risponde con una prima proposta.",
+    "ctaEyebrow": "Contatti"
   },
   "about": {
     "hero": {
       "eyebrow": "Chi siamo",
-      "title": "Esperienza concreta. Visione industriale.",
-      "text": "Da oltre venticinque anni trasformiamo complessità tecniche in opere affidabili, efficienti e misurabili."
+      "title": "Costruiamo il presente. Diamo energia al futuro.",
+      "text": "Due settori, un'unica visione: competenza, organizzazione e qualità nella realizzazione di opere edili e impianti fotovoltaici."
     },
     "history": {
       "eyebrow": "La nostra storia",
       "title": "Cresciuti sul campo, progetto dopo progetto.",
       "items": [
         {
-          "year": "2001",
-          "title": "Nasce SRA Costruzioni",
-          "text": "L'impresa nasce a Milano come general contractor per l'edilizia industriale."
+          "year": "2009",
+          "title": "Le nostre radici nell'edilizia",
+          "text": "Il nostro percorso nasce nel settore delle costruzioni, dove maturiamo esperienza nelle ristrutturazioni, riqualificazioni e lavorazioni edili, costruendo nel tempo competenze solide e una profonda conoscenza del cantiere."
         },
         {
-          "year": "2008",
-          "title": "Prime commesse nazionali",
-          "text": "Realizziamo i primi poli logistici fuori regione e otteniamo l'attestazione SOA."
-        },
-        {
-          "year": "2013",
-          "title": "Nasce la divisione Fotovoltaico",
-          "text": "Dalle coperture dei nostri edifici ai primi impianti per clienti terzi."
-        },
-        {
-          "year": "2019",
-          "title": "Sistema integrato certificato",
-          "text": "Qualità, ambiente e sicurezza certificati ISO 9001, 14001 e 45001."
-        },
-        {
-          "year": "2022",
-          "title": "Primo parco solare utility-scale",
-          "text": "Sviluppiamo e connettiamo alla rete il primo impianto a terra oltre i 10 MWp."
+          "year": "2021",
+          "title": "L'ingresso nel settore fotovoltaico",
+          "text": "Ampliamo le nostre attività nel settore delle energie rinnovabili, specializzandoci nella realizzazione meccanica di impianti fotovoltaici industriali. Un'evoluzione che unisce esperienza operativa, innovazione e nuove competenze."
         },
         {
           "year": "2026",
-          "title": "Oltre 180 progetti completati",
-          "text": "Due divisioni, un unico gruppo e più di 135 MWp installati in Italia."
+          "title": "Un gruppo, due settori, un'unica visione",
+          "text": "Oggi operiamo in tutta Italia attraverso due divisioni specializzate, Edilizia e Fotovoltaico. Squadre qualificate, mezzi dedicati e un'organizzazione strutturata ci permettono di affrontare commesse complesse, garantendo affidabilità, qualità e continuità operativa."
         }
       ]
     },
     "mission": {
       "eyebrow": "Missione e visione",
       "title": "Infrastrutture che migliorano il modo di lavorare e produrre.",
-      "missionLabel": "Missione",
-      "mission": "Progettare e realizzare edifici e impianti energetici affidabili, mettendo al centro qualità tecnica, controllo dei tempi e una relazione trasparente con ogni committente.",
-      "visionLabel": "Visione",
-      "vision": "Essere il partner di riferimento per le imprese italiane che vogliono crescere in spazi efficienti e alimentati da energia pulita.",
-      "values": ["Precisione", "Sicurezza", "Qualità", "Responsabilità"]
+      "missionLabel": "MISSIONE",
+      "mission": "Realizzare opere edili e impianti fotovoltaici con elevati standard di qualità, sicurezza ed efficienza. Attraverso personale qualificato, organizzazione e attenzione ai dettagli, affianchiamo i nostri partner in ogni fase operativa, garantendo professionalità e rispetto degli impegni.",
+      "visionLabel": "VISIONE",
+      "vision": "Essere un punto di riferimento nazionale nei settori dell'edilizia e del fotovoltaico, distinguendoci per solidità operativa, competenza e affidabilità. Investire continuamente nelle persone, nei mezzi e nell'organizzazione per affrontare progetti sempre più ambiziosi.",
+      "values": [
+        {
+          "title": "Precisione",
+          "text": "Cura dei dettagli e attenzione in ogni lavorazione."
+        },
+        {
+          "title": "Sicurezza",
+          "text": "Tutela delle persone e rispetto delle procedure."
+        },
+        {
+          "title": "Qualità",
+          "text": "Competenza tecnica e standard elevati."
+        },
+        {
+          "title": "Affidabilità",
+          "text": "Serietà, organizzazione e rispetto degli impegni."
+        }
+      ],
+      "missionTitle": "Trasformare competenze ed esperienza in risultati concreti.",
+      "visionTitle": "Crescere insieme, costruendo valore nel tempo."
     },
     "standards": {
-      "eyebrow": "Sicurezza e qualità",
-      "title": "Qualità e sicurezza non sono dichiarazioni: sono processi.",
-      "hse": {
-        "title": "Politica HSE",
-        "text": "Salute, sicurezza e ambiente guidano ogni decisione, dalla progettazione alla gestione del cantiere.",
-        "points": [
-          "Piani operativi di sicurezza specifici per ogni cantiere",
-          "Formazione e addestramento periodico di tutto il personale",
-          "Qualifica e monitoraggio dei subappaltatori",
-          "Analisi dei quasi-incidenti e azioni correttive tracciate",
-          "Gestione dei rifiuti e riduzione delle emissioni di cantiere"
-        ]
-      },
-      "quality": {
-        "title": "Controllo qualità",
-        "text": "Un processo in cinque passaggi verifica ogni lavorazione prima che diventi un problema.",
-        "steps": [
-          "Riesame del progetto e dei requisiti contrattuali",
-          "Qualifica di fornitori e materiali",
-          "Piani di controllo e ispezioni per lavorazione",
-          "Prove, collaudi e documentazione as-built",
-          "Verifica della soddisfazione del cliente"
-        ]
-      }
+      "eyebrow": "ORGANIZZAZIONE E CAPACITÀ OPERATIVA",
+      "title": "La nostra forza è trasformare i progetti in risultati.",
+      "cards": [
+        {
+          "title": "Squadre specializzate",
+          "text": "Personale qualificato e squadre organizzate per affrontare lavorazioni edili e fotovoltaiche con competenza, flessibilità e continuità operativa.",
+          "points": [
+            "Squadre dedicate all'edilizia e al fotovoltaico",
+            "Personale qualificato per lavorazioni specialistiche",
+            "Organizzazione efficiente delle attività di cantiere",
+            "Flessibilità nella gestione delle risorse operative",
+            "Capacità di operare su più cantieri contemporaneamente"
+          ]
+        },
+        {
+          "title": "Mezzi e autonomia operativa",
+          "text": "Investiamo in attrezzature, mezzi e risorse operative per garantire efficienza, autonomia e affidabilità anche nei cantieri più impegnativi.",
+          "points": [
+            "Disponibilità di mezzi e attrezzature professionali",
+            "Macchinari specifici per edilizia e fotovoltaico",
+            "Gestione autonoma delle principali lavorazioni",
+            "Ottimizzazione di tempi e risorse di cantiere",
+            "Supporto operativo per progetti di diversa complessità"
+          ]
+        }
+      ]
     },
     "leadership": {
       "eyebrow": "Leadership",
@@ -294,29 +327,35 @@
         }
       ]
     },
-    "cta": "Costruiamo insieme il prossimo capitolo."
+    "cta": "Grandi progetti nascono da solide collaborazioni.",
+    "ctaText": "Hai un progetto da realizzare? Mettiamo a tua disposizione esperienza, personale specializzato e capacità organizzativa per trasformare le tue esigenze in risultati concreti."
   },
   "construction": {
     "hero": {
       "eyebrow": "Divisione Costruzioni",
       "title": "Costruiamo certezze.",
-      "text": "Dalla progettazione alla consegna, coordiniamo persone, competenze e risorse per realizzare opere complesse senza compromessi."
+      "text": "Specializzati in costruzioni, ristrutturazioni e riqualificazioni edili, mettiamo a disposizione esperienza, squadre qualificate e capacità organizzativa per realizzare progetti di ogni dimensione.",
+      "tagline": "Affidabilità, competenza e qualità. In tutta Italia."
     },
     "sectors": {
       "eyebrow": "Ambiti",
-      "title": "Competenza trasversale, controllo verticale.",
+      "title": "Un'unica competenza, molteplici settori d'intervento.",
       "items": [
         {
-          "title": "Industriale",
-          "text": "Stabilimenti produttivi, poli logistici, magazzini automatizzati e riqualificazioni di siti esistenti."
+          "title": "Edilizia industriale",
+          "text": "Interventi di costruzione, manutenzione e riqualificazione di edifici industriali, stabilimenti e strutture produttive. Eseguiamo opere murarie, intonaci, pavimentazioni, isolamenti e finiture con personale specializzato."
         },
         {
-          "title": "Commerciale",
-          "text": "Uffici, spazi retail e direzionali ad alta efficienza, progettati per durare e per essere vissuti."
+          "title": "Edilizia commerciale e direzionale",
+          "text": "Lavorazioni edili per uffici, attività commerciali e strutture direzionali. Realizziamo ristrutturazioni, cartongessi, controsoffitti, pavimentazioni e finiture interne ed esterne."
         },
         {
-          "title": "Residenziale",
-          "text": "Complessi residenziali contemporanei, confortevoli e in classe energetica elevata."
+          "title": "Edilizia residenziale",
+          "text": "Ristrutturazione e riqualificazione di abitazioni e condomini, con interventi su facciate, cappotti termici, coperture, intonaci e opere di finitura."
+        },
+        {
+          "title": "Edilizia pubblica e scolastica",
+          "text": "Interventi di manutenzione, riqualificazione e completamento di edifici pubblici, istituti scolastici e strutture collettive, anche attraverso lavorazioni specialistiche in subappalto."
         }
       ]
     },
@@ -325,28 +364,36 @@
       "title": "Un unico interlocutore per l'intero processo.",
       "items": [
         {
-          "title": "Strutture in acciaio",
-          "text": "Carpenteria metallica, grandi luci e carroponti, con prefabbricazione in officina."
+          "title": "Intonaci tradizionali e meccanizzati",
+          "text": "Esecuzione di intonaci interni ed esterni, premiscelati e tradizionali, con macchine intonacatrici professionali e personale specializzato."
         },
         {
-          "title": "Calcestruzzo armato",
-          "text": "Fondazioni, strutture gettate in opera e prefabbricate, opere di contenimento."
+          "title": "Cappotti termici e isolamenti",
+          "text": "Realizzazione di sistemi a cappotto in EPS, lana di roccia e materiali isolanti ad alte prestazioni, completi di rasatura armata e finitura."
         },
         {
-          "title": "Ristrutturazioni",
-          "text": "Riqualificazione strutturale ed energetica di edifici esistenti, anche in esercizio."
+          "title": "Rasature e finiture di facciata",
+          "text": "Rasature armate, ripristini, intonachini, rivestimenti decorativi e finiture per edifici residenziali, commerciali e industriali."
         },
         {
-          "title": "Progetti chiavi in mano",
-          "text": "Un contratto unico, prezzo e tempi certi, dalla progettazione al collaudo."
+          "title": "Coperture e impermeabilizzazioni",
+          "text": "Rifacimento tetti, posa di guaine, sistemi di isolamento, manti di copertura, grondaie e opere di lattoneria."
         },
         {
-          "title": "Design & build",
-          "text": "Progettazione ed esecuzione integrate per ridurre interferenze, tempi e varianti."
+          "title": "Murature e opere edili",
+          "text": "Realizzazione di murature, tramezzature, tamponamenti, demolizioni e interventi di ripristino e ristrutturazione."
         },
         {
-          "title": "Direzione di cantiere",
-          "text": "Project management, sicurezza, contabilità lavori e coordinamento dei subappalti."
+          "title": "Pavimenti e rivestimenti",
+          "text": "Posa di pavimentazioni e rivestimenti interni ed esterni, preparazione dei sottofondi e lavorazioni di finitura."
+        },
+        {
+          "title": "Cartongesso e opere interne",
+          "text": "Realizzazione di pareti divisorie, contropareti, controsoffitti, sistemi a secco e interventi di finitura degli ambienti."
+        },
+        {
+          "title": "Subappalti e squadre specializzate",
+          "text": "Squadre qualificate e attrezzate per l'esecuzione di lavorazioni edili in subappalto, con organizzazione operativa su cantieri in tutta Italia."
         }
       ]
     },
@@ -355,28 +402,28 @@
       "title": "Sei fasi, un controllo costante.",
       "items": [
         {
-          "title": "Analisi",
-          "text": "Obiettivi, vincoli, fattibilità tecnica ed economica."
+          "title": "Analisi e sopralluogo",
+          "text": "Valutazione delle lavorazioni richieste, verifica delle condizioni del cantiere e individuazione delle soluzioni operative più efficienti."
         },
         {
-          "title": "Progettazione",
-          "text": "Coordinamento BIM tra architettura, strutture e impianti."
+          "title": "Preventivazione e pianificazione",
+          "text": "Elaborazione dell'offerta economica, definizione delle tempistiche e programmazione delle risorse necessarie."
         },
         {
-          "title": "Pianificazione",
-          "text": "Cronoprogramma, budget, approvvigionamenti e logistica."
+          "title": "Organizzazione del cantiere",
+          "text": "Mobilitazione delle squadre specializzate, predisposizione delle attrezzature e coordinamento delle attività operative."
         },
         {
-          "title": "Esecuzione",
-          "text": "Gestione diretta del cantiere e controllo qualità."
+          "title": "Esecuzione delle lavorazioni",
+          "text": "Realizzazione delle opere edili con personale qualificato, macchinari professionali e attenzione alla sicurezza."
         },
         {
-          "title": "Consegna",
-          "text": "Collaudi, documentazione as-built e formazione."
+          "title": "Verifica e controllo qualità",
+          "text": "Monitoraggio dell'avanzamento dei lavori, verifica delle lavorazioni eseguite e rispetto delle specifiche tecniche."
         },
         {
-          "title": "Assistenza",
-          "text": "Manutenzione programmata e garanzia post-consegna."
+          "title": "Completamento e consegna",
+          "text": "Ultimazione delle lavorazioni, gestione degli eventuali ripristini e consegna delle opere secondo gli accordi contrattuali."
         }
       ]
     },
@@ -388,7 +435,38 @@
       "eyebrow": "Il nostro team",
       "title": "Il team Costruzioni."
     },
-    "cta": "Il vostro progetto merita basi solide."
+    "cta": "Il vostro progetto merita basi solide.",
+    "capabilities": {
+      "eyebrow": "SRA COSTRUZIONI — I NOSTRI NUMERI",
+      "title": "La solidità si misura nei fatti.",
+      "text": "Un'esperienza nel settore edile che parte dal 2009, unita a personale qualificato, attrezzature professionali e organizzazione operativa.",
+      "stats": [
+        {
+          "value": "2009",
+          "label": "Esperienza nell'edilizia",
+          "text": "Competenza maturata nel settore delle costruzioni dal 2009"
+        },
+        {
+          "value": "35",
+          "label": "Addetti",
+          "text": "Muratori, intonacatori e operai specializzati"
+        },
+        {
+          "value": "100%",
+          "label": "Operatività nazionale",
+          "text": "Disponibilità per cantieri su tutto il territorio italiano"
+        },
+        {
+          "value": "360°",
+          "label": "Capacità operativa",
+          "text": "Squadre qualificate, macchinari e attrezzature professionali"
+        }
+      ]
+    },
+    "ctaSubtitle": "Esperienza, competenza e affidabilità al servizio delle vostre costruzioni.",
+    "ctaDescription": "Dal 2009 operiamo nel settore edile mettendo a disposizione squadre specializzate, macchinari professionali e un'organizzazione strutturata per interventi di costruzione, ristrutturazione e riqualificazione su tutto il territorio nazionale.",
+    "ctaText": "Contattaci per valutare insieme il tuo progetto. Siamo disponibili per nuove commesse e collaborazioni in subappalto.",
+    "ctaCall": "Contattaci"
   },
   "solar": {
     "hero": {
@@ -399,23 +477,27 @@
     "services": {
       "collageLabel": "SRA GROUP al lavoro sui cantieri fotovoltaici",
       "eyebrow": "Servizi",
-      "title": "Dalla copertura industriale al parco solare.",
+      "title": "SEZIONE FOTOVOLTAICO – I NOSTRI SERVIZI",
       "items": [
         {
-          "title": "Sviluppo parchi solari",
-          "text": "Ricerca terreni, iter autorizzativo, progettazione e costruzione di impianti utility-scale e agrivoltaici."
+          "title": "Battitura pali per impianti fotovoltaici",
+          "subtitle": "Fondazioni e preparazione dei parchi fotovoltaici",
+          "text": "Eseguiamo attività di battitura pali per impianti fotovoltaici a terra e agrivoltaici. Grazie a due battipalo di proprietà e a personale specializzato, garantiamo autonomia operativa, precisione e rapidità di esecuzione."
         },
         {
-          "title": "Efficienza energetica",
-          "text": "Diagnosi, monitoraggio dei consumi e interventi per ridurre il fabbisogno energetico."
+          "title": "Montaggio strutture fisse e tracker",
+          "subtitle": "Installazione meccanica di impianti fotovoltaici",
+          "text": "Siamo specializzati nel montaggio di strutture metalliche fisse, monopalo, bipalo e sistemi a inseguimento solare (tracker). Operiamo su impianti fotovoltaici industriali e parchi solari di grandi dimensioni, con squadre qualificate."
         },
         {
-          "title": "Manutenzione e O&M",
-          "text": "Manutenzione preventiva e correttiva, pulizia moduli e garanzia di performance."
+          "title": "Installazione moduli fotovoltaici",
+          "subtitle": "Posa e fissaggio professionale dei pannelli",
+          "text": "Effettuiamo la posa e il fissaggio meccanico dei moduli fotovoltaici su strutture a terra, tracker e coperture industriali, garantendo precisione, sicurezza e rispetto delle specifiche tecniche di progetto."
         },
         {
-          "title": "Accumulo e ricarica EV",
-          "text": "Sistemi di storage e infrastrutture di ricarica integrate con l'impianto fotovoltaico."
+          "title": "Revamping e manutenzione impianti",
+          "subtitle": "Riqualificazione e completamento degli impianti fotovoltaici",
+          "text": "Eseguiamo interventi di revamping, sostituzione moduli, ripristini meccanici, serraggi, pulizia pannelli e attività di completamento su impianti fotovoltaici esistenti."
         }
       ]
     },
@@ -425,19 +507,21 @@
       "text": "Gestiamo internamente tutte le fasi tecniche che determinano tempi, costi e rendimento dell'impianto.",
       "stats": [
         {
-          "value": "135 MWp",
+          "value": "+100",
+          "unit": "MWp",
+          "detail": "nel 2026",
           "label": "installati"
         },
         {
-          "value": "100+",
+          "value": "90",
           "label": "dipendenti"
         },
         {
-          "value": "24/7",
-          "label": "monitoraggio"
+          "value": "100%",
+          "label": "Operatività sul territorio nazionale"
         },
         {
-          "value": "3",
+          "value": "2",
           "label": "battipalo di proprietà"
         }
       ]
@@ -447,28 +531,28 @@
       "title": "Un percorso chiaro verso l'indipendenza energetica.",
       "items": [
         {
-          "title": "Studio di fattibilità",
-          "text": "Analisi dei consumi, delle superfici e del ritorno economico."
+          "title": "Preparazione del cantiere",
+          "text": "Organizzazione delle squadre, predisposizione delle attrezzature e movimentazione dei materiali per l’avvio delle lavorazioni."
         },
         {
-          "title": "Progettazione",
-          "text": "Dimensionamento, layout e simulazione della producibilità."
+          "title": "Battitura pali",
+          "text": "Infissione dei pali di fondazione mediante battipalo di proprietà, nel rispetto delle quote e delle specifiche progettuali."
         },
         {
-          "title": "Autorizzazioni",
-          "text": "Pratiche edilizie, ambientali e di connessione."
+          "title": "Montaggio strutture",
+          "text": "Assemblaggio e installazione di strutture metalliche fisse, monopalo, bipalo e sistemi tracker per impianti fotovoltaici."
         },
         {
-          "title": "Installazione",
-          "text": "Cantiere coordinato, sicuro e documentato."
+          "title": "Installazione moduli",
+          "text": "Posa e fissaggio meccanico dei pannelli fotovoltaici su strutture a terra, tracker e coperture industriali."
         },
         {
-          "title": "Connessione",
-          "text": "Collaudo, allaccio alla rete e messa in esercizio."
+          "title": "Serraggi e controlli",
+          "text": "Verifica dei fissaggi, serraggi con chiavi dinamometriche e controlli meccanici secondo le specifiche tecniche."
         },
         {
-          "title": "Monitoraggio e manutenzione",
-          "text": "Controllo continuo e O&M per tutta la vita dell'impianto."
+          "title": "Completamento e ripristini",
+          "text": "Esecuzione delle attività di finitura, risoluzione delle punch list e ripristini meccanici per la consegna delle lavorazioni."
         }
       ]
     },
@@ -478,7 +562,7 @@
       "members": [
         {
           "name": "Abbas Aryan",
-          "role": "Amministratore"
+          "role": "Responsabile Operativo"
         },
         {
           "name": "Khalid Mohsin",
@@ -493,7 +577,7 @@
           "role": "Site Manager"
         },
         {
-          "name": "Azhar Jahanzalb",
+          "name": "Azhar Jahanzaib",
           "role": "Site Manager"
         },
         {
@@ -510,7 +594,10 @@
       "eyebrow": "Progetti Fotovoltaico",
       "title": "Impianti in esercizio in tutta Italia."
     },
-    "cta": "Trasformate il sole in un vantaggio competitivo."
+    "cta": "Il partner operativo per i vostri progetti fotovoltaici.",
+    "ctaText": "Hai un impianto fotovoltaico da realizzare o un cantiere da completare? SRA Group mette a disposizione squadre specializzate, personale qualificato e mezzi di proprietà per garantire rapidità, qualità e affidabilità in ogni fase del montaggio meccanico. Contattaci per valutare una collaborazione e ricevere un’offerta personalizzata.",
+    "ctaRequest": "RICHIEDI UN’OFFERTA",
+    "ctaCall": "PARLA CON NOI"
   },
   "projects": {
     "hero": {
@@ -553,7 +640,7 @@
     "form": {
       "eyebrow": "Preventivo",
       "title": "Raccontateci il progetto.",
-      "requiredNote": "I campi contrassegnati con * sono obbligatori.",
+      "requiredNote": "Solo nome, email e telefono sono obbligatori.",
       "step1": "Divisione",
       "step1Question": "Di cosa avete bisogno?",
       "step2": "Dettagli del progetto",
@@ -584,16 +671,13 @@
       "installationType": "Tipologia di impianto",
       "installationTypes": {
         "roof": "Tetto",
-        "ground": "A terra",
         "park": "Parco solare"
       },
       "sizing": "Dimensionamento",
       "sizingModes": {
-        "power": "Potenza (kWp)",
-        "bill": "Bolletta annua (€)"
+        "power": "Potenza (MWp)"
       },
-      "power": "Potenza indicativa (kWp)",
-      "bill": "Spesa energetica annua (€)",
+      "power": "Potenza indicativa (MWp)",
       "subject": "Oggetto",
       "firstName": "Nome",
       "lastName": "Cognome",
@@ -608,7 +692,7 @@
       "fileButton": "Scegli file",
       "fileRemove": "Rimuovi allegato",
       "fileNone": "Nessun file selezionato",
-      "gdpr": "Ho letto l'<0>informativa privacy</0> e acconsento al trattamento dei miei dati per rispondere alla richiesta. *",
+      "gdpr": "Ho letto la <0>privacy policy</0>.",
       "marketing": "Acconsento a ricevere comunicazioni commerciali e aggiornamenti da SRAGROUP (facoltativo).",
       "submit": "Invia richiesta",
       "submitting": "Invio in corso…",

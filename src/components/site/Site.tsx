@@ -135,6 +135,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
         const linkProps = {
           to: alternatePath(location.pathname, target),
           search: alternateSearch(location.search as Record<string, unknown>, target),
+          hash: location.hash,
         } as unknown as LinkProps;
         return (
           <span key={target} className="flex items-center">
@@ -145,6 +146,7 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
             )}
             <Link
               {...linkProps}
+              reloadDocument
               hrefLang={target}
               lang={target}
               aria-current={active ? "true" : undefined}
@@ -470,6 +472,7 @@ export function PageHero({
   eyebrow,
   title,
   text,
+  tagline,
   image,
   division = "neutral",
   breadcrumb,
@@ -477,6 +480,7 @@ export function PageHero({
   eyebrow?: string;
   title: string;
   text?: string;
+  tagline?: string;
   image: string;
   division?: Tone;
   breadcrumb: Crumb[];
@@ -535,11 +539,12 @@ export function PageHero({
               </p>
             </Reveal>
           )}
+          {tagline && <p className="mt-5 text-lg font-semibold text-offwhite">{tagline}</p>}
         </div>
         <div className="flex items-end justify-between border-t border-offwhite/10 pt-6">
           <ScrollCue label={t("common.scroll")} />
           <p className="hidden text-[.7rem] font-semibold tracking-[.2em] uppercase text-offwhite/45 sm:block">
-            SRA GROUP · {company.city}
+            SRA GROUP
           </p>
         </div>
       </div>
@@ -593,7 +598,27 @@ export function SectionIntro({
   );
 }
 
-export function CTA({ title, division = "neutral" }: { title: string; division?: Tone }) {
+export function CTA({
+  title,
+  division = "neutral",
+  text,
+  requestLabel,
+  callLabel,
+  subtitle,
+  description,
+  textOnLeft = false,
+  eyebrow,
+}: {
+  title: string;
+  division?: Tone;
+  text?: string;
+  requestLabel?: string;
+  callLabel?: string;
+  subtitle?: string;
+  description?: string;
+  textOnLeft?: boolean;
+  eyebrow?: string;
+}) {
   const { t, lang } = useT();
   const lead: LeadDivision | undefined = division === "neutral" ? undefined : division;
   const image =
@@ -629,7 +654,7 @@ export function CTA({ title, division = "neutral" }: { title: string; division?:
       <div className="site-container grid gap-12 py-28 md:py-36 lg:grid-cols-[1.5fr_1fr] lg:items-end">
         <div>
           <Reveal>
-            <Eyebrow className={accent[division].textOnDark}>{t("cta.eyebrow")}</Eyebrow>
+            <Eyebrow className={accent[division].textOnDark}>{eyebrow ?? t("cta.eyebrow")}</Eyebrow>
           </Reveal>
           <RevealText
             as="h2"
@@ -637,10 +662,21 @@ export function CTA({ title, division = "neutral" }: { title: string; division?:
             immediate={false}
             className="mt-6 text-[clamp(2rem,4.2vw,3.75rem)] leading-[1.02] font-semibold tracking-[-0.035em]"
           />
+          {subtitle && <p className="mt-6 text-lg font-semibold">{subtitle}</p>}
+          {description && (
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-offwhite/70">{description}</p>
+          )}
+          {textOnLeft && (
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-offwhite/70">
+              {text ?? t("cta.text")}
+            </p>
+          )}
         </div>
         <Reveal delay={0.2} className="lg:pb-3">
-          <p className="max-w-md text-lg leading-8 text-offwhite/70">{t("cta.text")}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          {!textOnLeft && (
+            <p className="max-w-md text-lg leading-8 text-offwhite/70">{text ?? t("cta.text")}</p>
+          )}
+          <div className={`mt-8 flex gap-3 ${textOnLeft ? "flex-col items-stretch" : "flex-wrap"}`}>
             <Button
               asChild
               className={`group h-14 rounded-none px-7 text-base ${division === "neutral" ? "bg-offwhite text-charcoal hover:bg-offwhite/90" : accent[division].button}`}
@@ -649,7 +685,7 @@ export function CTA({ title, division = "neutral" }: { title: string; division?:
                 page="contact"
                 {...(lead ? { search: { division: divisionParam(lead, lang) } } : {})}
               >
-                {t("common.requestQuote")}
+                {requestLabel ?? t("common.requestQuote")}
                 <ArrowRight
                   className="transition-transform group-hover:translate-x-1"
                   aria-hidden
@@ -660,7 +696,7 @@ export function CTA({ title, division = "neutral" }: { title: string; division?:
               href={telHref(phone)}
               className="inline-flex h-14 items-center gap-2 border border-offwhite/25 px-7 font-medium transition-colors hover:bg-offwhite/10"
             >
-              <Phone className="size-4" aria-hidden /> {t("cta.call")}
+              <Phone className="size-4" aria-hidden /> {callLabel ?? t("cta.call")}
             </a>
           </div>
         </Reveal>

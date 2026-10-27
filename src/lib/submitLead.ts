@@ -15,7 +15,7 @@ export type LeadPayload = {
   message: string;
   /** Original file name; the file itself is sent as the `attachment` argument. */
   attachmentName?: string;
-  consent: { privacy: true; marketing: boolean };
+  consent: { privacy: boolean; marketing: boolean };
   /** Time between page load and submit; the CRM rejects implausibly fast (bot) submissions. */
   meta: { lang: Lang; page: string; submittedAt: string; elapsedMs: number };
   /** Hidden honeypot field: always empty for people, filled in by spam bots. */

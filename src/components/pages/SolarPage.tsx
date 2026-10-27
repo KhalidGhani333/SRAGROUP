@@ -1,8 +1,8 @@
-import { BatteryCharging, Leaf, Sun, SunMedium, Wrench } from "lucide-react";
+import { Hammer, PanelsTopLeft, Settings, Sun, Wrench } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import groundPv from "@/assets/project images/ground-mounted-pv-urban.jpeg";
+import groundPv from "@/assets/project images/solar-collage-fixed-structure.jpg";
 import pileDriver from "@/assets/project images/pile-driver-operator.jpeg";
-import solarInstallation from "@/assets/project images/agrivoltaic-installation-scissor-lift.jpeg";
+import solarInstallation from "@/assets/project images/solar-collage-tracker.jpg";
 import parkAerial from "@/assets/project images/solar-park-aerial-fields.jpeg";
 import logoSrc from "@/assets/sra-logo.png";
 import { Reveal } from "@/components/site/Motion";
@@ -12,8 +12,9 @@ import { CTA, NumberedSteps, PageHero, SectionIntro, images } from "@/components
 import { useT } from "@/i18n/useT";
 
 type Card = { title: string; text: string };
-type Stat = { value: string; label: string };
-const serviceIcons: LucideIcon[] = [SunMedium, Leaf, Wrench, BatteryCharging];
+type Service = Card & { subtitle: string };
+type Stat = { value: string; unit?: string; detail?: string; label: string };
+const serviceIcons: LucideIcon[] = [Hammer, Settings, PanelsTopLeft, Wrench];
 
 export function SolarPage() {
   const { t, list } = useT();
@@ -46,7 +47,7 @@ export function SolarPage() {
               <SolarCollage label={t("solar.services.collageLabel")} />
             </Reveal>
             <ul className="grid auto-rows-fr gap-4 sm:grid-cols-2">
-              {list<Card>("solar.services.items").map((item, i) => {
+              {list<Service>("solar.services.items").map((item, i) => {
                 const Icon = serviceIcons[i] ?? Sun;
                 return (
                   <li key={item.title}>
@@ -63,6 +64,7 @@ export function SolarPage() {
                         <h3 className="mt-6 text-lg font-semibold tracking-tight xl:mt-10 xl:text-xl">
                           {item.title}
                         </h3>
+                        <p className="mt-2 text-sm leading-6 font-medium">{item.subtitle}</p>
                         <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.text}</p>
                       </article>
                     </Reveal>
@@ -85,10 +87,29 @@ export function SolarPage() {
           />
           <dl className="mt-14 grid grid-cols-2 gap-px bg-offwhite/10 lg:grid-cols-4">
             {list<Stat>("solar.capabilities.stats").map((s) => (
-              <div key={s.label} className="flex flex-col-reverse bg-charcoal p-5 sm:p-7 xl:p-10">
+              <div
+                key={s.label}
+                className="flex min-w-0 flex-col-reverse justify-end bg-charcoal p-5 sm:p-7 xl:p-10"
+              >
                 <dt className="mt-2 text-xs text-offwhite/60">{s.label}</dt>
-                <dd className="font-display text-[clamp(1.75rem,8.5vw,2.25rem)] font-semibold tracking-tight whitespace-nowrap text-solar sm:text-5xl lg:text-[clamp(2.5rem,4vw,3.75rem)]">
-                  {s.value}
+                <dd className="min-h-20 font-display text-[clamp(1.75rem,8.5vw,2.25rem)] leading-none font-semibold tracking-tight text-solar sm:min-h-24 sm:text-5xl lg:text-[clamp(2.5rem,4vw,3.75rem)] xl:min-h-28">
+                  <span className="flex items-baseline gap-x-0.5 whitespace-nowrap">
+                    <span>{s.value}</span>
+                    {s.unit && (
+                      <>
+                        {" "}
+                        <span className="text-[.5em] tracking-normal">{s.unit}</span>
+                      </>
+                    )}
+                  </span>
+                  {s.detail && (
+                    <>
+                      {" "}
+                      <span className="mt-2 block text-base leading-6 font-medium tracking-normal sm:text-lg">
+                        {s.detail}
+                      </span>
+                    </>
+                  )}
                 </dd>
               </div>
             ))}
@@ -114,7 +135,13 @@ export function SolarPage() {
         </div>
       </section>
 
-      <CTA title={t("solar.cta")} division="solar" />
+      <CTA
+        title={t("solar.cta")}
+        text={t("solar.ctaText")}
+        requestLabel={t("solar.ctaRequest")}
+        callLabel={t("solar.ctaCall")}
+        division="solar"
+      />
     </>
   );
 }

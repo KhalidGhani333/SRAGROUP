@@ -1,4 +1,4 @@
-import { Award, CheckCircle2, HardHat, ShieldCheck, Target } from "lucide-react";
+import { Award, CheckCircle2, Handshake, Ruler, ShieldCheck, Truck, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import cCranes from "@/assets/c-cranes.webp";
 import { Reveal } from "@/components/site/Motion";
@@ -6,9 +6,11 @@ import { CTA, Eyebrow, PageHero, SectionIntro, images } from "@/components/site/
 import { useT } from "@/i18n/useT";
 
 type Milestone = { year: string; title: string; text: string };
-type Leader = { name: string; role: string };
+type Value = { title: string; text: string };
+type OperationalCard = Value & { points: string[] };
 
-const valueIcons: LucideIcon[] = [Target, ShieldCheck, Award, HardHat];
+const valueIcons: LucideIcon[] = [Ruler, ShieldCheck, Award, Handshake];
+const operationalIcons: LucideIcon[] = [Users, Truck];
 
 export function AboutPage() {
   const { t, list } = useT();
@@ -38,15 +40,6 @@ export function AboutPage() {
                 height={1067}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
-              <div className="absolute right-6 bottom-6 left-6 flex items-end justify-between text-offwhite md:right-8 md:bottom-8 md:left-8">
-                <p className="font-display text-7xl leading-none font-bold tracking-tighter md:text-8xl">
-                  {milestones[0]?.year}
-                </p>
-                <p className="max-w-[10rem] text-right text-xs leading-5 text-offwhite/70">
-                  {milestones[0]?.title}
-                </p>
-              </div>
               <span className="absolute top-0 left-0 h-1 w-1/3 bg-construction" aria-hidden />
               <span className="absolute top-0 left-1/3 h-1 w-1/3 bg-solar" aria-hidden />
             </div>
@@ -99,24 +92,28 @@ export function AboutPage() {
                   aria-hidden
                 />
                 <Eyebrow className="text-steel">{t(`about.mission.${k}Label`)}</Eyebrow>
-                <p className="mt-8 font-display text-2xl leading-snug font-medium tracking-tight md:text-3xl">
+                <h3 className="mt-8 font-display text-2xl leading-snug font-semibold tracking-tight md:text-3xl">
+                  {t(`about.mission.${k}Title`)}
+                </h3>
+                <p className="mt-5 text-base leading-8 text-offwhite/70 md:text-lg">
                   {t(`about.mission.${k}`)}
                 </p>
               </Reveal>
             ))}
           </div>
           <ul className="mt-4 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 lg:grid-cols-4">
-            {list<string>("about.mission.values").map((label, i) => {
-              const Icon = valueIcons[i] ?? Target;
+            {list<Value>("about.mission.values").map((value, i) => {
+              const Icon = valueIcons[i] ?? Ruler;
               return (
                 <li
-                  key={label}
-                  className="group flex items-center gap-4 border border-offwhite/10 p-5 transition-colors duration-500 hover:bg-offwhite/[.06] md:p-6"
+                  key={value.title}
+                  className="group border border-offwhite/10 p-5 transition-colors duration-500 hover:bg-offwhite/[.06] md:p-6"
                 >
                   <span className="grid size-12 shrink-0 place-items-center bg-offwhite text-charcoal transition-transform duration-500 group-hover:rotate-6">
                     <Icon className="size-5" strokeWidth={1.5} aria-hidden />
                   </span>
-                  <p className="font-display text-lg font-semibold">{label}</p>
+                  <h3 className="mt-5 font-display text-xl font-semibold">{value.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-offwhite/65">{value.text}</p>
                 </li>
               );
             })}
@@ -128,94 +125,41 @@ export function AboutPage() {
         <div className="site-container">
           <SectionIntro eyebrow={t("about.standards.eyebrow")} title={t("about.standards.title")} />
           <div className="mt-16 grid gap-4 lg:grid-cols-2">
-            <Reveal className="border border-border bg-background p-8 md:p-12">
-              <span className="grid size-14 place-items-center bg-solar text-charcoal">
-                <ShieldCheck className="size-6" strokeWidth={1.5} aria-hidden />
-              </span>
-              <h3 className="mt-8 text-3xl font-semibold tracking-tight">
-                {t("about.standards.hse.title")}
-              </h3>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                {t("about.standards.hse.text")}
-              </p>
-              <ul className="mt-8 border-t border-border">
-                {list<string>("about.standards.hse.points").map((p) => (
-                  <li
-                    key={p}
-                    className="flex gap-3 border-b border-border py-4 text-sm last:border-b-0"
-                  >
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-solar-ink" aria-hidden />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal delay={0.1} className="border border-border bg-background p-8 md:p-12">
-              <span className="grid size-14 place-items-center bg-construction text-charcoal">
-                <Award className="size-6" strokeWidth={1.5} aria-hidden />
-              </span>
-              <h3 className="mt-8 text-3xl font-semibold tracking-tight">
-                {t("about.standards.quality.title")}
-              </h3>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                {t("about.standards.quality.text")}
-              </p>
-              <ol className="mt-8 border-t border-border">
-                {list<string>("about.standards.quality.steps").map((s, i) => (
-                  <li
-                    key={s}
-                    className="flex gap-4 border-b border-border py-4 text-sm last:border-b-0"
-                  >
-                    <span className="font-display font-semibold text-construction-ink">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    {s}
-                  </li>
-                ))}
-              </ol>
-            </Reveal>
+            {list<OperationalCard>("about.standards.cards").map((card, i) => {
+              const Icon = operationalIcons[i] ?? Users;
+              return (
+                <Reveal
+                  key={card.title}
+                  delay={i * 0.1}
+                  className="border border-border bg-background p-8 md:p-12"
+                >
+                  <span className="grid size-14 place-items-center bg-brand/10 text-brand">
+                    <Icon className="size-6" strokeWidth={1.5} aria-hidden />
+                  </span>
+                  <h3 className="mt-8 text-3xl font-semibold tracking-tight">{card.title}</h3>
+                  <p className="mt-3 leading-7 text-muted-foreground">{card.text}</p>
+                  <ul className="mt-8 border-t border-border">
+                    {card.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex gap-3 border-b border-border py-4 text-sm last:border-b-0"
+                      >
+                        <CheckCircle2
+                          className="mt-0.5 size-4 shrink-0 text-solar-ink"
+                          aria-hidden
+                        />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="site-container py-28 md:py-36">
-        <SectionIntro
-          eyebrow={t("about.leadership.eyebrow")}
-          title={t("about.leadership.title")}
-          text={t("about.leadership.text")}
-        />
-        <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {list<Leader>("about.leadership.items").map((p, i) => (
-            <li key={p.name}>
-              <Reveal delay={i * 0.08}>
-                <article className="group">
-                  <div className="noise relative grid aspect-[4/5] place-items-center overflow-hidden bg-gradient-to-br from-slate to-charcoal text-offwhite">
-                    <div className="grid-lines absolute inset-0 text-offwhite" aria-hidden />
-                    {/* Monogram until portrait photos are provided. */}
-                    <span
-                      className="relative font-display text-7xl font-semibold tracking-tight text-offwhite/80 transition-transform duration-700 group-hover:scale-110"
-                      aria-hidden
-                    >
-                      {p.name
-                        .split(" ")
-                        .map((part) => part[0])
-                        .join("")}
-                    </span>
-                    <span
-                      className={`absolute bottom-0 left-0 h-1 w-0 transition-all duration-700 group-hover:w-full ${i % 2 === 0 ? "bg-construction" : "bg-solar"}`}
-                      aria-hidden
-                    />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold tracking-tight">{p.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.role}</p>
-                </article>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <CTA title={t("about.cta")} />
+      <CTA title={t("about.cta")} text={t("about.ctaText")} />
     </>
   );
 }
