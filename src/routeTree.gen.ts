@@ -25,7 +25,9 @@ import { Route as EnCookiePolicyRouteImport } from './routes/en/cookie-policy'
 import { Route as EnPrivacyPolicyRouteImport } from './routes/en/privacy-policy'
 import { Route as EnSolarRouteImport } from './routes/en/solar'
 import { Route as ProgettiIndexRouteImport } from './routes/progetti/index'
+import { Route as ProgettiSlugRouteImport } from './routes/progetti/$slug'
 import { Route as EnProjectsIndexRouteImport } from './routes/en/projects/index'
+import { Route as EnProjectsSlugRouteImport } from './routes/en/projects/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -107,9 +109,19 @@ const ProgettiIndexRoute = ProgettiIndexRouteImport.update({
   path: '/progetti/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgettiSlugRoute = ProgettiSlugRouteImport.update({
+  id: '/progetti/$slug',
+  path: '/progetti/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnProjectsIndexRoute = EnProjectsIndexRouteImport.update({
   id: '/en/projects/',
   path: '/en/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnProjectsSlugRoute = EnProjectsSlugRouteImport.update({
+  id: '/en/projects/$slug',
+  path: '/en/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -128,8 +140,10 @@ export interface FileRoutesByFullPath {
   '/en/cookie-policy': typeof EnCookiePolicyRoute
   '/en/privacy-policy': typeof EnPrivacyPolicyRoute
   '/en/solar': typeof EnSolarRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
   '/en/': typeof EnIndexRoute
   '/progetti/': typeof ProgettiIndexRoute
+  '/en/projects/$slug': typeof EnProjectsSlugRoute
   '/en/projects/': typeof EnProjectsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -147,8 +161,10 @@ export interface FileRoutesByTo {
   '/en/cookie-policy': typeof EnCookiePolicyRoute
   '/en/privacy-policy': typeof EnPrivacyPolicyRoute
   '/en/solar': typeof EnSolarRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
   '/en': typeof EnIndexRoute
   '/progetti': typeof ProgettiIndexRoute
+  '/en/projects/$slug': typeof EnProjectsSlugRoute
   '/en/projects': typeof EnProjectsIndexRoute
 }
 export interface FileRoutesById {
@@ -167,8 +183,10 @@ export interface FileRoutesById {
   '/en/cookie-policy': typeof EnCookiePolicyRoute
   '/en/privacy-policy': typeof EnPrivacyPolicyRoute
   '/en/solar': typeof EnSolarRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
   '/en/': typeof EnIndexRoute
   '/progetti/': typeof ProgettiIndexRoute
+  '/en/projects/$slug': typeof EnProjectsSlugRoute
   '/en/projects/': typeof EnProjectsIndexRoute
 }
 export interface FileRouteTypes {
@@ -188,8 +206,10 @@ export interface FileRouteTypes {
     | '/en/cookie-policy'
     | '/en/privacy-policy'
     | '/en/solar'
+    | '/progetti/$slug'
     | '/en/'
     | '/progetti/'
+    | '/en/projects/$slug'
     | '/en/projects/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -207,8 +227,10 @@ export interface FileRouteTypes {
     | '/en/cookie-policy'
     | '/en/privacy-policy'
     | '/en/solar'
+    | '/progetti/$slug'
     | '/en'
     | '/progetti'
+    | '/en/projects/$slug'
     | '/en/projects'
   id:
     | '__root__'
@@ -226,8 +248,10 @@ export interface FileRouteTypes {
     | '/en/cookie-policy'
     | '/en/privacy-policy'
     | '/en/solar'
+    | '/progetti/$slug'
     | '/en/'
     | '/progetti/'
+    | '/en/projects/$slug'
     | '/en/projects/'
   fileRoutesById: FileRoutesById
 }
@@ -246,8 +270,10 @@ export interface RootRouteChildren {
   EnCookiePolicyRoute: typeof EnCookiePolicyRoute
   EnPrivacyPolicyRoute: typeof EnPrivacyPolicyRoute
   EnSolarRoute: typeof EnSolarRoute
+  ProgettiSlugRoute: typeof ProgettiSlugRoute
   EnIndexRoute: typeof EnIndexRoute
   ProgettiIndexRoute: typeof ProgettiIndexRoute
+  EnProjectsSlugRoute: typeof EnProjectsSlugRoute
   EnProjectsIndexRoute: typeof EnProjectsIndexRoute
 }
 
@@ -365,11 +391,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgettiIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/progetti/$slug': {
+      id: '/progetti/$slug'
+      path: '/progetti/$slug'
+      fullPath: '/progetti/$slug'
+      preLoaderRoute: typeof ProgettiSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/en/projects/': {
       id: '/en/projects/'
       path: '/en/projects'
       fullPath: '/en/projects/'
       preLoaderRoute: typeof EnProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/projects/$slug': {
+      id: '/en/projects/$slug'
+      path: '/en/projects/$slug'
+      fullPath: '/en/projects/$slug'
+      preLoaderRoute: typeof EnProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -390,8 +430,10 @@ const rootRouteChildren: RootRouteChildren = {
   EnCookiePolicyRoute: EnCookiePolicyRoute,
   EnPrivacyPolicyRoute: EnPrivacyPolicyRoute,
   EnSolarRoute: EnSolarRoute,
+  ProgettiSlugRoute: ProgettiSlugRoute,
   EnIndexRoute: EnIndexRoute,
   ProgettiIndexRoute: ProgettiIndexRoute,
+  EnProjectsSlugRoute: EnProjectsSlugRoute,
   EnProjectsIndexRoute: EnProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport

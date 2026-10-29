@@ -27,6 +27,10 @@ export function localizedPath(page: PageKey, lang: Lang): string {
   return routeMap[page][lang];
 }
 
+export function projectPath(slug: string, lang: Lang): string {
+  return `${routeMap.projects[lang]}/${encodeURIComponent(slug)}`;
+}
+
 /** Division values as they appear in ?division= query strings, per language. */
 export type Division = "construction" | "solar";
 export type LeadDivision = Division | "general";
@@ -58,6 +62,10 @@ function normalize(pathname: string): string {
 export function alternatePath(pathname: string, target: Lang): string {
   const path = normalize(pathname);
   const current = langFromPath(path);
+  const projectPrefix = `${routeMap.projects[current]}/`;
+  if (path.startsWith(projectPrefix)) {
+    return `${routeMap.projects[target]}/${path.slice(projectPrefix.length)}`;
+  }
   for (const page of Object.keys(routeMap) as PageKey[]) {
     if (routeMap[page][current] === path) return routeMap[page][target];
   }

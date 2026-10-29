@@ -1,7 +1,7 @@
 import { Link, useRouterState, type LinkProps } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, ChevronRight, Mail, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import logoSrc from "@/assets/sra-logo.png";
+import logoSrc from "@/assets/sra-logo.webp";
 import { Button } from "@/components/ui/button";
 import { company, departments, telHref, socialLinks, siteCredit } from "@/data/company";
 import { useConsent } from "@/lib/consent";
@@ -20,6 +20,7 @@ import { CookieConsent } from "./CookieConsent";
 import { images } from "./images";
 import { LocalizedLink } from "./LocalizedLink";
 import { Reveal, RevealText } from "./Motion";
+import { HeroImage } from "./HeroImage";
 
 export { images } from "./images";
 
@@ -497,14 +498,7 @@ export function PageHero({
   return (
     <section className="noise relative isolate overflow-hidden bg-charcoal text-offwhite">
       <div className="absolute inset-0 -z-20 overflow-hidden">
-        <img
-          src={image}
-          alt=""
-          className="animate-ken-burns h-full w-full object-cover"
-          width={1600}
-          height={1067}
-          fetchPriority="high"
-        />
+        <HeroImage src={image} className="animate-ken-burns h-full w-full object-cover" />
       </div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-charcoal via-charcoal/70 to-charcoal/35" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal/80 via-charcoal/20 to-transparent" />

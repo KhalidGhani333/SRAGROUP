@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { accent } from "@/components/site/accent";
 import { LocalizedLink } from "@/components/site/LocalizedLink";
 import { Marquee, Reveal, RevealText } from "@/components/site/Motion";
+import { HeroImage } from "@/components/site/HeroImage";
 import { ProjectList } from "@/components/site/ProjectGrid";
 import { CTA, Eyebrow, LogoMark, ScrollCue, SectionIntro, images } from "@/components/site/Site";
 import { getFeaturedProjects, type Division } from "@/data/projects";
@@ -33,7 +34,7 @@ export function HomePage() {
 
       {/* Split hero: each half grows on hover (desktop), stacked 70vh halves on mobile. */}
       <section className="relative flex min-h-svh flex-col bg-charcoal md:h-svh md:min-h-[640px] md:flex-row">
-        <HeroHalf division="construction" image={images.constructionHero} index="01" />
+        <HeroHalf division="construction" image={images.homeConstruction} index="01" />
         <HeroHalf division="solar" image={images.solarHero} index="02" />
         <div
           className="pointer-events-none absolute top-1/2 left-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 md:block"
@@ -201,13 +202,10 @@ function HeroHalf({
   const solar = division === "solar";
   return (
     <div className="group relative isolate flex min-h-[50svh] flex-1 overflow-hidden transition-[flex-grow] duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:min-h-0 md:hover:flex-[1.35]">
-      <img
+      <HeroImage
         src={image}
-        alt=""
         className={`absolute inset-0 -z-20 h-full w-full object-cover ${solar ? "object-[70%_50%]" : "animate-ken-burns"}`}
-        width={solar ? 944 : 1600}
-        height={solar ? 1666 : 1008}
-        fetchPriority="high"
+        sizes="(min-width: 768px) 60vw, 100vw"
       />
       {solar ? (
         <>

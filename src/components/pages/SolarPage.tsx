@@ -4,7 +4,7 @@ import groundPv from "@/assets/project images/solar-collage-fixed-structure.jpg"
 import pileDriver from "@/assets/project images/pile-driver-operator.jpeg";
 import solarInstallation from "@/assets/project images/solar-collage-tracker.jpg";
 import parkAerial from "@/assets/project images/solar-park-aerial-fields.jpeg";
-import logoSrc from "@/assets/sra-logo.png";
+import logoSrc from "@/assets/sra-logo.webp";
 import { Reveal } from "@/components/site/Motion";
 import { ProjectCarousel } from "@/components/site/ProjectCarousel";
 import { TeamSection, type TeamMember } from "@/components/site/TeamSection";

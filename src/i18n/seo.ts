@@ -1,6 +1,7 @@
 import i18n from "./index";
-import { routeMap, type Lang, type PageKey } from "./routes";
+import { projectPath, routeMap, type Lang, type PageKey } from "./routes";
 import { company, departments, socialLinks } from "@/data/company";
+import { localize, type Project } from "@/data/projects";
 
 /** Production origin used for canonical and hreflang URLs. Update when the domain is final. */
 export const SITE_URL = "https://www.sragroup.it";
@@ -135,5 +136,22 @@ export function pageHead(page: PageKey, lang: Lang) {
     crumbs:
       page === "home" ? [home] : [home, { name: pageName(page, lang), path: routeMap[page][lang] }],
     structuredData: page === "home" ? [organizationData(lang)] : [],
+  });
+}
+
+export function projectHead(project: Project, lang: Lang) {
+  const t = i18n.getFixedT(lang);
+  const paths = { it: projectPath(project.slug, "it"), en: projectPath(project.slug, "en") };
+  return buildHead({
+    title: `${localize(project.title, lang)} | SRAGROUP`,
+    description: localize(project.summary, lang),
+    lang,
+    paths,
+    image: project.coverImage,
+    crumbs: [
+      { name: t("nav.home"), path: routeMap.home[lang] },
+      { name: t("nav.projects"), path: routeMap.projects[lang] },
+      { name: localize(project.title, lang), path: paths[lang] },
+    ],
   });
 }

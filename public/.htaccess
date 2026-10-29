@@ -1,6 +1,7 @@
 # SRAGROUP static site on cPanel / Apache (built with `npm run build:cpanel`).
 Options -Indexes -MultiViews
 DirectoryIndex index.html index.php
+AddType image/avif .avif
 
 # Force HTTPS and the canonical www host once the SSL certificate is active.
 <IfModule mod_rewrite.c>

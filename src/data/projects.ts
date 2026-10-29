@@ -1,3 +1,4 @@
+import condominiFacade from "@/assets/client-oct28/condomini-facade.webp";
 import constructionHero from "@/assets/construction-hero.webp";
 import projectConstruction from "@/assets/project-construction.webp";
 import cBlueprint from "@/assets/c-blueprint.webp";
@@ -33,6 +34,18 @@ import type { Division, Lang } from "@/i18n/routes";
 
 export type { Division };
 export type Localized = { it: string; en: string };
+export type ProjectSection = {
+  title: Localized;
+  paragraphs?: Localized[];
+  items?: Localized[];
+};
+export type ProjectDetail = {
+  heading: Localized;
+  intro?: Localized;
+  facts: { label: Localized; value: Localized }[];
+  sections: ProjectSection[];
+  plannedQuantities?: { label: Localized; value: Localized }[];
+};
 
 /**
  * Shape mirrors a typical headless CMS entry (one document per project, localized fields as
@@ -44,8 +57,8 @@ export type Project = {
   slug: string;
   division: Division;
   title: Localized;
-  location: string;
-  year?: number;
+  location: Localized | string;
+  year?: number | string;
   metric?: Localized;
   summary: Localized;
   challenge: Localized;
@@ -54,6 +67,7 @@ export type Project = {
   coverImage: string;
   gallery: string[];
   featured?: boolean;
+  detail?: ProjectDetail;
 };
 
 export function localize(value: Localized | string, lang: Lang): string {
@@ -63,39 +77,130 @@ export function localize(value: Localized | string, lang: Lang): string {
 const projects: Project[] = [
   {
     id: "c-001",
-    slug: "hub-logistico-piacenza",
+    slug: "riqualificazione-energetica-condominiale",
     division: "construction",
-    title: { it: "Hub logistico Nord", en: "North Logistics Hub" },
-    location: "Piacenza",
-    year: 2026,
-    metric: { it: "42.000 m²", en: "42,000 m²" },
-    featured: true,
+    title: {
+      it: "Riqualificazione energetica condominiale",
+      en: "Residential energy renovation",
+    },
+    location: {
+      it: "Italia",
+      en: "Italy",
+    },
+    metric: {
+      it: "55+ condomìni · 100.000+ m² di facciate",
+      en: "55+ apartment buildings · 100,000+ m² of façades",
+    },
     summary: {
-      it: "Nuovo polo logistico di classe A con uffici integrati, realizzato chiavi in mano per un operatore della distribuzione.",
-      en: "A new grade-A logistics hub with integrated offices, delivered turnkey for a distribution operator.",
+      it: "Un'esperienza consolidata negli interventi di isolamento termico a cappotto e riqualificazione del patrimonio residenziale.",
+      en: "Extensive experience in external wall insulation and residential building renovation.",
     },
     challenge: {
-      it: "Il cliente doveva rendere operativo il magazzino prima del picco stagionale, su un'area con terreni eterogenei e vincoli idraulici stringenti.",
-      en: "The client needed the warehouse operational before peak season, on a site with mixed ground conditions and strict drainage constraints.",
+      it: "",
+      en: "",
     },
     solution: {
-      it: "Abbiamo combinato strutture prefabbricate in calcestruzzo con un cantiere organizzato per fasi parallele, anticipando le opere idrauliche e consegnando i primi 20.000 m² con sei settimane di anticipo.",
-      en: "We combined precast concrete structures with a site organised in parallel phases, front-loading the drainage works and handing over the first 20,000 m² six weeks early.",
+      it: "",
+      en: "",
     },
-    keyFigures: [
-      {
-        label: { it: "Superficie coperta", en: "Covered area" },
-        value: { it: "42.000 m²", en: "42,000 m²" },
+    keyFigures: [],
+    coverImage: condominiFacade,
+    gallery: [],
+    featured: true,
+    detail: {
+      heading: {
+        it: "Oltre 55 condomìni. Più di 100.000 m² di facciate.",
+        en: "Over 55 apartment buildings. More than 100,000 m² of façades.",
       },
-      { label: { it: "Baie di carico", en: "Loading bays" }, value: "64" },
-      {
-        label: { it: "Durata lavori", en: "Build time" },
-        value: { it: "14 mesi", en: "14 months" },
+      intro: {
+        it: "Un'esperienza consolidata negli interventi di isolamento termico a cappotto e riqualificazione del patrimonio residenziale.",
+        en: "Extensive experience in external wall insulation and residential building renovation.",
       },
-      { label: { it: "Certificazione", en: "Certification" }, value: "LEED Gold" },
-    ],
-    coverImage: cWarehouse,
-    gallery: [cWarehouseInterior, cSiteAerial, projectConstruction],
+      facts: [
+        {
+          label: {
+            it: "Condomìni interessati",
+            en: "Apartment buildings",
+          },
+          value: {
+            it: "55+",
+            en: "55+",
+          },
+        },
+        {
+          label: {
+            it: "m² di facciate realizzate",
+            en: "m² of completed façades",
+          },
+          value: {
+            it: "100.000+",
+            en: "100,000+",
+          },
+        },
+      ],
+      sections: [
+        {
+          title: {
+            it: "Il progetto",
+            en: "The project",
+          },
+          paragraphs: [
+            {
+              it: "SRA Costruzioni ha preso parte a un importante programma di riqualificazione energetica del patrimonio edilizio residenziale, intervenendo su oltre 55 condomìni e realizzando più di 100.000 m² di facciate.",
+              en: "SRA Costruzioni took part in a major energy renovation programme for residential buildings, working on over 55 apartment buildings and completing more than 100,000 m² of façades.",
+            },
+            {
+              it: "L'esperienza maturata in questi interventi testimonia la capacità dell'azienda di operare su cantieri di diverse dimensioni, attraverso squadre specializzate e una organizzazione strutturata.",
+              en: "The experience gained demonstrates the company’s ability to work on sites of different sizes, with specialist teams and a structured organisation.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Principali lavorazioni",
+            en: "Main activities",
+          },
+          items: [
+            {
+              it: "Posa di sistemi di isolamento termico a cappotto.",
+              en: "Installation of external thermal insulation systems.",
+            },
+            {
+              it: "Installazione di pannelli isolanti.",
+              en: "Installation of insulation panels.",
+            },
+            {
+              it: "Applicazione di rasature armate con reti di rinforzo.",
+              en: "Application of reinforced skim coats with reinforcing mesh.",
+            },
+            {
+              it: "Realizzazione di finiture e rivestimenti esterni.",
+              en: "Execution of exterior finishes and cladding.",
+            },
+            {
+              it: "Ripristino e riqualificazione delle superfici di facciata.",
+              en: "Restoration and renovation of façade surfaces.",
+            },
+            {
+              it: "Lavorazioni complementari di completamento.",
+              en: "Associated completion works.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Risultati",
+            en: "Results",
+          },
+          paragraphs: [
+            {
+              it: "Oltre 55 edifici condominiali interessati da interventi di riqualificazione e più di 100.000 m² di facciate realizzate, a dimostrazione dell'esperienza operativa maturata nel settore della riqualificazione edilizia.",
+              en: "Over 55 apartment buildings renovated and more than 100,000 m² of façades completed, demonstrating the practical experience gained in building renovation.",
+            },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "s-001",
@@ -138,39 +243,173 @@ const projects: Project[] = [
   },
   {
     id: "c-002",
-    slug: "campus-direzionale-milano",
+    slug: "riqualificazione-post-alluvione-acer-faenza",
     division: "construction",
-    title: { it: "Campus direzionale", en: "Corporate Office Campus" },
-    location: "Milano",
-    year: 2025,
-    metric: { it: "16.800 m²", en: "16,800 m²" },
-    featured: true,
+    title: {
+      it: "Riqualificazione post-alluvione – 20 alloggi ACER",
+      en: "Post-flood renovation – 20 ACER homes",
+    },
+    location: {
+      it: "Faenza (RA)",
+      en: "Faenza (RA)",
+    },
+    metric: {
+      it: "20 appartamenti",
+      en: "20 apartments",
+    },
     summary: {
-      it: "Tre edifici per uffici ad alta efficienza energetica con piazza pedonale e parcheggi interrati.",
-      en: "Three high-efficiency office buildings with a pedestrian plaza and underground parking.",
+      it: "SRA Costruzioni ha partecipato agli interventi di ripristino e riqualificazione di 20 alloggi di edilizia residenziale pubblica ACER situati nel Comune di Faenza, interessati da danni provocati dagli eventi alluvionali.",
+      en: "SRA Costruzioni took part in the restoration and renovation of 20 ACER public housing apartments in the municipality of Faenza that had been damaged by flooding.",
     },
     challenge: {
-      it: "Cantiere in pieno contesto urbano, con edifici confinanti abitati e una finestra di consegna legata al trasferimento della sede del cliente.",
-      en: "A dense urban site next to occupied buildings, with a handover date tied to the client's headquarters move.",
+      it: "",
+      en: "",
     },
     solution: {
-      it: "Paratie e scavi monitorati in continuo, logistica di cantiere notturna e progettazione BIM coordinata tra strutture e impianti per eliminare le interferenze prima dell'esecuzione.",
-      en: "Continuously monitored retaining walls and excavation, night-time site logistics and coordinated BIM design across structure and MEP to clear clashes before construction.",
+      it: "",
+      en: "",
     },
-    keyFigures: [
-      {
-        label: { it: "Superficie lorda", en: "Gross floor area" },
-        value: { it: "16.800 m²", en: "16,800 m²" },
+    keyFigures: [],
+    coverImage: cResidential,
+    gallery: [],
+    featured: true,
+    detail: {
+      heading: {
+        it: "Ripristino e riqualificazione di 20 alloggi ACER a Faenza",
+        en: "Restoration and renovation of 20 ACER homes in Faenza",
       },
-      { label: { it: "Piani interrati", en: "Basement levels" }, value: "2" },
-      { label: { it: "Classe energetica", en: "Energy class" }, value: "A4" },
-      {
-        label: { it: "Ore senza infortuni", en: "Injury-free hours" },
-        value: { it: "310.000", en: "310,000" },
-      },
-    ],
-    coverImage: cOffice,
-    gallery: [cOffice2, cBlueprint, constructionHero],
+      facts: [
+        {
+          label: {
+            it: "Località",
+            en: "Location",
+          },
+          value: {
+            it: "Faenza (RA)",
+            en: "Faenza (RA)",
+          },
+        },
+        {
+          label: {
+            it: "Periodo di intervento",
+            en: "Work period",
+          },
+          value: {
+            it: "2025–2026",
+            en: "2025–2026",
+          },
+        },
+        {
+          label: {
+            it: "Settore",
+            en: "Sector",
+          },
+          value: {
+            it: "Edilizia residenziale pubblica",
+            en: "Public housing",
+          },
+        },
+        {
+          label: {
+            it: "Tipologia",
+            en: "Type",
+          },
+          value: {
+            it: "Ripristino post-alluvione e riqualificazione edilizia",
+            en: "Post-flood restoration and building renovation",
+          },
+        },
+        {
+          label: {
+            it: "Unità immobiliari",
+            en: "Housing units",
+          },
+          value: {
+            it: "20 appartamenti",
+            en: "20 apartments",
+          },
+        },
+      ],
+      sections: [
+        {
+          title: {
+            it: "Descrizione del progetto",
+            en: "Project description",
+          },
+          paragraphs: [
+            {
+              it: "SRA Costruzioni ha partecipato agli interventi di ripristino e riqualificazione di 20 alloggi di edilizia residenziale pubblica ACER situati nel Comune di Faenza, interessati da danni provocati dagli eventi alluvionali.",
+              en: "SRA Costruzioni took part in the restoration and renovation of 20 ACER public housing apartments in the municipality of Faenza that had been damaged by flooding.",
+            },
+            {
+              it: "Le lavorazioni, eseguite nel periodo 2025–2026, hanno riguardato un articolato programma di opere edili, finalizzato al recupero degli ambienti abitativi danneggiati e al ripristino delle condizioni di funzionalità e abitabilità degli immobili.",
+              en: "The works, carried out in 2025–2026, involved an extensive building programme to recover damaged living spaces and restore the properties to a functional, habitable condition.",
+            },
+            {
+              it: "L'intervento ha previsto una prima fase di demolizione e rimozione delle parti compromesse, seguita dalle opere di ricostruzione, ripristino e finitura degli ambienti interni.",
+              en: "An initial phase of demolition and removal of damaged parts was followed by reconstruction, restoration and finishing of the interiors.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Principali lavorazioni eseguite",
+            en: "Main activities completed",
+          },
+          items: [
+            {
+              it: "Demolizione e rimozione delle pavimentazioni esistenti.",
+              en: "Demolition and removal of existing flooring.",
+            },
+            {
+              it: "Demolizione e rimozione degli intonaci deteriorati.",
+              en: "Demolition and removal of damaged plaster.",
+            },
+            {
+              it: "Preparazione e ripristino dei supporti murari.",
+              en: "Preparation and restoration of masonry substrates.",
+            },
+            {
+              it: "Rifacimento degli intonaci interni.",
+              en: "Renewal of internal plasterwork.",
+            },
+            {
+              it: "Ripristino dei sottofondi e delle superfici di posa.",
+              en: "Restoration of screeds and laying surfaces.",
+            },
+            {
+              it: "Realizzazione delle nuove pavimentazioni.",
+              en: "Installation of new flooring.",
+            },
+            {
+              it: "Opere di rasatura, tinteggiatura e finitura.",
+              en: "Skim coating, painting and finishing.",
+            },
+            {
+              it: "Lavorazioni edili complementari per il recupero degli alloggi.",
+              en: "Associated building works to restore the homes.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Esperienza e capacità operativa",
+            en: "Experience and operational capability",
+          },
+          paragraphs: [
+            {
+              it: "L'intervento rappresenta un'importante esperienza di SRA Costruzioni nel settore del recupero edilizio post-emergenza, evidenziando la capacità dell'impresa di organizzare e gestire lavorazioni articolate su più unità abitative.",
+              en: "The project represents important experience for SRA Costruzioni in post-emergency building restoration, demonstrating its ability to organise and manage complex works across multiple homes.",
+            },
+            {
+              it: "Un progetto che testimonia il nostro impegno nella riqualificazione del patrimonio residenziale pubblico e nel recupero di edifici danneggiati da eventi straordinari.",
+              en: "A project that reflects our commitment to renovating public housing and restoring buildings damaged by exceptional events.",
+            },
+          ],
+        },
+      ],
+    },
+    year: "2025–2026",
   },
   {
     id: "s-002",
@@ -209,32 +448,147 @@ const projects: Project[] = [
   },
   {
     id: "c-003",
-    slug: "residenze-porta-est-bologna",
+    slug: "idroscarifica-silos-industriali-vicenza",
     division: "construction",
-    title: { it: "Residenze Porta Est", en: "Porta Est Residences" },
-    location: "Bologna",
-    year: 2024,
-    metric: { it: "96 unità", en: "96 units" },
+    title: {
+      it: "Intervento di idroscarifica su silos industriali",
+      en: "Hydrodemolition of industrial silos",
+    },
+    location: {
+      it: "Vicenza (VI)",
+      en: "Vicenza (VI)",
+    },
+    metric: {
+      it: "16.000 m²",
+      en: "16,000 m²",
+    },
     summary: {
-      it: "Complesso residenziale in classe A con spazi comuni, verde condominiale e impianti a pompa di calore.",
-      en: "A class-A residential complex with shared amenities, landscaped gardens and heat-pump systems.",
+      it: "SRA Costruzioni ha eseguito un importante intervento specialistico di idroscarifica su strutture industriali a silos, per una superficie complessiva di circa 16.000 m².",
+      en: "SRA Costruzioni carried out a major specialist hydrodemolition project on industrial silo structures, covering a total area of approximately 16,000 m².",
     },
     challenge: {
-      it: "Rispettare un budget chiuso garantendo finiture di qualità e i requisiti energetici più recenti.",
-      en: "Holding a fixed budget while delivering quality finishes and the latest energy requirements.",
+      it: "",
+      en: "",
     },
     solution: {
-      it: "Ingegneria del valore in fase di progetto, strutture in calcestruzzo armato ottimizzate e capitolati condivisi con il committente fin dall'inizio.",
-      en: "Value engineering at design stage, optimised reinforced concrete structures and specifications agreed with the client from day one.",
+      it: "",
+      en: "",
     },
-    keyFigures: [
-      { label: { it: "Alloggi", en: "Homes" }, value: "96" },
-      { label: { it: "Superficie", en: "Floor area" }, value: { it: "9.400 m²", en: "9,400 m²" } },
-      { label: { it: "Classe energetica", en: "Energy class" }, value: "A" },
-      { label: { it: "Scostamento budget", en: "Budget variance" }, value: "0%" },
-    ],
-    coverImage: cResidential,
-    gallery: [cCranes, cWorkers, cEngineering],
+    keyFigures: [],
+    coverImage: cWarehouse,
+    gallery: [],
+    detail: {
+      heading: {
+        it: "Intervento specialistico di idroscarifica su silos industriali",
+        en: "Specialist hydrodemolition of industrial silos",
+      },
+      facts: [
+        {
+          label: {
+            it: "Località",
+            en: "Location",
+          },
+          value: {
+            it: "Vicenza (VI)",
+            en: "Vicenza (VI)",
+          },
+        },
+        {
+          label: {
+            it: "Settore",
+            en: "Sector",
+          },
+          value: {
+            it: "Edilizia industriale",
+            en: "Industrial construction",
+          },
+        },
+        {
+          label: {
+            it: "Tipologia",
+            en: "Type",
+          },
+          value: {
+            it: "Idroscarifica e trattamento delle superfici",
+            en: "Hydrodemolition and surface treatment",
+          },
+        },
+        {
+          label: {
+            it: "Superficie di intervento",
+            en: "Work area",
+          },
+          value: {
+            it: "Circa 16.000 m²",
+            en: "Approximately 16,000 m²",
+          },
+        },
+        {
+          label: {
+            it: "Esecuzione",
+            en: "Delivery",
+          },
+          value: {
+            it: "In subappalto",
+            en: "Subcontracted works",
+          },
+        },
+      ],
+      sections: [
+        {
+          title: {
+            it: "Descrizione del progetto",
+            en: "Project description",
+          },
+          paragraphs: [
+            {
+              it: "SRA Costruzioni ha eseguito un importante intervento specialistico di idroscarifica su strutture industriali a silos, per una superficie complessiva di circa 16.000 m².",
+              en: "SRA Costruzioni carried out a major specialist hydrodemolition project on industrial silo structures, covering a total area of approximately 16,000 m².",
+            },
+            {
+              it: "Le lavorazioni hanno riguardato il trattamento delle superfici mediante idroscarifica, nell'ambito delle attività di preparazione e riqualificazione delle strutture esistenti.",
+              en: "The works involved treating surfaces by hydrodemolition as part of the preparation and renovation of the existing structures.",
+            },
+            {
+              it: "L'intervento rappresenta un'esperienza significativa nel settore delle lavorazioni industriali specialistiche, evidenziando la capacità operativa di SRA Costruzioni nella gestione di attività su superfici estese e in contesti tecnicamente impegnativi.",
+              en: "The project represents significant experience in specialist industrial works, demonstrating SRA Costruzioni’s operational capability on extensive surfaces and in technically demanding environments.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Lavorazioni principali",
+            en: "Main activities",
+          },
+          items: [
+            {
+              it: "Interventi di idroscarifica sulle superfici dei silos.",
+              en: "Hydrodemolition of silo surfaces.",
+            },
+            {
+              it: "Trattamento e preparazione delle superfici esistenti.",
+              en: "Treatment and preparation of existing surfaces.",
+            },
+            {
+              it: "Organizzazione delle lavorazioni su un'estensione complessiva di circa 16.000 m².",
+              en: "Organisation of works over a total area of approximately 16,000 m².",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Il nostro contributo",
+            en: "Our contribution",
+          },
+          paragraphs: [
+            {
+              it: "Attraverso l'impiego di personale operativo e un'adeguata organizzazione delle attività, SRA Costruzioni ha contribuito all'esecuzione dell'intervento per conto dell'impresa appaltatrice, consolidando la propria esperienza nelle lavorazioni specialistiche in ambito industriale.",
+              en: "With operational staff and organised activities, SRA Costruzioni contributed to delivering the works on behalf of the main contractor, strengthening its experience in specialist industrial construction.",
+            },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "s-003",
@@ -273,38 +627,139 @@ const projects: Project[] = [
   },
   {
     id: "c-004",
-    slug: "polo-produttivo-brescia",
+    slug: "consolidamento-rinforzo-strutturale",
     division: "construction",
-    title: { it: "Polo produttivo", en: "Manufacturing Plant" },
-    location: "Brescia",
-    year: 2025,
-    metric: { it: "23.500 m²", en: "23,500 m²" },
+    title: {
+      it: "Interventi di consolidamento e rinforzo strutturale",
+      en: "Structural consolidation and strengthening",
+    },
+    location: {
+      it: "Cantieri in tutta Italia",
+      en: "Sites across Italy",
+    },
     summary: {
-      it: "Nuovo stabilimento in carpenteria metallica con carroponti, uffici tecnici e aree di collaudo.",
-      en: "A new steel-framed plant with overhead cranes, engineering offices and testing areas.",
+      it: "SRA Costruzioni ha maturato una significativa esperienza nell'esecuzione di interventi di consolidamento e rinforzo strutturale su edifici esistenti, operando in diversi cantieri distribuiti sul territorio nazionale.",
+      en: "SRA Costruzioni has gained significant experience in consolidation and structural strengthening of existing buildings at sites across Italy.",
     },
     challenge: {
-      it: "Luci strutturali ampie per carroponti da 32 t e un cronoprogramma vincolato all'arrivo delle nuove linee produttive.",
-      en: "Long spans for 32 t overhead cranes and a schedule locked to the arrival of new production lines.",
+      it: "",
+      en: "",
     },
     solution: {
-      it: "Progetto integrato strutture-impianti, prefabbricazione in officina delle travi reticolari e montaggio in sequenza con due autogru dedicate.",
-      en: "Integrated structural and MEP design, shop-fabricated trusses and sequenced erection with two dedicated mobile cranes.",
+      it: "",
+      en: "",
     },
-    keyFigures: [
-      {
-        label: { it: "Superficie", en: "Floor area" },
-        value: { it: "23.500 m²", en: "23,500 m²" },
+    keyFigures: [],
+    coverImage: cEngineering,
+    gallery: [],
+    detail: {
+      heading: {
+        it: "Consolidamento e rinforzo strutturale degli edifici",
+        en: "Structural consolidation and strengthening of buildings",
       },
-      {
-        label: { it: "Acciaio strutturale", en: "Structural steel" },
-        value: { it: "1.850 t", en: "1,850 t" },
-      },
-      { label: { it: "Luce massima", en: "Max span" }, value: "36 m" },
-      { label: { it: "Portata carroponti", en: "Crane capacity" }, value: "32 t" },
-    ],
-    coverImage: projectConstruction,
-    gallery: [cSteel, cWorkers, cSiteAerial],
+      facts: [
+        {
+          label: {
+            it: "Settore",
+            en: "Sector",
+          },
+          value: {
+            it: "Edilizia e consolidamento strutturale",
+            en: "Construction and structural consolidation",
+          },
+        },
+        {
+          label: {
+            it: "Località",
+            en: "Location",
+          },
+          value: {
+            it: "Diverse regioni d'Italia",
+            en: "Various regions of Italy",
+          },
+        },
+        {
+          label: {
+            it: "Tipologia",
+            en: "Type",
+          },
+          value: {
+            it: "Interventi di rinforzo e miglioramento sismico",
+            en: "Strengthening and seismic improvement works",
+          },
+        },
+      ],
+      sections: [
+        {
+          title: {
+            it: "Descrizione del progetto",
+            en: "Project description",
+          },
+          paragraphs: [
+            {
+              it: "SRA Costruzioni ha maturato una significativa esperienza nell'esecuzione di interventi di consolidamento e rinforzo strutturale su edifici esistenti, operando in diversi cantieri distribuiti sul territorio nazionale.",
+              en: "SRA Costruzioni has gained significant experience in consolidation and structural strengthening of existing buildings at sites across Italy.",
+            },
+            {
+              it: "Le lavorazioni hanno riguardato principalmente la realizzazione di intonaci armati e sistemi di rinforzo strutturale, nell'ambito di interventi finalizzati al miglioramento delle prestazioni meccaniche e della sicurezza degli edifici.",
+              en: "The works mainly involved reinforced render and structural strengthening systems, as part of projects to improve the mechanical performance and safety of buildings.",
+            },
+            {
+              it: "Grazie all'impiego di squadre specializzate e a un'organizzazione operativa flessibile, l'azienda è in grado di affrontare lavorazioni tecnicamente complesse su immobili residenziali e altre tipologie di strutture.",
+              en: "With specialist teams and a flexible operational organisation, the company can undertake technically complex works on residential buildings and other structures.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Principali lavorazioni",
+            en: "Main activities",
+          },
+          items: [
+            {
+              it: "Realizzazione di intonaci armati strutturali.",
+              en: "Application of structural reinforced render.",
+            },
+            {
+              it: "Posa di reti di rinforzo strutturale.",
+              en: "Installation of structural reinforcing mesh.",
+            },
+            {
+              it: "Applicazione di malte strutturali.",
+              en: "Application of structural mortars.",
+            },
+            {
+              it: "Installazione di connettori e sistemi di collegamento.",
+              en: "Installation of connectors and connection systems.",
+            },
+            {
+              it: "Realizzazione di rinforzi mediante barre e fiocchi strutturali.",
+              en: "Strengthening using structural bars and fibre anchors.",
+            },
+            {
+              it: "Preparazione e ripristino delle superfici murarie.",
+              en: "Preparation and restoration of masonry surfaces.",
+            },
+            {
+              it: "Opere complementari di consolidamento e ripristino.",
+              en: "Associated consolidation and restoration works.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "La nostra esperienza",
+            en: "Our experience",
+          },
+          paragraphs: [
+            {
+              it: "Gli interventi eseguiti in diverse località italiane testimoniano la competenza di SRA Costruzioni nelle lavorazioni di consolidamento e rinforzo strutturale, con particolare attenzione alla qualità esecutiva, al rispetto delle prescrizioni progettuali e alla corretta realizzazione delle opere.",
+              en: "Works carried out in various Italian locations demonstrate SRA Costruzioni’s expertise in consolidation and structural strengthening, with particular attention to workmanship, design requirements and correct execution.",
+            },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "s-004",
@@ -336,7 +791,160 @@ const projects: Project[] = [
     coverImage: trackerAxial,
     gallery: [sStorage, sEv, sInstall],
   },
-  // Year and capacity supplied by the user; case-study details await confirmation.
+  {
+    id: "c-005",
+    slug: "sicurezza-solai-antincendio-gorizia",
+    division: "construction",
+    title: {
+      it: "Messa in sicurezza dei solai e adeguamento antincendio",
+      en: "Floor slab safety and fire protection upgrades",
+    },
+    location: {
+      it: "Gorizia (GO)",
+      en: "Gorizia (GO)",
+    },
+    summary: {
+      it: "SRA Costruzioni ha operato nell'ambito degli interventi di messa in sicurezza e adeguamento antincendio dei soffitti e controsoffitti del Liceo Scientifico “Duca degli Abruzzi” di Gorizia.",
+      en: "SRA Costruzioni worked on safety and fire protection upgrades to ceilings and suspended ceilings at the “Duca degli Abruzzi” Science High School in Gorizia.",
+    },
+    challenge: {
+      it: "",
+      en: "",
+    },
+    solution: {
+      it: "",
+      en: "",
+    },
+    keyFigures: [],
+    coverImage: cOffice2,
+    gallery: [],
+    detail: {
+      heading: {
+        it: "Riqualificazione e messa in sicurezza dei soffitti scolastici",
+        en: "Renovation and safety upgrades to school ceilings",
+      },
+      facts: [
+        {
+          label: {
+            it: "Località",
+            en: "Location",
+          },
+          value: {
+            it: "Gorizia (GO)",
+            en: "Gorizia (GO)",
+          },
+        },
+        {
+          label: {
+            it: "Edificio",
+            en: "Building",
+          },
+          value: {
+            it: "Liceo Scientifico “Duca degli Abruzzi” – Succursale di Via Randaccio",
+            en: "“Duca degli Abruzzi” Science High School – Via Randaccio branch",
+          },
+        },
+        {
+          label: {
+            it: "Settore",
+            en: "Sector",
+          },
+          value: {
+            it: "Edilizia pubblica e scolastica",
+            en: "Public and school construction",
+          },
+        },
+        {
+          label: {
+            it: "Tipologia",
+            en: "Type",
+          },
+          value: {
+            it: "Messa in sicurezza dei solai, sistemi antisfondellamento e adeguamento antincendio",
+            en: "Floor slab safety, ceiling collapse prevention systems and fire protection upgrades",
+          },
+        },
+      ],
+      sections: [
+        {
+          title: {
+            it: "Descrizione del progetto",
+            en: "Project description",
+          },
+          paragraphs: [
+            {
+              it: "SRA Costruzioni ha operato nell'ambito degli interventi di messa in sicurezza e adeguamento antincendio dei soffitti e controsoffitti del Liceo Scientifico “Duca degli Abruzzi” di Gorizia.",
+              en: "SRA Costruzioni worked on safety and fire protection upgrades to ceilings and suspended ceilings at the “Duca degli Abruzzi” Science High School in Gorizia.",
+            },
+            {
+              it: "Le lavorazioni hanno interessato il ripristino e la riqualificazione dei soffitti esistenti, con l'installazione di sistemi antisfondellamento, controsoffitti e soluzioni tecniche per la protezione antincendio.",
+              en: "The works involved restoring and renovating existing ceilings, installing ceiling collapse prevention systems, suspended ceilings and technical fire protection solutions.",
+            },
+            {
+              it: "L'intervento ha richiesto lavorazioni specialistiche, con particolare attenzione alla sicurezza degli ambienti scolastici e al rispetto delle prescrizioni tecniche di progetto.",
+              en: "The project required specialist works, with particular attention to school safety and compliance with the technical design requirements.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Principali lavorazioni",
+            en: "Main activities",
+          },
+          items: [
+            {
+              it: "Demolizione e rimozione dei soffitti e controsoffitti esistenti.",
+              en: "Demolition and removal of existing ceilings and suspended ceilings.",
+            },
+            {
+              it: "Installazione di sistemi antisfondellamento dei solai.",
+              en: "Installation of floor slab ceiling collapse prevention systems.",
+            },
+            {
+              it: "Posa di reti e sistemi di rinforzo in materiale composito.",
+              en: "Installation of composite mesh and reinforcement systems.",
+            },
+            {
+              it: "Realizzazione di controsoffitti in cartongesso, anche con caratteristiche antincendio.",
+              en: "Installation of plasterboard suspended ceilings, including fire resistant systems.",
+            },
+            {
+              it: "Installazione di strutture metalliche di sostegno dei controsoffitti.",
+              en: "Installation of metal support structures for suspended ceilings.",
+            },
+            {
+              it: "Realizzazione di controsoffitti modulari con pannelli in fibra minerale.",
+              en: "Installation of modular suspended ceilings with mineral fibre panels.",
+            },
+            {
+              it: "Applicazione di sistemi protettivi intumescenti.",
+              en: "Application of intumescent protection systems.",
+            },
+            {
+              it: "Realizzazione di botole e accessi per ispezione e manutenzione.",
+              en: "Provision of hatches and access for inspection and maintenance.",
+            },
+            {
+              it: "Opere complementari di ripristino e finitura.",
+              en: "Associated restoration and finishing works.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Il nostro contributo",
+            en: "Our contribution",
+          },
+          paragraphs: [
+            {
+              it: "L'intervento rappresenta una referenza significativa nell'ambito dell'edilizia pubblica, valorizzando le competenze di SRA Costruzioni nella realizzazione di sistemi di protezione dei solai, controsoffittature tecniche e opere di adeguamento antincendio.",
+              en: "The project is a significant reference in public construction, highlighting SRA Costruzioni’s expertise in floor slab protection systems, technical suspended ceilings and fire protection upgrades.",
+            },
+          ],
+        },
+      ],
+    },
+  },
   {
     id: "s-005",
     slug: "impianto-fotovoltaico-salerno",
@@ -355,7 +963,160 @@ const projects: Project[] = [
     coverImage: solarArctech,
     gallery: [],
   },
-  // Project name, location, year and capacity supplied in the 2026-10-23 change document.
+  {
+    id: "c-006",
+    slug: "coperture-residenziali-san-lazzaro",
+    division: "construction",
+    title: {
+      it: "Rifacimento e riqualificazione di coperture residenziali",
+      en: "Residential roof renewal and renovation",
+    },
+    location: {
+      it: "San Lazzaro di Savena (BO)",
+      en: "San Lazzaro di Savena (BO)",
+    },
+    summary: {
+      it: "SRA Costruzioni ha operato nell'ambito di interventi di riqualificazione delle coperture residenziali, occupandosi delle principali lavorazioni edili necessarie al ripristino e al rifacimento dei sistemi di copertura.",
+      en: "SRA Costruzioni worked on residential roof renovation, carrying out the main building activities needed to restore and renew roofing systems.",
+    },
+    challenge: {
+      it: "",
+      en: "",
+    },
+    solution: {
+      it: "",
+      en: "",
+    },
+    keyFigures: [],
+    coverImage: cResidential,
+    gallery: [],
+    detail: {
+      heading: {
+        it: "Rifacimento e riqualificazione delle coperture",
+        en: "Roof renewal and renovation",
+      },
+      facts: [
+        {
+          label: {
+            it: "Località",
+            en: "Location",
+          },
+          value: {
+            it: "San Lazzaro di Savena (BO)",
+            en: "San Lazzaro di Savena (BO)",
+          },
+        },
+      ],
+      sections: [
+        {
+          title: {
+            it: "Descrizione del progetto",
+            en: "Project description",
+          },
+          paragraphs: [
+            {
+              it: "SRA Costruzioni ha operato nell'ambito di interventi di riqualificazione delle coperture residenziali, occupandosi delle principali lavorazioni edili necessarie al ripristino e al rifacimento dei sistemi di copertura.",
+              en: "SRA Costruzioni worked on residential roof renovation, carrying out the main building activities needed to restore and renew roofing systems.",
+            },
+            {
+              it: "Le attività comprendono la rimozione degli elementi esistenti, la realizzazione di sistemi impermeabilizzanti, la posa di nuovi manti di copertura e le opere complementari di lattoneria.",
+              en: "Activities include removing existing elements, installing waterproofing systems, laying new roof coverings and associated sheet metal work.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Principali lavorazioni",
+            en: "Main activities",
+          },
+          items: [
+            {
+              it: "Rimozione e smontaggio delle coperture esistenti.",
+              en: "Removal and dismantling of existing roof coverings.",
+            },
+            {
+              it: "Preparazione dei supporti.",
+              en: "Preparation of substrates.",
+            },
+            {
+              it: "Posa di membrane impermeabilizzanti.",
+              en: "Installation of waterproofing membranes.",
+            },
+            {
+              it: "Rifacimento del manto di copertura con tegole.",
+              en: "Renewal of tiled roof coverings.",
+            },
+            {
+              it: "Installazione di converse e scossaline.",
+              en: "Installation of roof junction flashings and cover flashings.",
+            },
+            {
+              it: "Posa e sostituzione di gronde e lattonerie.",
+              en: "Installation and replacement of gutters and sheet metal components.",
+            },
+            {
+              it: "Opere complementari di finitura.",
+              en: "Associated finishing works.",
+            },
+          ],
+        },
+        {
+          title: {
+            it: "Competenze operative",
+            en: "Operational expertise",
+          },
+          paragraphs: [
+            {
+              it: "L'esperienza maturata nel settore delle coperture consente a SRA Costruzioni di affrontare interventi di manutenzione straordinaria e riqualificazione, con particolare attenzione all'impermeabilizzazione, alla protezione degli edifici e alla durabilità delle opere.",
+              en: "Experience in roofing enables SRA Costruzioni to undertake major maintenance and renovation projects, with particular attention to waterproofing, building protection and durability.",
+            },
+          ],
+        },
+      ],
+      plannedQuantities: [
+        {
+          label: {
+            it: "Superficie copertura",
+            en: "Roof area",
+          },
+          value: {
+            it: "939 m²",
+            en: "939 m²",
+          },
+        },
+        {
+          label: {
+            it: "Converse",
+            en: "Roof junction flashings",
+          },
+          value: {
+            it: "10 pezzi",
+            en: "10 pieces",
+          },
+        },
+        {
+          label: {
+            it: "Gronde",
+            en: "Gutters",
+          },
+          value: {
+            it: "168 metri lineari",
+            en: "168 linear metres",
+          },
+        },
+        {
+          label: {
+            it: "Lattonerie",
+            en: "Sheet metal work",
+          },
+          value: {
+            it: "307 metri lineari",
+            en: "307 linear metres",
+          },
+        },
+      ],
+    },
+  },
   {
     id: "s-006",
     slug: "impianto-fotovoltaico-alessandria",
@@ -374,7 +1135,6 @@ const projects: Project[] = [
     coverImage: solarComal,
     gallery: [],
   },
-  // Supplied in the client's 27 October change document.
   {
     id: "s-007",
     slug: "agrivoltaico-valmont-benevento",
@@ -408,4 +1168,8 @@ export function getProjects(division?: Division): Project[] {
 
 export function getFeaturedProjects(limit = 3): Project[] {
   return projects.filter((p) => p.featured).slice(0, limit);
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((project) => project.slug === slug && project.detail);
 }

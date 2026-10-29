@@ -602,12 +602,12 @@
   "projects": {
     "hero": {
       "eyebrow": "Portfolio",
-      "title": "Visible results. Measurable value.",
-      "text": "A selection of projects that shows our ability to work across different scales, settings and goals."
+      "title": "Our experience takes shape in our projects.",
+      "text": "Projects completed across Italy, demonstrating our ability to tackle complex challenges in construction and energy."
     },
     "list": {
       "eyebrow": "Projects",
-      "title": "Construction and energy across Italy."
+      "title": "Our completed projects. The strength of our experience."
     },
     "filterLabel": "Filter by division",
     "filters": {
@@ -617,7 +617,16 @@
     },
     "count_one": "{{count}} project",
     "count_other": "{{count}} projects",
-    "carouselLabel": "Related projects"
+    "carouselLabel": "Related projects",
+    "detail": {
+      "back": "All projects",
+      "contact": "Tell us about your project",
+      "facts": "Project facts",
+      "plannedTitle": "Site quantities to be confirmed",
+      "plannedNote": "The San Lazzaro work programme lists the following planned quantities. They must be verified against the work actually completed.",
+      "work": "Activity",
+      "planned": "Planned quantity"
+    }
   },
   "contact": {
     "hero": {

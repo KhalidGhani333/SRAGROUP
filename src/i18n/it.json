@@ -602,12 +602,12 @@
   "projects": {
     "hero": {
       "eyebrow": "Portfolio",
-      "title": "Risultati visibili. Valore misurabile.",
-      "text": "Una selezione di opere che racconta la nostra capacità di affrontare scale, contesti e obiettivi diversi."
+      "title": "La nostra esperienza prende forma nei progetti.",
+      "text": "Interventi realizzati in tutta Italia, testimonianza della nostra capacità di affrontare sfide complesse nel settore edile ed energetico."
     },
     "list": {
       "eyebrow": "Progetti",
-      "title": "Costruzioni ed energia, sul territorio."
+      "title": "Le nostre realizzazioni. La forza della nostra esperienza."
     },
     "filterLabel": "Filtra per divisione",
     "filters": {
@@ -617,7 +617,16 @@
     },
     "count_one": "{{count}} progetto",
     "count_other": "{{count}} progetti",
-    "carouselLabel": "Progetti correlati"
+    "carouselLabel": "Progetti correlati",
+    "detail": {
+      "back": "Tutti i progetti",
+      "contact": "Parliamo del tuo progetto",
+      "facts": "Dati del progetto",
+      "plannedTitle": "Dati del cantiere da valorizzare",
+      "plannedNote": "Dal programma delle lavorazioni di San Lazzaro risultano queste quantità, da verificare rispetto alle opere effettivamente completate.",
+      "work": "Lavorazione",
+      "planned": "Quantità prevista"
+    }
   },
   "contact": {
     "hero": {

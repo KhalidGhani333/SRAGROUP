@@ -6,7 +6,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 /**
  * Subtle fade-and-rise. By default it plays when scrolled into view;
- * `immediate` plays on mount (for above-the-fold hero content).
+ * `immediate` stays visible in the initial HTML (for above-the-fold hero content).
  */
 export function Reveal({
   children,
@@ -24,7 +24,7 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 28 }}
+      initial={reduce || immediate ? false : { opacity: 0, y: 28 }}
       {...(immediate
         ? { animate: target }
         : { whileInView: target, viewport: { once: true, margin: "-60px" } })}
@@ -56,7 +56,7 @@ export function RevealText({
     <MotionTag
       className={className}
       aria-label={text}
-      initial="hidden"
+      initial={immediate || reduce ? "show" : "hidden"}
       {...(immediate
         ? { animate: "show" }
         : { whileInView: "show", viewport: { once: true, margin: "-60px" } })}

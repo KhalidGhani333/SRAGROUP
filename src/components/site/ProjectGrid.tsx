@@ -1,17 +1,15 @@
-import { useNavigate, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { getProjects, localize, type Division, type Project } from "@/data/projects";
-import { divisionParam, parseDivisionParam } from "@/i18n/routes";
+import { divisionParam, parseDivisionParam, projectPath } from "@/i18n/routes";
 import { useT } from "@/i18n/useT";
 import { accent } from "./accent";
 
 export function ProjectCard({
   project,
-  eager = false,
   size = "default",
 }: {
   project: Project;
-  eager?: boolean;
   size?: "default" | "large";
 }) {
   const { t, lang } = useT();
@@ -26,7 +24,8 @@ export function ProjectCard({
         alt=""
         width={1600}
         height={1067}
-        loading={eager ? "eager" : "lazy"}
+        loading="lazy"
+        fetchPriority="low"
         decoding="async"
         className="absolute inset-0 -z-20 h-full w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-[1.06]"
       />
@@ -41,13 +40,22 @@ export function ProjectCard({
         </div>
         <div>
           <p className="text-[.68rem] font-semibold tracking-[.18em] text-offwhite/65 uppercase">
-            {project.location}
+            {localize(project.location, lang)}
             {project.year !== undefined && <> · {project.year}</>}
           </p>
           <h3
             className={`mt-3 font-semibold tracking-tight ${size === "large" ? "text-2xl md:text-4xl" : "text-2xl"}`}
           >
-            {title}
+            {project.detail ? (
+              <Link
+                to={projectPath(project.slug, lang)}
+                className="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-construction"
+              >
+                {title}
+              </Link>
+            ) : (
+              title
+            )}
           </h3>
           {project.metric && (
             <div className="mt-5 border-t border-offwhite/15 pt-4">
@@ -73,7 +81,7 @@ export function ProjectList({ projects }: { projects: Project[] }) {
     <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
       {projects.map((p, i) => (
         <li key={p.id} className={i === 0 ? "md:col-span-2 lg:row-span-2" : ""}>
-          <ProjectCard project={p} eager={i < 3} size={i === 0 ? "large" : "default"} />
+          <ProjectCard project={p} size={i === 0 ? "large" : "default"} />
         </li>
       ))}
     </ul>
@@ -142,7 +150,7 @@ export function FilterableProjectGrid() {
       </div>
       <motion.ul layout={!reduce} className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout" initial={false}>
-          {visible.map((p, i) => (
+          {visible.map((p) => (
             <motion.li
               key={p.id}
               layout={!reduce}
@@ -151,7 +159,7 @@ export function FilterableProjectGrid() {
               exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
-              <ProjectCard project={p} eager={i < 3} />
+              <ProjectCard project={p} />
             </motion.li>
           ))}
         </AnimatePresence>
